@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,booktabs,amsmath,longtable}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\title{Catalog observations and limits on reproducing earthquake-triggered activity at Sierra Negra}
+\author{Reproducibility project}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Earthquake timing and waveform recurrence can constrain the processes connecting fault slip to eruption. We assess the reproducibility of Song et al. (2026) and calculate seismicity statistics from the independently archived original catalog. Browser-accessible source rows recover 219 earthquakes on 26 June 2018. Their distribution among four published activity windows is 29, 74, 72, and 44 events. We implement and test spectral classification, signed cross-correlation, connected-component clustering, magnitude-to-moment conversion, and recurrence statistics. However, local network restrictions prevent continuous-waveform and trained-model acquisition, and the supplementary methods remain inaccessible. Therefore, no enhanced catalog, long-period classifications, multiplet memberships, or published recurrence regressions are independently reproduced. Partial observation-based figures and an original conceptual schematic document the available calculations. The results establish a reusable numerical basis and a transparent assessment of missing inputs; they do not independently verify a fluid-triggering mechanism.
+\end{abstract}
+
+\section{Introduction}
+Volcanic eruption initiation involves mechanical interaction between a magma reservoir and the surrounding faulted edifice. Seismic timing alone leaves an ambiguity: fault slip may open a magma pathway directly, or it may initiate a sequence of processes that eventually permits intrusion. The Sierra Negra observations motivate testing this distinction because a well-recorded fault earthquake preceded the 2018 eruption \citep{bell2021,song2026}.
+
+An enhanced earthquake catalog can reveal signals absent from an original monitoring catalog, but agreement depends on waveform coverage, detection thresholds, and manual decisions. We distinguish three reproducibility questions: whether an archived original catalog can be recovered; whether numerical components behave as defined; and whether the enhanced observations and mechanism can be independently verified. Only the first two questions are answered by the present calculations. The project assessment explicitly retains the third as unresolved.
+
+\section{Data availability and provenance}
+The original earthquake catalog is deposited with geodetic and interferometric products by \citet{bellarchive}. We recovered all 219 rows dated 26 June 2018 through the browser's text representation. These occupy consecutive source rows 348--566; neighboring rows belong to other dates. The subset retains event identifiers, origin times, coordinates, catalog depths, magnitudes, location-error fields, travel-time RMS, azimuthal gap, and phase-pick counts. A source URL and subset SHA-256 accompany the machine-readable output. The full archive's published MD5 remains unverified because no complete byte-preserving download succeeded.
+
+Public metadata identify IGUANA as network 8G during 2018--2019 \citep{iguana}. Access to the actual continuous records and response metadata failed locally. The public Volpick repository provides trained models \citep{volpick,zhong2024}, but weights were not downloaded and inference was not executed. Public model availability is thus distinguished from successful model execution. The seismic and GNSS archive links stated by \citet{song2026} were identified; no GNSS observations or high-rate position solutions were obtained.
+
+The accessible main article does not expose a separate Code Availability section or an enhanced catalog download. Targeted searches did not identify a study-specific code deposit. This does not establish that such a deposit is absent. The supplement is linked publicly, but browser requests failed at both the PMC and Springer routes. Its methods, equations, and panels have not been reviewed. Our list of supplementary products comes only from main-text cross-references.
+
+\section{Methods}
+\subsection{Original-catalog calculations}
+We parse source rows without rejecting events by location uncertainty, magnitude, or depth. Validation requires unique identifiers, finite numerical fields, valid coordinate ranges, and chronological ordering. UTC boundaries of 09:15, 17:00, and 19:40 define half-open phase intervals. An event exactly on a boundary belongs to the later phase. This uses the publication's rounded times; the largest catalog event occurs 32.299 seconds after the first boundary and is consequently counted in Phase 2.
+
+For phase $k$, the observed catalog rate is $r_k=N_k/\Delta t_k$, where $N_k$ is the number of catalog entries and $\Delta t_k$ is the interval duration in hours. This rate describes the catalog. It is not corrected for completeness, missing stations, or time-dependent noise. Maps preserve source coordinates; zoomed panels state how many events lie outside their extent. The latitude--depth plot includes every event rather than imposing an undocumented cross-section selection. The source depth datum is not verified, so the plotted values are labeled catalog depth.
+
+\subsection{Waveform and classification components}
+Waveform processing requires contiguous finite segments. The implementation rejects gaps instead of silently filling them. Detrending, Butterworth bandpass filtering, and rational anti-alias resampling are available, but filter order and phase convention must be specified. Instrument-response removal is a dependency-bound ObsPy operation with an explicit stabilization passband. None of these operations were applied to Sierra Negra waveforms in this run.
+
+The classification kernel calculates
+\begin{equation}
+ F=\log_2\left(\frac{\overline{A}_{9\text{--}15}}{\overline{A}_{2\text{--}5}}\right),
+\end{equation}
+where $\overline{A}$ is mean Fourier amplitude in the indicated frequency band, in hertz. Five-second arrival windows can be extracted from one second before a pick. This expression measures amplitude contrast; it is not an integrated power ratio. Station estimates are averaged only when their supplied signal-to-noise ratios satisfy the criterion of two. Values below $-2$ are LP, and values at or above $-2$ are VT. Missing measurements remain unclassified. These definitions follow the accessible method description \citep{song2026}; taper, SNR definition, and filter details remain unresolved.
+
+\subsection{Correlation and families}
+Continuous template correlation uses FFT convolution through compiled SciPy routines. Moving-window sums and sums of squares give the local normalization. Constant templates and non-finite samples are rejected; zero-energy data windows return undefined scores. Detection requires explicit thresholds and separation. We implement both absolute and the EQcorrscan median-absolute-score convention \citep{eqcorrscan}; a chosen sensitivity threshold would not be labeled a published threshold.
+
+An independent C++ kernel demeans each overlapping event-pair window, computes normalized cross-correlation at a user-specified range of integer lags, and retains the sign of the coefficient with largest absolute value. Thus a polarity-reversed signal remains negatively correlated. Common station/component/phase windows contribute to a network average; missing channels contribute no artificial zero. This equal-channel weighting and lag selection are independent conventions awaiting comparison with supplementary details.
+
+Positive network coefficients greater than 0.7 create graph edges. Connected components with at least ten events define candidate families; explicit template links can propagate family and FI membership. Negative coefficients below $-0.7$ create review candidates, not automatically confirmed anti-repeaters. Observed polarity reversals require station-by-station inspection. No observational similarity graph was constructed.
+
+\subsection{Recurrence, moment, and geodesy}
+For chronologically ordered family events, recurrence intervals are $T_i=t_{i+1}-t_i$. Periodicity is their mean divided by their standard deviation. The implementation exposes the population versus sample standard-deviation choice because that convention is not resolved. Duplicated origin times require review.
+
+The accessible moment conversion is
+\begin{equation}
+ M_0=10^{1.5 M_w+9.105}\ \mathrm{N\,m},\qquad
+ M_w=\begin{cases}M_L,&M_L>3,\\2M_L/3+1,&M_L\leq3.\end{cases}
+\end{equation}
+Its application to a new catalog requires confirming the magnitude scale. The regression functions require explicit linear or logarithmic coordinates and an explicit choice of pairing moment with the preceding or following recurrence interval. Leave-one-out jackknife calculations estimate slope variability. These choices cannot be selected by optimizing agreement with a target coefficient.
+
+The GNSS utility differences average positions in one-hour windows before and after an earthquake. It does not estimate precise point positions. A full geodetic reproduction requires observations, correction products, software, and control settings. Likewise, phase association and differential relocation require verified velocity models and input controls \citep{pyocto,waldhauser2001}; neither was executed.
+
+\section{Results}
+The recovered original catalog contains 219 earthquakes, with a magnitude range from $-0.63$ to 4.73 and median 1.78. The largest entry, dias2018mkgw, has an origin time of 09:15:32.299 UTC. Its catalog magnitude is retained as 4.73; it is not substituted for the separately reported moment magnitude of the fault earthquake.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}\toprule
+Phase & Duration (h) & Events & Rate (h$^{-1}$) & Median magnitude\\\midrule
+1 & 9.250 & 29 & 3.135 & 0.900\\
+2 & 7.750 & 74 & 9.548 & 0.845\\
+3 & 2.667 & 72 & 27.000 & 2.935\\
+4 & 4.333 & 44 & 10.154 & 2.520\\\bottomrule
+\end{tabular}
+\caption{Calculations from the original archived catalog. UTC boundaries are 00:00, 09:15, 17:00, 19:40, and 24:00. Counts include all source events and are not completeness-corrected.}
+\label{tab:phases}
+\end{table}
+
+Figure~\ref{fig:map} shows the spatial observations recoverable without waveform processing. One location lies far from the caldera vicinity; preserving it makes the distinction between source data and an interpreted local population explicit. No new location inversion or structural reconstruction is implied. Figure~\ref{fig:timeline} and Table~\ref{tab:phases} show the highest observed catalog rate during the third interval. The corresponding rise in median magnitude means that changing detection completeness must be considered before comparing physical event rates. Using the alternative published eruption boundary of 19:35 changes Phase 3 and 4 counts to 69 and 47, respectively. Three events therefore change phase assignment within the five-minute timing range.
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{../results/figures/fig01_original_catalog.pdf}
+\caption{Partial reproduction corresponding to main Figure 1. Original Bell archive event coordinates are colored by UTC hour. Panel (a) preserves every catalog location; (b) zooms into the caldera vicinity and marks the maximum-magnitude entry; (c) projects all events onto latitude and source catalog depth. No station, fault, terrain, or reservoir layers are available, and the depth datum is unresolved. These are observations from the original catalog, not an enhanced-catalog reconstruction.}
+\label{fig:map}\end{figure}
+\setcounter{figure}{3}
+\begin{figure}[p]\centering
+\includegraphics[width=.95\textwidth]{../results/figures/fig02_original_timeline.pdf}
+\caption{Partial reproduction corresponding to main Figure 2. Cumulative original events and original catalog magnitudes are plotted against hour UTC on 26 June 2018. Dashed lines give published rounded fault-earthquake, intrusion, and eruption times. Enhanced counts and GNSS displacement are absent. The timing lines are literature annotations rather than measurements newly extracted from waveforms or deformation.}
+\label{fig:timeline}\end{figure}
+\setcounter{figure}{3}
+\begin{figure}[p]\centering
+\includegraphics[width=.9\textwidth]{../results/figures/fig04_original_phase_maps.pdf}
+\caption{Partial reproduction corresponding to main Figure 4. Each panel plots original event locations in one published phase, with color indicating UTC hour. Titles report full phase counts and locations outside the zoom. Frequency-index color, topography, fault traces, and GNSS records remain unavailable. This comparison documents temporal changes in the original catalog without assigning unmeasured LP or VT labels.}
+\label{fig:phases}\end{figure}
+
+Ten numerical test cases pass. FFT correlation agrees with direct Pearson correlation, and the C++ signed lag kernel agrees with a NumPy reference. Injected positive and negative signals are recovered at their known positions. A constructed Fourier spectrum verifies the amplitude-based FI boundary. Additional tests check transitive components, magnitude conversion, recurrence pairing, regression and jackknife calculations, arrival-window boundaries, and geodetic differencing. A synthetic end-to-end window-CLI test additionally verifies classification, family membership, and interval output. Constructed test signals are algorithm validation data and are excluded from observational products.
+
+\section{Comparison with published results}
+The comparison table in the repository distinguishes uncomputed quantities from numerical disagreements. The accessible paper reports two inconsistent VT counts: 1,224 in Results and 1,214 in Methods. With 711 LP events, the first total is 1,935 and the second is 1,925. Independently, 694 located events plus 1,241 new template detections sum to 1,935. We preserve both reported counts and request source catalog reconciliation before selecting a target.
+
+\begin{table}[ht]\centering\small
+\begin{tabular}{p{.38\textwidth}p{.20\textwidth}p{.30\textwidth}}\toprule
+Quantity & Published & Present calculation\\\midrule
+Enhanced event total & 1,935 by stated workflow & Not computed\\
+VT classifications & 1,224 / 1,214 & Not computed\\
+LP classifications & 711 & Not computed\\
+Families / member events & 29 / 714 & Not computed\\
+Anti-correlated LP pairs & 11 & Not computed\\
+VT / LP regression $R^2$ & 0.70 / 0.07 & Not computed\\
+Fault earthquake time & 09:15 UTC & Original entry 09:15:32.299\\
+Original catalog subset & Archive rows for date & 219 events recovered\\\bottomrule
+\end{tabular}
+\caption{Comparison targets from \citet{song2026} and computations from the original archive. The 219 original events are not a numerical estimate of enhanced-catalog completeness. No difference is assigned to uncomputed quantities.}
+\end{table}
+
+Exact agreement of the enhanced waveform results is not testable here. Main Figures 3 and 5 require FI measurements, family memberships, and original waveform examples. Main-text references identify supplementary products S1--S9 involving classification, locations, similarity, periodicity, historical deformation, magnitude calibration, completeness, FI inheritance, and resampling. None has been reproduced; the inaccessible supplement may contain further material.
+
+\section{Discussion}
+Figure~\ref{fig:concept} is an original schematic separating recorded seismic observations from the proposed physical sequence. A delayed response could be consistent with local changes in fault conditions, but the original catalog alone does not measure fluid pressure, flux, or effective stress. The absence of reproduced waveform and geodetic constraints prevents an independent test of the mechanism.
+
+\setcounter{figure}{5}
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{../results/figures/fig06_conceptual_sequence.pdf}
+\caption{Original conceptual interpretation corresponding to main Figure 6. The panels depict fault slip, a proposed intervening fluid process associated with reported LP sources, intrusion, and eruption. Times are taken from the literature, including its 19:35--19:40 onset range. Geometry is not to scale. Fluid pressurization is a hypothesis; this is neither a numerical simulation nor an independently measured pressure history.}
+\label{fig:concept}\end{figure}
+
+A rigorous recurrence analysis must also consider missed events, temporal censoring, magnitude uncertainty, and dependence among events in the same family. These effects can alter a moment--recurrence regression even when pointwise numerical methods are correct. Leave-one-out resampling of individual events does not account for all family-level dependence. Future observational execution should compare both interval-pairing conventions, quantify family-level uncertainty, and inspect how frequency bands and station weights alter classifications and membership.
+
+\section{Limitations}
+Direct local downloads failed because DNS resolution is unavailable; explicit outbound socket checks returned permission errors. The machine has ample resources, but resources alone do not provide archive access. The installed usable environment lacks ObsPy and machine-learning dependencies. GitHub authentication is absent, and standard SSH configuration/key locations are unavailable. Accordingly, no remote repository was created or pushed.
+
+The supplement has not been reviewed. The source catalog's full-file checksum, location-error units, and depth datum remain unverified. The archive license was not exposed by the browser representation, so raw files are excluded from Git. Derived numerical facts retain attribution. The four figures are partial observation products or an explicitly conceptual illustration. No enhanced catalog, measured LP/VT event set, family analysis, observed polarity reversal, GNSS solution, or published regression is claimed.
+
+\section{Conclusions}
+We recover a complete date-specific subset of the archived original catalog, calculate its phase statistics, and verify numerical components needed for further reproduction. The central completed observational result is a 219-event original catalog with a peak recorded rate of 27 events per hour in the published intrusion interval. This does not independently establish the LP population or the proposed triggering mechanism. Continuous records, supplementary parameters, original family data, and geodetic solutions are required to test those findings. Restoring archive access and authentication would permit the next phase of reproducibility work.
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,15 @@
+test_cpp_against_numpy (test_algorithms.Numerics) ... ok
+test_fft_against_direct (test_algorithms.Numerics) ... ok
+test_frequency_amplitude_not_power (test_algorithms.Numerics) ... ok
+test_injection_and_polarity (test_algorithms.Numerics) ... ok
+test_moment_conversion_boundary (test_algorithms.Numerics) ... ok
+test_recurrence_and_pairing (test_algorithms.Numerics) ... ok
+test_regression_and_jackknife (test_algorithms.Numerics) ... ok
+test_transitive_components_and_anti (test_algorithms.Numerics) ... ok
+test_windows_and_gnss (test_algorithms.Numerics) ... ok
+test_classification_family_and_statistics (test_window_cli.WindowCLI) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.685s
+
+OK

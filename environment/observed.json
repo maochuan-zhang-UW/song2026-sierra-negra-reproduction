@@ -1,0 +1,21 @@
+{
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-centos-8.10-Green_Obsidian",
+  "python": "3.6.8 (default, Sep 24 2024, 09:44:46) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-22)]",
+  "versions": {
+    "numpy": "1.19.5",
+    "scipy": "1.5.4",
+    "matplotlib": "3.3.4",
+    "pandas": "1.1.5",
+    "nbformat": "5.1.3",
+    "IPython": "7.16.1"
+  },
+  "storage": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sdb1        15T  6.2T  8.5T  42% /data/data1/mczhang8-scratch\n",
+  "cpu_logical_count": 96,
+  "memory": "              total        used        free      shared  buff/cache   available\nMem:          754Gi        52Gi        17Gi       152Mi       684Gi       697Gi\nSwap:            0B          0B          0B\n",
+  "cpp": "g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)",
+  "julia": "julia version 1.7.2",
+  "latex": "pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018)",
+  "github_auth_status": "No authenticated hosts; no token variables present",
+  "ssh_status": "Standard config/key directories absent; no accessible agent",
+  "network": "DNS resolution fails; explicit outbound socket connections return EPERM"
+}

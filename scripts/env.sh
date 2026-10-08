@@ -1,0 +1,13 @@
+# Source from the repository root before any command.
+export TMPDIR="$PWD/.cache/tmp"
+export XDG_CACHE_HOME="$PWD/.cache"
+export MPLCONFIGDIR="$PWD/.cache/matplotlib"
+export PIP_CACHE_DIR="$PWD/.cache/pip"
+export SEISBENCH_CACHE_ROOT="$PWD/.cache/seisbench"
+export JULIA_DEPOT_PATH="$PWD/.cache/julia"
+export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+mkdir -p "$TMPDIR" "$MPLCONFIGDIR" "$PIP_CACHE_DIR" "$SEISBENCH_CACHE_ROOT"
+export IPYTHONDIR="$PWD/.cache/ipython"
+export JUPYTER_CONFIG_DIR="$PWD/.cache/jupyter"
+export JUPYTER_DATA_DIR="$PWD/.cache/jupyter-data"
+export JUPYTER_RUNTIME_DIR="$PWD/.cache/jupyter-runtime"

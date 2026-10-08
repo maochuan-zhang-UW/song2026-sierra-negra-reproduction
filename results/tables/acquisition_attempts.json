@@ -1,0 +1,37 @@
+[
+  {
+    "name": "IGUANA_Cat_V1.eventlist",
+    "url": "https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist?download=1",
+    "attempt_utc": "2026-10-08T23:15:11.434689Z",
+    "status": "failed",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "name": "GV01-gv02_gv04_filled.baseline",
+    "url": "https://zenodo.org/records/4389190/files/GV01-gv02_gv04_filled.baseline?download=1",
+    "attempt_utc": "2026-10-08T23:15:11.458097Z",
+    "status": "failed",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "name": "article.pdf",
+    "url": "https://www.nature.com/articles/s41467-026-68645-4.pdf",
+    "attempt_utc": "2026-10-08T23:15:11.473857Z",
+    "status": "failed",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "name": "supplement.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/12946353/bin/41467_2026_68645_MOESM1_ESM.pdf",
+    "attempt_utc": "2026-10-08T23:15:11.489175Z",
+    "status": "failed",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "name": "stations.xml",
+    "url": "https://service.iris.edu/fdsnws/station/1/query?network=8G&starttime=2018-06-26&endtime=2018-06-27&level=response&format=xml",
+    "attempt_utc": "2026-10-08T23:15:11.504413Z",
+    "status": "failed",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  }
+]

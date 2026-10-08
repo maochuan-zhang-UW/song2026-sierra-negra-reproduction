@@ -1,0 +1,16 @@
+{
+  "n_original_events": 219,
+  "minimum_magnitude": -0.63,
+  "maximum_magnitude": 4.73,
+  "median_magnitude": 1.78,
+  "maximum_magnitude_event_id": "dias2018mkgw",
+  "maximum_magnitude_event_utc": "2018-06-26 09:15:32.299000+00:00",
+  "original_depth_reference": "Not verified; preserve source values; do not interpret as below surface",
+  "phase_counts": {
+    "1": 29,
+    "2": 74,
+    "3": 72,
+    "4": 44
+  },
+  "note": "No enhanced events, LP/VT labels, families, or GNSS solutions were computed"
+}

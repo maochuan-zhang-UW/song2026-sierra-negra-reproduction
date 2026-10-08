@@ -1,0 +1,6 @@
+# Optional modern environment; NOT installed or executed in this run.
+# Resolve under Python >=3.10, then save pip freeze before scientific execution.
+obspy
+seisbench
+pyocto
+eqcorrscan
