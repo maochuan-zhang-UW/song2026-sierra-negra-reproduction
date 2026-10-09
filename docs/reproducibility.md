@@ -24,14 +24,14 @@ The public Volpick EQTransformer checkpoint v1 is cached on the data drive. Its 
 | Waveforms | Nine stations across 8G/EC; four PAYG historical records; coverage inventoried | VCH1 access; SN02 gaps; public checkpoint differs from unverifiable source checkpoint |
 | Picking | Public checkpoint executed on actual acquired waveforms | Exact checkpoint and unspecified filtering/normalization details |
 | Association | 536 approximate candidates, 5,138 assigned picks, constraints validated | Published alternative Model F supplied; exact original model/domain and location controls differ |
-| Locations | Published relocation selection/windows reviewed | HypoInverse/HypoDD source controls, differential observations; no relocation run |
+| Locations | Published relocation selection/windows reviewed | Original HypoInverse/HypoDD controls and CC differential observations; independent CT pilot executed but rejected |
 | Template matching | 447 templates searched over real 24-h records; 1007 additional candidates; all self-recovered | Original relocation, spike controls and false-positive assessment |
 | FI classification | 96 LP / 438 VT seeds; enhanced 453 LP / 1088 VT inherited labels | Independent noise/SNR definitions; direct/inherited disagreement |
 | Multiplets | C++ signed NCC and connected components tested | Observed event windows, lag/station aggregation and manual inspection |
 | Recurrence/moment | Actual independent magnitudes, OLS/RANSAC and pairing sensitivities executed | Original RANSAC controls, family dependence and membership |
 | GNSS | Validated RINEX, independent float PPP and relative baseline computed | Original GIPSY/VMF1/FES2004 controls; GV03 outage |
 
-The velocity-model manuscript (Rezaeifar et al., 2024) is locally reviewed. It describes a VELEST-derived 1-D P model and plots it, without a numerical layer table identified in accessible text. Authorized approximate association uses published Tepp et al. (2014) Table 1 Model F P/S values with explicit interpolation and elevation correction; differential relocation remains unexecuted.
+The velocity-model manuscript (Rezaeifar et al., 2024) is locally reviewed. It describes a VELEST-derived 1-D P model and plots it, without a numerical layer table identified in accessible text. Authorized approximate association uses published Tepp et al. (2014) Table 1 Model F P/S values with explicit interpolation and elevation correction; an independent CT-only differential-location pilot executes but fails validation.
 
 FI is the base-2 logarithm of mean spectral amplitude at 9–15 Hz divided by mean spectral amplitude at 2–5 Hz. FI -2 implies amplitude ratio 1/4, not integrated energy ratio 1/4. Unmeasured events remain unclassified.
 
@@ -63,7 +63,7 @@ S5 uses per-day display gain based on the 99th percentile of absolute velocity, 
 
 Results report 1,224 VT and 711 LP events (1,935 total); Methods report 1,214 VT and 711 LP (1,925). The stated 694 located plus 1,241 matched events give 1,935. Both VT values are preserved. The associated arrival counts in the main text must not be compared with all candidate picks in the supplement.
 
-Twenty-one numerical tests pass under the modern environment. They compare FFT and C++ correlation to direct calculations, recover injected signs, verify amplitude-based FI, transitive families, moment conversion, recurrence pairing, regressions and window handling. These use constructed signals, excluded from volcanic results. Archived catalog count and checksum validation use actual observations.
+Twenty-four numerical tests pass under the modern environment. They compare FFT and C++ correlation to direct calculations, recover injected signs, verify amplitude-based FI, transitive families, moment conversion, recurrence pairing, regressions and window handling. These use constructed signals, excluded from volcanic results. Archived catalog count and checksum validation use actual observations.
 
 The observed original phase counts are 29/74/72/44 using a 19:40 eruption boundary. A 19:35 boundary gives 29/74/69/47. These are catalog observations, not completeness-corrected physical rates. The mainshock's original time is 09:15:32.299; its original magnitude 4.73 is distinct from reported Mw 5.4.
 

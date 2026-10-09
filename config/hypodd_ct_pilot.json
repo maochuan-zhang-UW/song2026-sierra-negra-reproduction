@@ -1,0 +1,16 @@
+{
+  "description": "Independent nine-station CT-only HypoDD pilot; not Song controls",
+  "maximum_initial_pair_separation_km": 5,
+  "minimum_common_station_phase_observations": 4,
+  "catalog_pick_weights": "equal unit weights; not probabilities or calibrated uncertainties",
+  "P_weight": 1,
+  "S_weight": 1,
+  "solver": "LSQR",
+  "damping": 20,
+  "iterations": 10,
+  "station_centroid_maximum_distance_km": 70,
+  "airquake_removal": 1,
+  "velocity_model": "Tepp2014 Model F nodes as piecewise constant layers; variable Vp/Vs; not the association's linear interpolation",
+  "cross_correlation_data": false,
+  "unknown_magnitude_and_location_error_input": -9
+}

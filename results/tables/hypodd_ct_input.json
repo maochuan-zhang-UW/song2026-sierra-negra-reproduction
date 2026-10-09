@@ -1,0 +1,34 @@
+{
+  "events": 716,
+  "stations": 9,
+  "event_pairs": 151447,
+  "differential_observations": 1195493,
+  "phase_counts": {
+    "P": 649697,
+    "S": 545796
+  },
+  "settings": {
+    "description": "Independent nine-station CT-only HypoDD pilot; not Song controls",
+    "maximum_initial_pair_separation_km": 5,
+    "minimum_common_station_phase_observations": 4,
+    "catalog_pick_weights": "equal unit weights; not probabilities or calibrated uncertainties",
+    "P_weight": 1,
+    "S_weight": 1,
+    "solver": "LSQR",
+    "damping": 20,
+    "iterations": 10,
+    "station_centroid_maximum_distance_km": 70,
+    "airquake_removal": 1,
+    "velocity_model": "Tepp2014 Model F nodes as piecewise constant layers; variable Vp/Vs; not the association's linear interpolation",
+    "cross_correlation_data": false,
+    "unknown_magnitude_and_location_error_input": -9
+  },
+  "origin_time_file_precision_s": 0.01,
+  "input_sha256": {
+    "dt.ct": "d384b6a802c5c819cd95c15c690e7f6a5a2fa6d571b99a3ae323a6c774239039",
+    "event.sel": "709bac1e9d05c13891aced6ff7c7dbd1b860f9caf908546e12dc6fe31cb9a5a4",
+    "station.sel": "ea02139ea41cc3a61491f00cde133ded98c786c6c45e7e4c28780d923d999b79",
+    "hypoDD.inp": "abdf5dc3ea8e642eafa8e6fab152725bc5b1f36b988ad0fa3b4bdeed18150e72"
+  },
+  "note": "Negative-nine metadata are missing-value placeholders, not estimated magnitudes or location uncertainties"
+}

@@ -1,0 +1,8 @@
+{
+  "source_revision": "fb40407fb768cbdc23a11e27bc841f5d4a98abb7",
+  "example": "author example1, unchanged inputs",
+  "events": 16,
+  "max_horizontal_cartesian_difference_m": 0.8062257748298602,
+  "max_depth_difference_m": 0.9999999999994458,
+  "max_origin_seconds_field_difference_s": 0.0
+}

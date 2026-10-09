@@ -1,0 +1,24 @@
+{
+  "completed": true,
+  "scientifically_accepted": false,
+  "input_events": 716,
+  "retained_events": 709,
+  "not_retained_events": 7,
+  "retained_within_initial_domain": 700,
+  "clusters": {
+    "1": 706,
+    "2": 3
+  },
+  "median_horizontal_shift_km": 0.6237702561666081,
+  "maximum_horizontal_shift_km": 110.62030429403009,
+  "median_absolute_depth_shift_km": 0.35524999999999995,
+  "depth_range_km": [
+    0.001,
+    58.684
+  ],
+  "zero_depth_warnings": 1219,
+  "policy": "retain event, freeze negative depth update",
+  "reason": "Boundary-sensitive CT-only pilot; native zero-depth step freezing; not validated as original relocation",
+  "output_sha256": "a7ac3c1218063d67243958ac5f857afa60482d2168ad9615b441699490649621",
+  "note": "Domain flag is diagnostic, not independent truth. -9 metadata omitted; formal LSQR errors are not bootstrap confidence intervals."
+}

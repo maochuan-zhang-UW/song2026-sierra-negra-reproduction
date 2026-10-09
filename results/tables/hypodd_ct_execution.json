@@ -1,0 +1,24 @@
+{
+  "completed": true,
+  "scientifically_accepted": false,
+  "input_events": 716,
+  "retained_events": 206,
+  "not_retained_events": 510,
+  "retained_within_initial_domain": 3,
+  "clusters": {
+    "1": 203,
+    "2": 3
+  },
+  "median_horizontal_shift_km": 35.02162190773518,
+  "maximum_horizontal_shift_km": 61.47261975744544,
+  "median_absolute_depth_shift_km": 56.74375,
+  "depth_range_km": [
+    5.753,
+    71.375
+  ],
+  "zero_depth_warnings": 503,
+  "policy": "remove negative-depth event",
+  "reason": "CT-only pilot with alternative velocity layering and settings; substantial location drift; not accepted as paper reproduction",
+  "output_sha256": "03a1f55cc858c6802226c53d1ddfdcea12e97a728f74afadd2dff39fae42c3e4",
+  "note": "Domain flag is diagnostic, not independent truth. -9 metadata omitted; formal LSQR errors are not bootstrap confidence intervals."
+}

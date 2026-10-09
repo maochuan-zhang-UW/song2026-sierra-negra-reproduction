@@ -32,6 +32,13 @@ for name in ['enhanced_frequency_families','enhanced_phase_maps','enhanced_magni
 for name in ['template_matching_execution','matched_window_execution','nine_station_association','enhanced_family_execution','enhanced_permissive_family_execution','matched_magnitude_execution','observed_permissive_recurrence_execution','gnss_bend_execution','family_periodicity_execution','topographic_map_execution','template_control_execution']:
     codes.append("print(json.dumps(json.loads(Path('results/tables/{}.json').read_text()), indent=2))".format(name))
 codes.append("print(pd.read_csv('results/tables/template_threshold_sensitivity.csv').to_string(index=False))")
+codes.append("print(pd.read_csv('results/tables/heldout_station_validation.csv').to_string(index=False))")
+codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/heldout_station_validation.png'))")
+codes.append("print(json.dumps(json.loads(Path('results/tables/hypodd_author_example.json').read_text()), indent=2))")
+codes.append("print(json.dumps(json.loads(Path('results/tables/hypodd_ct_execution.json').read_text()), indent=2))")
+codes.append("display(Image(filename='results/figures/hypodd_ct_audit.png'))")
+codes.append("print(json.dumps(json.loads(Path('results/tables/hypodd_ct_keep_execution.json').read_text()), indent=2))")
+codes.append("display(Image(filename='results/figures/hypodd_ct_keep_audit.png'))")
 shell=InteractiveShell.instance()
 for count,code in enumerate(codes,1):
     with capture_output() as captured:

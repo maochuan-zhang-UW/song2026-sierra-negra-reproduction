@@ -1,0 +1,25 @@
+{
+  "method": "EC stations excluded from seven-station template construction; predict arrivals with same FMM approximation and elevation correction",
+  "controls": "500 within-hour shared-catalog time shifts; independent offset per UTC hour; 60..3540 seconds circular",
+  "seed": 20261009,
+  "primary_tolerance_s": 0.5,
+  "secondary_tolerances_s": [
+    0.2,
+    1,
+    2
+  ],
+  "gap_policy": "real common three-component segments; exclude 5-second blind edges",
+  "input_sha256": {
+    "results/catalogs/ec_volpick_picks.csv": "12bdabc584566858368bbe5c9dcb396cad8fa789a1e5ce85de224e55a6bd0db1",
+    "results/catalogs/enhanced_classified_catalog.csv": "ad2b754f1e37c5520b31595b596019312e83c0e12cc3d03526b1c794034d7239",
+    ".cache/approximate_tt.bin": "acc23807a19a675c3fa3327a7d492f23382f73190cc3a0ed6ab22a05ab8eade1"
+  },
+  "limitations": [
+    "Pick model shared across networks but observed waveforms independent",
+    "Approximate inherited locations affect arrival residuals",
+    "Missing heldout support is not proof of false detection",
+    "Time control assumes approximate stationarity within each hour",
+    "No heldout-trained tuning or manual earthquake labels",
+    "No calibrated earthquake false-positive rate"
+  ]
+}
