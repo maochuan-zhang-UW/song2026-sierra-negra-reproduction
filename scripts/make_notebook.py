@@ -39,6 +39,8 @@ codes.append("print(json.dumps(json.loads(Path('results/tables/hypodd_ct_executi
 codes.append("display(Image(filename='results/figures/hypodd_ct_audit.png'))")
 codes.append("print(json.dumps(json.loads(Path('results/tables/hypodd_ct_keep_execution.json').read_text()), indent=2))")
 codes.append("display(Image(filename='results/figures/hypodd_ct_keep_audit.png'))")
+codes.append("print(pd.read_csv('results/tables/relocation_absolute_arrival_summary.csv').to_string(index=False))")
+codes.append("display(Image(filename='results/figures/relocation_absolute_arrivals.png'))")
 shell=InteractiveShell.instance()
 for count,code in enumerate(codes,1):
     with capture_output() as captured:

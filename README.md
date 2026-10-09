@@ -126,3 +126,10 @@ Run the differential-location diagnostic with `python scripts/run_hypodd_pilot.p
 The unchanged author example can be rerun with `python scripts/validate_hypodd_build.py`. The native zero-depth sensitivity uses `python scripts/run_hypodd_pilot.py --keep-shallow-events` and `python scripts/analyze_hypodd_ct.py --keep-shallow-events`. This setting freezes negative-depth updates; it does not freely locate events above sea level.
 
 The depth-policy sensitivity retains 709 events (700 inside the initial domain), with median horizontal shift 0.624 km. Large outliers and 1,219 repeated negative-depth step warnings remain; this catalog is a diagnostic, not validated source locations. Both pilot audits and held-out station results are included in the report.
+
+The fixed-pick absolute-arrival audit (`scripts/audit_relocation_arrivals.py`)
+compares 7,481 observations using the association model before and after IAQ=0
+relocation. RMS increases from 0.170 to 0.247 s. This is model-consistency
+analysis on fitted arrivals, not independent location validation; different
+velocity-layer representations prevent attributing the change uniquely to
+location error. See [audit methods](docs/heldout_and_relocation.md).

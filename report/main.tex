@@ -243,6 +243,13 @@ A boundary sensitivity uses the native IAQ=0 policy. Inspection of the code esta
 \includegraphics[width=\textwidth]{../results/figures/hypodd_ct_keep_audit.pdf}
 \caption{Native zero-depth policy sensitivity for the catalog-time-only pilot. IAQ=0 retains connected events while freezing depth steps that would become negative. Seven hundred of 709 retained events remain within the original domain, but large outliers remain and the zero-depth boundary still restricts the solution. The full geographic extent preserves these outliers. This is a diagnostic catalog rather than a validated reproduction of the original relocated population.}\end{figure}
 
+
+A fixed-pick audit evaluates absolute arrivals under the association FMM model before and after IAQ=0 relocation. The paired sample comprises 7481 observations across 708 events; 50 observations lack paired predictions within the interpolation domain and are recorded separately. Initial predictions reproduce stored association residuals to 5.73 microseconds. RMS increases from 0.17028 to 0.24721 s, and the fraction within 0.5 s falls from 100\% to 95.95\%. S-phase RMS increases from 0.17505 to 0.28445 s. These are fitted observations rather than independent validation data. Because HypoDD uses a different layer representation, the deterioration does not isolate location error from forward-model mismatch. The output remains an unaccepted diagnostic.
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{../results/figures/relocation_absolute_arrivals.pdf}
+\caption{Absolute assigned-arrival residual distributions for P and S phases. Initial and native IAQ=0 pilot locations predict the same original picks with the association FMM model and identical elevation corrections. Horizontal axes show absolute residual in seconds on a logarithmic scale; vertical axes show cumulative fraction. Only observations with both predictions within the interpolation domain enter the paired comparison. The changed residual distributions assess consistency with the initial model, not independent location accuracy.}\end{figure}
+
 \section{Comparison with published results}
 The comparison table in the repository distinguishes uncomputed quantities from numerical disagreements. The accessible paper reports two inconsistent VT counts: 1,224 in Results and 1,214 in Methods. With 711 LP events, the first total is 1,935 and the second is 1,925. Independently, 694 located events plus 1,241 new template detections sum to 1,935. We preserve both reported counts and request source catalog reconciliation before selecting a target.
 

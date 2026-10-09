@@ -56,3 +56,24 @@ The baseline pilot completed but failed validation: 206 of 716 inputs survive, o
 Reproduce the code validation with `python scripts/validate_hypodd_build.py` after setup. Execute the baseline with `python scripts/run_hypodd_pilot.py`, then `python scripts/analyze_hypodd_ct.py`; add `--keep-shallow-events` to both commands for the native IAQ=0 sensitivity. All working inputs, source and binary files remain under the project scratch cache.
 
 The IAQ=0 sensitivity completes with 709 retained events, 700 in the original domain. Median horizontal shift is 0.62377 km (90th percentile 1.36701 km), median absolute depth shift 0.35525 km. Maximum horizontal shift is 110.6203 km and maximum depth 58.684 km. Its 1219 negative-depth warnings count repeated proposed steps, not unique earthquakes. It remains an unvalidated boundary-conditioned diagnostic. The contrast with the removal case establishes strong policy sensitivity and does not identify the source catalog.
+
+## Absolute arrival consistency after relocation
+
+`audit_relocation_arrivals.py` evaluates the same originally assigned P/S picks
+before and after IAQ=0 relocation. Neither picks nor event identities are
+reselected. Both predictions use the association FMM table with identical
+station elevation corrections. Of 7,531 assigned observations, 7,481 across
+708 events have both predictions inside that table; the other 50 retain missing
+prediction fields and are excluded from the paired summary. No extrapolation
+is performed. Initial residuals agree with the stored association residuals to
+5.73 microseconds, checking time conversion, event joins and model evaluation.
+
+Across the paired observations, absolute-arrival RMS increases from 0.17028 s
+to 0.24721 s. The fraction within 0.5 s falls from 100% to 95.95%; S-phase RMS
+increases from 0.17505 s to 0.28445 s. This tests agreement with the initial
+association model on fitted observations. It is not independent station
+validation, and the FMM model differs from HypoDD's piecewise constant layers.
+Thus the degradation does not isolate location error from forward-model
+mismatch. It supplies an additional reason to retain the relocation products
+as diagnostics rather than accepted locations. The report includes the full
+residual distributions, not only a thresholded subset.

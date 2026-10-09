@@ -1,0 +1,13 @@
+{
+  "assigned_observations": 7531,
+  "paired_observations": 7481,
+  "excluded_observations": 50,
+  "initial_residual_maximum_check_difference_s": 5.7220458984375e-06,
+  "method": "Fixed original assigned picks; initial and IAQ=0 positions predicted with association FMM and identical elevation correction",
+  "limitations": [
+    "Fitted observations, not held-out validation",
+    "FMM interpolation differs from HypoDD piecewise-constant layers",
+    "Interpolation-domain exclusions are recorded, not extrapolated",
+    "No candidate locations scientifically accepted"
+  ]
+}
