@@ -58,7 +58,7 @@ catalog['family_id']=-1;statistics=[];paired=[]
 for family_id,events in enumerate(families):
     catalog.loc[catalog.event_id.isin(events),'family_id']=family_id
     sub=catalog[catalog.event_id.isin(events)].sort_values('origin_time')
-    seconds=pd.to_datetime(sub.origin_time,utc=True).astype('int64').values/1e9
+    seconds=pd.to_datetime(sub.origin_time,utc=True).astype('datetime64[ns, UTC]').astype('int64').values/1e9
     intervals,periodicity=recurrence(seconds,ddof=a.ddof)
     statistics.append(dict(family_id=family_id,n_events=len(sub),mean_fi=float(sub.frequency_index.mean()),
                            type=classify(sub.frequency_index.mean()),mean_recurrence_seconds=float(intervals.mean()),

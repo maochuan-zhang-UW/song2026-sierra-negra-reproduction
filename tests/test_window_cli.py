@@ -29,6 +29,8 @@ class WindowCLI(unittest.TestCase):
             result=pd.read_csv(str(d/'out/classified_catalog.csv'))
             self.assertEqual(set(result.type),{'LP'});self.assertEqual(set(result.family_id),{0})
             self.assertEqual(len(pd.read_csv(str(d/'out/moment_recurrence_pairs.csv'))),11)
+            pairs=pd.read_csv(str(d/'out/moment_recurrence_pairs.csv'))
+            np.testing.assert_allclose(pairs.recurrence_seconds,120)
             self.assertEqual(json.loads((d/'out/settings.json').read_text())['n_families'],1)
 
 

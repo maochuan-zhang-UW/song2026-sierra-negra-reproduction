@@ -22,9 +22,11 @@ for name in ['fig01_all_stations','figS05_payg_dayplots','phase_pick_counts']:
     codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/{}.png'))".format(name))
 codes.append("import json\nexecution = json.loads(Path('results/tables/volpick_execution.json').read_text())\nprint('Picking status:', execution['status'])\nprint('Candidate phase counts:', execution['phase_counts'])\nprint('These are phase picks, not associated earthquake events.')")
 codes.append("print('Separate VCH1 original entries:', len(pd.read_csv('results/catalogs/vch1_original_20180626.csv')))\nprint('VCH1 entries are not merged with the located catalog.')")
-for name in ['gnss_independent_ppp','gnss_relative_baseline']:
+for name in ['gnss_independent_ppp','gnss_relative_baseline','approximate_association']:
     codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/{}.png'))".format(name))
 codes.append("import json\nprint(json.dumps(json.loads(Path('results/tables/gnss_ppp_analysis.json').read_text()), indent=2))\nprint('Independent PPP; original GIPSY settings differ. VCH1 skipped; GV03 lacks earthquake interval.')")
+codes.append("print(json.dumps(json.loads(Path('results/tables/approximate_association.json').read_text()), indent=2))\nprint('Approximate associations, not original relocated enhanced catalog.')")
+codes.append("print(json.dumps(json.loads(Path('results/tables/velocity_sensitivity.json').read_text()), indent=2))")
 shell=InteractiveShell.instance()
 for count,code in enumerate(codes,1):
     with capture_output() as captured:

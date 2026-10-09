@@ -1,0 +1,11 @@
+{
+  "candidate_events": 536,
+  "constraints_valid": true,
+  "original_events": 219,
+  "candidates_with_original_time_within_2s": 199,
+  "unique_original_events_with_candidate_time_within_2s": 199,
+  "note": "Time-only candidates; false detections and completeness unassessed",
+  "minimum_depth_node_km": 0.46875,
+  "fraction_at_minimum_depth_node": 0.539179104477612,
+  "warning": "Coarse depth nodes and many near-surface solutions limit depth interpretation"
+}

@@ -1,5 +1,5 @@
 quantity,published_value,reproduced_value,difference,explanation
-Located machine-learning events,694,,not computed,Association and relocation not executed; numerical velocity layers and source controls missing
+Located machine-learning events,694,,not computed,536 approximate associated candidates are not the 694 HypoDD-relocated events. Original source controls and differential relocation remain unavailable.
 Templates,669,,not computed,Template selections unavailable
 Additional template detections,1241,,not computed,Raw waveforms acquired; relocated templates and assigned phase arrivals unavailable
 Enhanced total (694+1241),1935,,not computed,219 original events are not an enhanced reproduction
@@ -19,3 +19,4 @@ Candidate P picks,13144,6908,-6236,Seven acquired 8G stations only; exact origin
 Candidate S picks,12196,6379,-5817,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
 GV09 coseismic vertical hourly mean (m),at least 1.83,1.867071,0.037071 above published lower bound,"Independent RTKLIB float PPP; 120 epochs per hour. Published value is a lower bound, not an exact target. Different corrections and postseismic motion."
 GV03 coseismic displacement,published record missing,,not measurable,Validated 03:21:42–12:46:12 UTC observation outage; no interpolation.
+Associated machine-learning events before relocation,994,536,-458,"Seven stations; different published 1-D approximation, domain and defaults. No original relocation or false-detection assessment."

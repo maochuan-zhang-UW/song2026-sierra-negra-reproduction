@@ -1,0 +1,56 @@
+{
+  "events": 536,
+  "assigned_picks": 5163,
+  "raw_events_before_final_qc": 536,
+  "raw_arrivals_before_final_qc": 5165,
+  "assigned_P": 2737,
+  "assigned_S": 2426,
+  "median_absolute_residual_s": 0.10203886032104492,
+  "max_absolute_residual_s": 0.49959635734558105,
+  "model": "Tepp et al. 2014 Table 1 Model F; top grid value at -2 km",
+  "interpolation": "piecewise linear",
+  "speed_scale": 0.95,
+  "depth_datum": "km below sea level",
+  "elevation_correction": {
+    "method": "PyOcto surface correction",
+    "vp_km_s": 4.0755,
+    "vs_km_s": 2.2609999999999997
+  },
+  "domain_lat": [
+    -0.9,
+    -0.76
+  ],
+  "domain_lon": [
+    -91.22,
+    -91.08
+  ],
+  "depth_km": [
+    0,
+    30
+  ],
+  "minimum_P": 4,
+  "minimum_S": 1,
+  "minimum_total": 5,
+  "minimum_both_phase_stations": 0,
+  "match_tolerance_s": 0.5,
+  "duplicate_time_s": 2,
+  "location_node_km": 1,
+  "travel_time_grid_km": 0.1,
+  "time_slice_s": 300,
+  "n_threads": 16,
+  "pick_time_span_s": 86376.53999996185,
+  "pyocto_version": "0.2.0",
+  "limitations": [
+    "Seven 8G stations only; EC picks pending",
+    "Not the source model",
+    "No HypoInverse or HypoDD quality control",
+    "No magnitudes estimated",
+    "Candidate events are not the published enhanced catalog"
+  ],
+  "input_sha256": {
+    "config/tepp2014_model_f.csv": "4ffe1be7d8c68eae11fc33bfacce18981df470fbec82443dfcf0639add939f02",
+    "results/catalogs/volpick_picks.csv": "246068c9270271572cb4908ae87bec3991476eadd813a81a3a8467302bd3885d",
+    "data/raw/stations.xml": "8728f3981f6e27013bdead675779e8f666c951daa897ca800df7179939759024"
+  },
+  "velocity_source_doi": "10.1002/2013JB010227"
+}

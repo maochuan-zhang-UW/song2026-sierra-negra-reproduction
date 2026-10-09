@@ -23,7 +23,7 @@ The public Volpick EQTransformer checkpoint v1 is cached on the data drive. Its 
 | Catalog acquisition | Full source checksum verified; date subset analyzed | Enhanced source catalog and picks |
 | Waveforms | Nine stations across 8G/EC; four PAYG historical records; coverage inventoried | VCH1 access; SN02 gaps; EC inputs not yet picked |
 | Picking | Public checkpoint executed on actual acquired waveforms | Exact checkpoint and unspecified filtering/normalization details |
-| Association | PyOcto installed; published selection criteria recorded | Published alternative Model F supplied; exact original model/domain and location controls differ |
+| Association | 536 approximate candidates, 5,138 assigned picks, constraints validated | Published alternative Model F supplied; exact original model/domain and location controls differ |
 | Locations | Published relocation selection/windows reviewed | HypoInverse/HypoDD source controls, differential observations; no relocation run |
 | Template matching | FFT kernels tested; nine-MAD and 0.4 quality thresholds recorded | Real relocated templates and picks; original gap/spike controls |
 | FI classification | Amplitude-based FI tested, LP < -2 | Event-associated arrival windows and SNR definition |
@@ -72,3 +72,5 @@ Completed actual-waveform Volpick execution processed all 168 acquired station-h
 The public repository is published at https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction. The full VCH1 original catalog also passes its published MD5; its separate date subset contains 191 events. It lacks locations and event identities for reliable merging with the 219-event located catalog. A new consolidated station map includes 14 seismic metadata stations (nine acquired) and GV03/GV09 DOI coordinates. GNSS observations and navigation files are now authenticated, decompressed and validated; independent PPP positions are calculated. See `gnss_and_velocity.md` for coverage, processing settings and departures from source methods. See `docs/data_access.md` and `results/tables/remaining_data_access.json`.
 
 Independent PPP gives a one-hour GV09 vertical difference of 1.86707 m, consistent with the published lower bound of 1.83 m. This is not an exact scalar agreement test. GV03 has no coseismic estimate owing to its outage. New GNSS figures supplement the original-catalog main Figure 2 comparison; LP/VT and family results remain incomplete.
+
+The nominal published-model approximation produces 536 candidates (2,730 P and 2,408 S assigned arrivals). Median absolute residual is 0.0982 s. There are 199 time-only matches to distinct original events within two seconds; unmatched candidates are not automatically new earthquakes. No false-detection or completeness estimate follows from this comparison.

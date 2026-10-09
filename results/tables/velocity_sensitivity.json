@@ -1,0 +1,30 @@
+{
+  "nominal_events": 536,
+  "tests": [
+    {
+      "label": "velocity_slow",
+      "speed_scale": 0.95,
+      "events": 536,
+      "change_from_nominal_events": 0,
+      "mutual_time_matches_within_2s": 531,
+      "median_horizontal_shift_km": 0.0,
+      "p90_horizontal_shift_km": 1.3728497529926678,
+      "median_absolute_depth_shift_km": 0.0,
+      "p90_absolute_depth_shift_km": 0.9375,
+      "removed_arrivals_final_qc": 2
+    },
+    {
+      "label": "velocity_fast",
+      "speed_scale": 1.05,
+      "events": 534,
+      "change_from_nominal_events": -2,
+      "mutual_time_matches_within_2s": 530,
+      "median_horizontal_shift_km": 0.0,
+      "p90_horizontal_shift_km": 1.3728498335603063,
+      "median_absolute_depth_shift_km": 0.0,
+      "p90_absolute_depth_shift_km": 0.9375,
+      "removed_arrivals_final_qc": 3
+    }
+  ],
+  "interpretation": "Uniform P/S speed perturbations are declared sensitivity cases, not physical confidence intervals; time matches do not prove event identity"
+}
