@@ -8,3 +8,9 @@ pyocto
 # GNSS validation and approximate 1-D association.
 hatanaka
 pyrocko
+
+# Independently specified robust regression sensitivity.
+scikit-learn
+
+# Public numerical surface-elevation map.
+rasterio

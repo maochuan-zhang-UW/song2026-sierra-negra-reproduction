@@ -20,3 +20,15 @@ extern "C" double best_ncc(const double* a, const double* b, int n, int lagmax, 
     }
     return best;
 }
+
+// Batch matrix avoids repeated Python/library overhead for real event windows.
+extern "C" void pairwise_ncc(const double* windows,int events,int samples,int lagmax,double* out) {
+    for(int i=0;i<events;i++) {
+        out[i*events+i]=1.;
+        for(int j=i+1;j<events;j++) {
+            int lag=0;
+            double r=best_ncc(windows+i*samples,windows+j*samples,samples,lagmax,&lag);
+            out[i*events+j]=out[j*events+i]=r;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "new_events": 1007,
+  "combined_candidates": 1543,
+  "new_windows": 11949,
+  "inherited_counts": {
+    "VT": 650,
+    "LP": 357
+  },
+  "measured_counts": {
+    "VT": 519,
+    "unclassified": 361,
+    "LP": 127
+  },
+  "comparable_events": 646,
+  "inherited_measured_agreement": 520,
+  "velocity_processing": "hourly real-padded response-corrected 2-20 Hz continuous blocks",
+  "limitations": [
+    "Detection arrivals inherited, not repicked",
+    "Primary classifications inherited from template per publication",
+    "Direct FI uses available qualifying template channels, not all acquired channels",
+    "Locations inherited; events not visually confirmed"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "estimated_events": 1154,
+  "total_candidates": 1543,
+  "station_ratios": 1467,
+  "relative_formula": "ML_detection = ML_template + 0.7 log10(alpha)",
+  "ratio": "dominant eigenvector detection/template slope of centered two-waveform covariance; signed best lag within 0.2 s; positive NCC only",
+  "aggregation": "median station relative ML; available SNR>=2 P/Z waveforms",
+  "limitations": [
+    "Independent PCA formulation; original implementation unavailable",
+    "Approximate absolute template magnitudes",
+    "Correlation-defined detections not visually confirmed",
+    "No unpublished ratio or correlation quality thresholds imposed"
+  ]
+}

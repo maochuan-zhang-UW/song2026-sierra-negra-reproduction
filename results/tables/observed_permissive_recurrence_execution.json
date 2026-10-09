@@ -1,0 +1,116 @@
+{
+  "common_station_screen": 1,
+  "fits": [
+    {
+      "family_type": "LP",
+      "pairing": "preceding",
+      "estimator": "OLS",
+      "slope": 0.05277756314042264,
+      "intercept": 10.91181294911479,
+      "r_squared": 0.0073382909817465225,
+      "p_value": 0.33441478805852376,
+      "jackknife_slope_se": 0.03929042184473706,
+      "transform": "log10",
+      "n": 129
+    },
+    {
+      "family_type": "LP",
+      "pairing": "preceding",
+      "estimator": "RANSAC independent settings",
+      "slope": 0.07646453941261065,
+      "intercept": 10.779131490750467,
+      "r_squared": -0.044887643043735714,
+      "inlier_r_squared": 0.16622584326515177,
+      "inliers": 66,
+      "n": 129,
+      "transform": "log10"
+    },
+    {
+      "family_type": "LP",
+      "pairing": "following",
+      "estimator": "OLS",
+      "slope": -0.04993040115545705,
+      "intercept": 11.150853019545314,
+      "r_squared": 0.005792887853715629,
+      "p_value": 0.3912871910336783,
+      "jackknife_slope_se": 0.05711493107107461,
+      "transform": "log10",
+      "n": 129
+    },
+    {
+      "family_type": "LP",
+      "pairing": "following",
+      "estimator": "RANSAC independent settings",
+      "slope": 0.242491814899763,
+      "intercept": 10.26704788105355,
+      "r_squared": -0.5181743731371378,
+      "inlier_r_squared": 0.4864951180069751,
+      "inliers": 60,
+      "n": 129,
+      "transform": "log10"
+    },
+    {
+      "family_type": "VT",
+      "pairing": "preceding",
+      "estimator": "OLS",
+      "slope": 0.5033442663473143,
+      "intercept": 11.607922965318151,
+      "r_squared": 0.1482924882108106,
+      "p_value": 1.424316648001505e-07,
+      "jackknife_slope_se": 0.10529097887149949,
+      "transform": "log10",
+      "n": 175
+    },
+    {
+      "family_type": "VT",
+      "pairing": "preceding",
+      "estimator": "RANSAC independent settings",
+      "slope": -0.049121724362968806,
+      "intercept": 13.014851385730742,
+      "r_squared": -0.18019030949635018,
+      "inlier_r_squared": 0.02706347701955114,
+      "inliers": 90,
+      "n": 175,
+      "transform": "log10"
+    },
+    {
+      "family_type": "VT",
+      "pairing": "following",
+      "estimator": "OLS",
+      "slope": 0.48241465791767607,
+      "intercept": 11.635572216948603,
+      "r_squared": 0.13159681355974948,
+      "p_value": 8.072224358221079e-07,
+      "jackknife_slope_se": 0.12611806232545228,
+      "transform": "log10",
+      "n": 175
+    },
+    {
+      "family_type": "VT",
+      "pairing": "following",
+      "estimator": "RANSAC independent settings",
+      "slope": 0.0429174311719487,
+      "intercept": 12.793761996041,
+      "r_squared": -0.10649091122804077,
+      "inlier_r_squared": 0.02172442482532755,
+      "inliers": 89,
+      "n": 175,
+      "transform": "log10"
+    }
+  ],
+  "comparison_windows": "LP before 17:00; VT after 17:00 UTC",
+  "primary_pairing": "preceding",
+  "ransac": {
+    "min_samples": 2,
+    "max_trials": 1000,
+    "random_state": 20261009,
+    "residual_threshold": "sklearn default MAD of y"
+  },
+  "limitations": [
+    "Family membership and approximate magnitudes independently computed",
+    "Original RANSAC controls unavailable",
+    "R squared all points distinguished from R squared inliers",
+    "OLS jackknife event pairs not independent family uncertainty",
+    "Low family count or missing VT family prevents validating the published contrasting populations"
+  ]
+}

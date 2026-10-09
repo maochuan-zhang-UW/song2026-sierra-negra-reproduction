@@ -1,0 +1,45 @@
+{
+  "status": "partial scientific reproduction published; exact source catalog and statistical agreement unverified",
+  "events": {
+    "original": 219,
+    "nine_station_approximate_associations": 716,
+    "seven_station_seeds": 536,
+    "templates": 447,
+    "additional_candidates": 1007,
+    "enhanced_candidates": 1543,
+    "LP_inherited": 453,
+    "VT_inherited": 1088,
+    "unclassified": 2
+  },
+  "families": {
+    "primary_four_station": 2,
+    "primary_members": 23,
+    "permissive_one_station": 14,
+    "permissive_members": 452
+  },
+  "modules_executed": [
+    "RINEX decompression/validation",
+    "Independent PPP and relative-baseline cross-check",
+    "Public Volpick inference on nine stations",
+    "Approximate published 1-D association and speed sensitivity",
+    "Response-corrected FI and signed network similarity",
+    "Full-day real waveform template search and self recovery",
+    "Direct versus inherited detection spectra",
+    "Independent WA and PCA relative magnitudes",
+    "Recurrence OLS/RANSAC and pairing/family-screen sensitivities",
+    "GNSS bend timing sensitivity",
+    "Public numerical topography",
+    "Partial main/supplementary counterparts",
+    "Full-day 20-template phase-randomized waveform-shape control: zero raw peaks"
+  ],
+  "tests_passed": 21,
+  "limitations": [
+    "Exact source velocity/picker/relocation and manual controls unavailable",
+    "VCH1 deliberately skipped",
+    "SN02 gapped; GV03 missing fault earthquake interval",
+    "Correlation candidates not false-positive-calibrated",
+    "Original S1 calibration identities and S6 calibration samples unavailable",
+    "Published family and regression statistics not reproduced"
+  ],
+  "repository": "https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction"
+}

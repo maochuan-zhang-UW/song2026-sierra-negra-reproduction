@@ -1,0 +1,24 @@
+{
+  "events": 536,
+  "class_counts": {
+    "VT": 438,
+    "LP": 96,
+    "unclassified": 2
+  },
+  "families": 1,
+  "family_events": 10,
+  "primary_minimum_common_stations": 4,
+  "primary_max_lag_s": 0.2,
+  "NCC_threshold": 0.7,
+  "minimum_family_size": 10,
+  "station_weighting": "mean component scores within station, then equal mean across common stations",
+  "limitations": [
+    "No template-expanded events",
+    "Approximate locations only",
+    "No manual waveform labels or calibration events",
+    "Noise windows, SNR and lag convention are independent choices",
+    "Minimum four common stations is an independent quality screen",
+    "Anticorrelations require visual review",
+    "No magnitudes or moment-recurrence fit"
+  ]
+}

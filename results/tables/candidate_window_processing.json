@@ -1,0 +1,36 @@
+{
+  "windows": 7546,
+  "sample_rate_hz": 50,
+  "band_hz": [
+    2,
+    20
+  ],
+  "filter_order": 4,
+  "zero_phase": true,
+  "response_output": "VEL",
+  "response_prefilter_hz": [
+    0.5,
+    1,
+    22,
+    24
+  ],
+  "water_level": null,
+  "day_end_exclusion_s": 64,
+  "context_duration_s": 64,
+  "response_taper_fraction": 0.05,
+  "window_relative_arrival_s": [
+    -1,
+    4
+  ],
+  "noise_relative_arrival_s": [
+    -11,
+    -6
+  ],
+  "alternative_noise_s": [
+    -6,
+    -1
+  ],
+  "snr": "demeaned signal RMS / demeaned noise RMS",
+  "waveform_sha256": "5cdd1b101229dc19762ca21ce22a55ded4a1c0ac9e543e8ab1ae2ac1f3e10a05",
+  "note": "Independent response stabilization, filter order, noise/SNR convention; no magnitudes estimated"
+}

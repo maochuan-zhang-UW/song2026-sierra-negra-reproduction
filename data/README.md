@@ -11,3 +11,11 @@ Original catalog schema: event_id; UTC origin_time; latitude/longitude in decima
 Candidate phase picks from any Volpick execution require association and relocation before becoming earthquakes. Their timestamps and model probabilities must not be interpreted as an enhanced event catalog.
 
 GNSS raw observations (CRINEX and decompressed RINEX), station-specific navigation, ESA precise orbit/clock products and IGS20 antenna calibration are stored under `data/raw/gnss` and excluded from Git. Acquisition scripts record source URLs and hashes. Derived RTKLIB position solutions, validation summaries and observation-coverage tables are under `results`; they are independent processing products, not the authors' GIPSY time series. See `docs/gnss_and_velocity.md`.
+
+
+Copernicus surface elevation is retrieved by `scripts/plot_topographic_catalog.py` from the public GLO-30 bucket. The raw GeoTIFF remains ignored. Derived map attribution:
+
+produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018
+provided under COPERNICUS by the European Union and ESA; all rights reserved
+
+The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30. See the source licence linked in `results/tables/topographic_map_execution.json`. Subsequent redistribution of this surface-elevation map must preserve these notices.

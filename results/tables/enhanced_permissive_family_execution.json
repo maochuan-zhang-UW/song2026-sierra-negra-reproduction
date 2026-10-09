@@ -1,0 +1,7 @@
+{
+  "common_stations_minimum": 1,
+  "families": 14,
+  "family_members": 452,
+  "negative_candidates": 159,
+  "limitations": "Permissive sensitivity only; some edges supported by one station, not source-confirmed membership"
+}

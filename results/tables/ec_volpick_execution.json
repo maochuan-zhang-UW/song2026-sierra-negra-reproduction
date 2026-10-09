@@ -1,0 +1,303 @@
+{
+  "status": "complete",
+  "phase_counts": {
+    "P": 1665,
+    "S": 1622
+  },
+  "runs": [
+    {
+      "station": "SN02",
+      "hour": 0,
+      "common_segments": 1,
+      "picks": 46
+    },
+    {
+      "station": "SN02",
+      "hour": 1,
+      "common_segments": 1,
+      "picks": 40
+    },
+    {
+      "station": "SN02",
+      "hour": 2,
+      "common_segments": 1,
+      "picks": 44
+    },
+    {
+      "station": "SN02",
+      "hour": 3,
+      "common_segments": 2,
+      "picks": 25
+    },
+    {
+      "station": "SN02",
+      "hour": 4,
+      "common_segments": 1,
+      "picks": 23
+    },
+    {
+      "station": "SN02",
+      "hour": 5,
+      "common_segments": 1,
+      "picks": 33
+    },
+    {
+      "station": "SN02",
+      "hour": 6,
+      "common_segments": 1,
+      "picks": 25
+    },
+    {
+      "station": "SN02",
+      "hour": 7,
+      "common_segments": 1,
+      "picks": 36
+    },
+    {
+      "station": "SN02",
+      "hour": 8,
+      "common_segments": 1,
+      "picks": 33
+    },
+    {
+      "station": "SN02",
+      "hour": 9,
+      "common_segments": 1,
+      "picks": 108
+    },
+    {
+      "station": "SN02",
+      "hour": 10,
+      "common_segments": 2,
+      "picks": 93
+    },
+    {
+      "station": "SN02",
+      "hour": 11,
+      "common_segments": 1,
+      "picks": 89
+    },
+    {
+      "station": "SN02",
+      "hour": 12,
+      "common_segments": 1,
+      "picks": 68
+    },
+    {
+      "station": "SN02",
+      "hour": 13,
+      "common_segments": 1,
+      "picks": 52
+    },
+    {
+      "station": "SN02",
+      "hour": 14,
+      "common_segments": 1,
+      "picks": 40
+    },
+    {
+      "station": "SN02",
+      "hour": 15,
+      "common_segments": 1,
+      "picks": 48
+    },
+    {
+      "station": "SN02",
+      "hour": 16,
+      "common_segments": 1,
+      "picks": 29
+    },
+    {
+      "station": "SN02",
+      "hour": 17,
+      "common_segments": 2,
+      "picks": 88
+    },
+    {
+      "station": "SN02",
+      "hour": 18,
+      "common_segments": 3,
+      "picks": 80
+    },
+    {
+      "station": "SN02",
+      "hour": 19,
+      "common_segments": 2,
+      "picks": 87
+    },
+    {
+      "station": "SN02",
+      "hour": 20,
+      "common_segments": 2,
+      "picks": 64
+    },
+    {
+      "station": "SN02",
+      "hour": 21,
+      "common_segments": 2,
+      "picks": 79
+    },
+    {
+      "station": "SN02",
+      "hour": 22,
+      "common_segments": 2,
+      "picks": 71
+    },
+    {
+      "station": "SN02",
+      "hour": 23,
+      "common_segments": 2,
+      "picks": 59
+    },
+    {
+      "station": "SN06",
+      "hour": 0,
+      "common_segments": 1,
+      "picks": 70
+    },
+    {
+      "station": "SN06",
+      "hour": 1,
+      "common_segments": 1,
+      "picks": 30
+    },
+    {
+      "station": "SN06",
+      "hour": 2,
+      "common_segments": 1,
+      "picks": 34
+    },
+    {
+      "station": "SN06",
+      "hour": 3,
+      "common_segments": 1,
+      "picks": 35
+    },
+    {
+      "station": "SN06",
+      "hour": 4,
+      "common_segments": 1,
+      "picks": 16
+    },
+    {
+      "station": "SN06",
+      "hour": 5,
+      "common_segments": 1,
+      "picks": 16
+    },
+    {
+      "station": "SN06",
+      "hour": 6,
+      "common_segments": 1,
+      "picks": 30
+    },
+    {
+      "station": "SN06",
+      "hour": 7,
+      "common_segments": 1,
+      "picks": 35
+    },
+    {
+      "station": "SN06",
+      "hour": 8,
+      "common_segments": 1,
+      "picks": 56
+    },
+    {
+      "station": "SN06",
+      "hour": 9,
+      "common_segments": 1,
+      "picks": 107
+    },
+    {
+      "station": "SN06",
+      "hour": 10,
+      "common_segments": 1,
+      "picks": 113
+    },
+    {
+      "station": "SN06",
+      "hour": 11,
+      "common_segments": 1,
+      "picks": 94
+    },
+    {
+      "station": "SN06",
+      "hour": 12,
+      "common_segments": 1,
+      "picks": 90
+    },
+    {
+      "station": "SN06",
+      "hour": 13,
+      "common_segments": 1,
+      "picks": 99
+    },
+    {
+      "station": "SN06",
+      "hour": 14,
+      "common_segments": 1,
+      "picks": 101
+    },
+    {
+      "station": "SN06",
+      "hour": 15,
+      "common_segments": 1,
+      "picks": 99
+    },
+    {
+      "station": "SN06",
+      "hour": 16,
+      "common_segments": 1,
+      "picks": 81
+    },
+    {
+      "station": "SN06",
+      "hour": 17,
+      "common_segments": 1,
+      "picks": 123
+    },
+    {
+      "station": "SN06",
+      "hour": 18,
+      "common_segments": 1,
+      "picks": 145
+    },
+    {
+      "station": "SN06",
+      "hour": 19,
+      "common_segments": 1,
+      "picks": 129
+    },
+    {
+      "station": "SN06",
+      "hour": 20,
+      "common_segments": 1,
+      "picks": 75
+    },
+    {
+      "station": "SN06",
+      "hour": 21,
+      "common_segments": 1,
+      "picks": 108
+    },
+    {
+      "station": "SN06",
+      "hour": 22,
+      "common_segments": 1,
+      "picks": 127
+    },
+    {
+      "station": "SN06",
+      "hour": 23,
+      "common_segments": 1,
+      "picks": 114
+    }
+  ],
+  "elapsed_s": 308.87269316398306,
+  "input_sha256": "57d3e83fab76ae76827912fc10427c2483de27d1bfaa2cc6e39114383a35cf37",
+  "horizontal_aliases": "HH1 -> HHN and HH2 -> HHE, verified 0/90 degree horizontal StationXML orientation",
+  "gap_policy": "common finite three-component segments >=60 s; no interpolation",
+  "processing": "same public Volpick checkpoint, 0.2 thresholds, 60-s windows and 50% overlap as 8G run",
+  "limitations": "SN02 gaps and five-second model blind edges at each segment remain; VCH1 skipped"
+}

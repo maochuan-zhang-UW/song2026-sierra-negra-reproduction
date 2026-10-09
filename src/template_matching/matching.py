@@ -55,3 +55,17 @@ def pair_ncc(a,b,maximum_lag_samples):
     lag=ctypes.c_int()
     r=fun(a.ctypes.data_as(pointer),b.ctypes.data_as(pointer),len(a),maximum_lag_samples,ctypes.byref(lag))
     return r,lag.value
+
+
+def pairwise_ncc(windows,maximum_lag_samples):
+    data=np.ascontiguousarray(windows,dtype=np.float64)
+    if data.ndim!=2 or data.shape[1]<3 or not np.isfinite(data).all():
+        raise ValueError('Finite matrix of equal-length windows required')
+    if not 0<=maximum_lag_samples<=data.shape[1]-3:raise ValueError('Invalid lag')
+    lib=ctypes.CDLL(str(Path(__file__).resolve().parents[2]/'.cache/libcorrelation.so'))
+    function=lib.pairwise_ncc;pointer=ctypes.POINTER(ctypes.c_double)
+    function.argtypes=[pointer,ctypes.c_int,ctypes.c_int,ctypes.c_int,pointer]
+    function.restype=None
+    output=np.empty((len(data),len(data)),dtype=np.float64)
+    function(data.ctypes.data_as(pointer),len(data),data.shape[1],maximum_lag_samples,output.ctypes.data_as(pointer))
+    return output

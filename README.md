@@ -1,9 +1,10 @@
 # Song (2026) Sierra Negra reproduction
 
-**Status: partial, with original-catalog analysis, approximate association and independent GNSS calculations.** The full Bell catalog passes its published checksum and contains 219 events on 26 June 2018. Nine three-component stations across 8G and EC and all four PAYG days in Supplementary Figure 5 are acquired. Eight stations are complete; SN02 has gaps. The VCH1 archive checksum is verified, with 191 events on the date retained in a separate catalog. The supplement is reviewed. No enhanced located catalog, event-associated LP/VT population, observed families or published regressions are reproduced yet.
+**Status: partial reproduction with actual waveform detection, spectral classification, template matching and independent GNSS processing.** The original archive contains 219 events on 26 June 2018. Nine seismic stations are acquired: eight complete and SN02 gapped; VCH1 is skipped as requested. The public Volpick checkpoint produces 8,573 P and 8,001 S picks across the nine stations. Using the declared published Tepp et al. 1-D approximation gives 716 candidate associations, without HypoDD relocation.
 
-The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Fifteen numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. The public [GitHub repository](https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction) is published and its remote commit verified.
+A separate seven-station baseline gives 536 associated candidates (96 LP, 438 VT, two unclassified). A full-day search with 447 templates recovers every template and adds 1,007 candidates, giving 1,543 events with inherited classifications: 453 LP, 1,088 VT and two unclassified. Direct spectra are measurable for 646 new detections and agree with inherited labels in 520 cases. These are independent candidate results, not the published enhanced catalog or verified false-positive-free earthquake counts. See [processing and sensitivity details](docs/candidate_waveform_analysis.md).
 
+GV09 independent float PPP gives a 1.867-m hourly uplift at the fault earthquake, consistent with the reported lower bound. GV03 has an observation outage across that earthquake. The project also provides partial main figures, four independently processed PAYG day plots (S5), and an original conceptual Figure 6. Raw waveforms and model weights remain outside Git.
 - [Compiled report](report/main.pdf), [LaTeX source](report/main.tex), [executed notebook](report/analysis.ipynb)
 - [Reproducibility assessment](docs/reproducibility.md), [supplementary-methods audit](docs/supplementary_methods.md), [limitations](docs/limitations.md)
 - [Comparison table](results/tables/comparison.csv), [original catalog](results/catalogs/original_20180626.csv), [catalog provenance](results/tables/catalog_provenance.json)
@@ -20,6 +21,7 @@ Work on a drive with room for waveform archives and scientific dependencies. Sou
 source scripts/env.sh
 python3.11 -m venv .venv
 .venv/bin/python -m pip install -r environment/waveforms-lock.txt
+bash scripts/build.sh
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python scripts/rebuild_from_csv.py
 .venv/bin/python scripts/acquire.py --only IGUANA_Cat_V1.eventlist
@@ -84,6 +86,35 @@ bash scripts/run_gnss_ppp.sh
 OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/associate_approximate.py
 ```
 
-Approximate PyOcto locations use [Tepp et al. (2014) Table 1 Model F](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JB010227), with published P/S values, piecewise-linear interpolation and documented elevation correction. They are candidate associations; no HypoInverse/HypoDD relocation or magnitudes are claimed. Configuration and differences from Song's model are described in `docs/gnss_and_velocity.md`.
+Approximate PyOcto locations use [Tepp et al. (2014) Table 1 Model F](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JB010227), with published P/S values, piecewise-linear interpolation and documented elevation correction. They are candidate associations; no HypoInverse/HypoDD relocation is claimed; independently estimated magnitudes are documented separately. Configuration and differences from Song's model are described in `docs/gnss_and_velocity.md`.
 
 Approximate association now yields **536 candidates**, with 2,730 P and 2,408 S assigned arrivals. All satisfy four P, one S and the 0.5-s tolerance. Time-only matching finds 199 original entries within two seconds, without establishing event identity or completeness. See [candidate catalog](results/catalogs/approximate_associated_events.csv), [validation](results/tables/approximate_association_validation.json) and [figure](results/figures/approximate_association.png). About 53.9% occupy the shallowest 0.46875-km grid node; depth interpretation requires finer relocation.
+
+## Executed waveform extension
+
+From the repository root, after activating the waveform environment and retrieving inputs:
+
+```bash
+source scripts/env.sh
+bash scripts/build.sh
+.venv/bin/python scripts/pick_ec_waveforms.py
+.venv/bin/python scripts/associate_approximate.py --label nine_station --picks results/catalogs/combined_volpick_picks.csv --inventories data/raw/stations.xml data/raw/EC_responses.xml
+.venv/bin/python scripts/extract_candidate_windows.py
+.venv/bin/python scripts/analyze_candidate_families.py
+.venv/bin/python scripts/prepare_matching_velocity.py
+.venv/bin/python scripts/match_candidate_templates.py
+.venv/bin/python scripts/extract_matched_windows.py
+.venv/bin/python scripts/analyze_candidate_families.py --enhanced
+.venv/bin/python scripts/estimate_candidate_magnitudes.py
+.venv/bin/python scripts/estimate_matched_magnitudes.py
+.venv/bin/python scripts/analyze_observed_recurrence.py
+.venv/bin/python scripts/plot_candidate_properties.py
+```
+
+The seven-station association must exist before window extraction (`associate_approximate.py` without arguments). The nine-station association is a separate coverage experiment and is not silently combined with seven-station templates. Magnitudes use explicit independent Wood–Anderson and amplitude-ratio conventions; execution records describe differences from the source methods.
+
+Further sensitivity products are generated by `analyze_family_screen_sensitivity.py`, `analyze_observed_recurrence.py --permissive`, `summarize_matching_sensitivity.py`, `analyze_gnss_change.py`, `plot_enhanced_catalog.py` and `plot_waveform_supplements.py`. Regenerate the saved-output notebook with `make_notebook.py`; compile the report with `latexmk -cd -pdf -interaction=nonstopmode -halt-on-error report/main.tex`. Twenty-one numerical tests pass.
+
+Numerical topography is retrieved and plotted by `plot_topographic_catalog.py`; the Copernicus attribution is preserved in [data documentation](data/README.md). `plot_remaining_supplements.py` supplies partial S2/S3/S4/S7 counterparts. S1 calibration identities and S6 original amplitude–magnitude calibration samples remain gaps. The nearest-distance map uses approximate inherited locations; histogram modes do not establish true detection completeness.
+
+A full-day phase-randomized waveform-shape control is available via `match_candidate_templates.py --null-control`. It uses ten LP and ten VT templates, preserving each channel's amplitude spectrum while independently randomizing phases. The same detection thresholds yield zero raw control peaks. This is a specificity check with a smaller library, not an earthquake false-positive-rate estimate.

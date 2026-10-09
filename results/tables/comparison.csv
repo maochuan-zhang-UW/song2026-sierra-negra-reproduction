@@ -1,22 +1,22 @@
 quantity,published_value,reproduced_value,difference,explanation
-Located machine-learning events,694,,not computed,536 approximate associated candidates are not the 694 HypoDD-relocated events. Original source controls and differential relocation remain unavailable.
-Templates,669,,not computed,Template selections unavailable
-Additional template detections,1241,,not computed,Raw waveforms acquired; relocated templates and assigned phase arrivals unavailable
-Enhanced total (694+1241),1935,,not computed,219 original events are not an enhanced reproduction
-VT events (Results),1224,,not computed,Results and Methods disagree by 10 VT events
-VT events (Methods),1214,,not computed,"Methods sum with 711 LP is 1925, not 1935"
-LP events,711,,not computed,No FI windows available
-Families / member events,29 / 714,,not computed,No waveform similarities computed for observations
+Located machine-learning events,694,716,22,"Nine-station approximate associations, not HypoDD-relocated events; numerical count comparison only."
+Templates,669,447,-222,Seven-station independent SNR and station screen; source template identities unavailable.
+Additional template detections,1241,1007,-234,Actual full-day seven-station matching; candidates not manually confirmed. All templates recover themselves.
+Enhanced total (694+1241),1935,1543,-392,"536 approximate seeds plus 1007 additional candidates; different coverage and relocation, not completeness."
+VT events (Results),1224,1088,-136,Inherited template FI for detections; 438 measured seed VT plus 650 inherited labels. Source counts inconsistent.
+VT events (Methods),1214,1088,-126,Methods VT count disagrees with Results by 10; independent labels not source event identities.
+LP events,711,453,-258,96 measured seed LP plus 357 inherited labels. Additional direct FI agrees for 520/646 measurable detections overall.
+Families / member events,29 / 714,2 / 23,-27 / -691,Four-common-station primary screen. One-station sensitivity gives 14 / 452; source membership unavailable.
 Phase-2 LP families,5,,not computed,Membership unavailable
-Anticorrelated LP pairs,11,,not computed,Manual inspection and waveforms required
-VT moment/recurrence R squared,0.70,,not computed,Observed family data and original RANSAC controls unavailable
-LP moment/recurrence R squared,0.07,,not computed,Observed family data and original RANSAC controls unavailable
-Recurrence/periodicity Pearson r,0.03,,not computed,Family times unavailable
+Anticorrelated LP pairs,11,5 review candidates,not established,Expanded signed network pairs; three baseline overlay sets reviewed. Narrow-band phase shifts can yield negative NCC; no confirmed source reversal.
+VT moment/recurrence R squared,0.70,0.148292 OLS sensitivity,not comparable estimators,"Permissive screen, 175 preceding pairs, independent magnitudes. RANSAC all-point R2 -0.180190; inlier R2 0.027063. Original controls unknown."
+LP moment/recurrence R squared,0.07,0.007338 OLS sensitivity,not comparable estimators,"Permissive screen, 129 preceding pairs; primary LP OLS R2 0.002715 on 21 pairs. Independent RANSAC reported separately."
+Recurrence/periodicity Pearson r,0.03,-0.421324,-0.451324,Permissive 14-family sample; p=0.13352; six LP and eight VT. Original 29 memberships unavailable; conditional screen and bootstrap sensitivity.
 TDF earthquake UTC (minute precision),09:15,09:15:32.299,+32.299 s,Original maximum-magnitude event; nominal difference +32.299 seconds
-Magma intrusion UTC,~17:00,,not computed,"Timeline annotation from publication, not independently measured"
+Magma intrusion UTC,~17:00,GV09 east bend 17:11 in primary fit,independent model,Continuous piecewise-linear bend window sensitivity 17:09–17:24; other components differ greatly. Not unique magma onset or exact source GIPSY processing.
 Eruption UTC,19:35-19:40,,not computed,Publication timing range; no tremor processed
-Candidate P picks,13144,6908,-6236,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
-Candidate S picks,12196,6379,-5817,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
+Candidate P picks,13144,8573,-4571,All nine acquired stations; SN02 gaps preserved. Public Volpick checkpoint; independent filter/edge/stacking choices.
+Candidate S picks,12196,8001,-4195,All nine acquired stations; phase picks are not associated events or completeness.
 GV09 coseismic vertical hourly mean (m),at least 1.83,1.867071,0.037071 above published lower bound,"Independent RTKLIB float PPP; 120 epochs per hour. Published value is a lower bound, not an exact target. Different corrections and postseismic motion."
 GV03 coseismic displacement,published record missing,,not measurable,Validated 03:21:42–12:46:12 UTC observation outage; no interpolation.
-Associated machine-learning events before relocation,994,536,-458,"Seven stations; different published 1-D approximation, domain and defaults. No original relocation or false-detection assessment."
+Associated machine-learning events before relocation,994,716,-278,Nine-station approximate 1-D association; seven-station baseline 536. No original relocation or false-detection assessment.

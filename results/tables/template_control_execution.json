@@ -1,0 +1,13 @@
+{
+  "control": "20 templates, 10 LP and 10 VT, independently phase-randomized per channel while preserving individual Fourier amplitude spectra",
+  "seed": 20261009,
+  "templates": 20,
+  "station_hours": 168,
+  "raw_control_peaks": 0,
+  "thresholds": "same positive max(9*MAD,0.4) as actual search",
+  "limitations": [
+    "Tests waveform-shape specificity, not earthquake false-positive rate",
+    "Independent channel phases remove network coherence",
+    "A smaller control library than real 447 templates; counts not directly scaled"
+  ]
+}

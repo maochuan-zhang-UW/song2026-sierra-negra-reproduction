@@ -1,0 +1,30 @@
+{
+  "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S01_00_W092_00_DEM/Copernicus_DSM_COG_10_S01_00_W092_00_DEM.tif",
+  "sha256": "d0ff15fda50e4521717571c71908bee40ee344b6df54da6f47c9ceaa9d9358f0",
+  "tile_shape": [
+    3600,
+    3600
+  ],
+  "spacing_degrees": [
+    0.0002777777777777778,
+    0.0002777777777777778
+  ],
+  "map_bounds": [
+    -91.22,
+    -0.9,
+    -91.08,
+    -0.76
+  ],
+  "map_elevation_min_m": 199.14227294921875,
+  "map_elevation_max_m": 1132.0770263671875,
+  "map_samples": 254016,
+  "type": "Copernicus GLO-30 digital surface model, not reconstructed eruption topography",
+  "attribution": "produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018\nprovided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "license_url": "https://docs.sentinel-hub.com/api/latest/static/files/data/dem/resources/license/License-COPDEM-30.pdf",
+  "limitations": [
+    "DSM surface and EGM2008 datum not used to change station or source locations",
+    "Not original source topographic layer",
+    "Published fault traces and cross-section orientation unavailable",
+    "Event depths from approximate 1-D model, not HypoDD"
+  ]
+}

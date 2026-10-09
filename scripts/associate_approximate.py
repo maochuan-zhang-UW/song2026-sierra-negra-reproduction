@@ -20,8 +20,12 @@ def unix_seconds(values):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--speed-scale',type=float,default=1.,help='Declared uniform P/S speed sensitivity factor')
-    parser.add_argument('--label',default='approximate',choices=['approximate','velocity_slow','velocity_fast'])
+    parser.add_argument('--label',default='approximate',choices=['approximate','velocity_slow','velocity_fast','nine_station'])
+    parser.add_argument('--picks',type=Path,default=ROOT/'results/catalogs/volpick_picks.csv')
+    parser.add_argument('--inventories',type=Path,nargs='+',default=[ROOT/'data/raw/stations.xml'])
     args=parser.parse_args()
+    args.picks=args.picks.resolve()
+    args.inventories=[p.resolve() for p in args.inventories]
     if args.speed_scale<=0:raise ValueError('Positive speed scale required')
     model = pd.read_csv(ROOT/'config/tepp2014_model_f.csv')
     model[['vp','vs']]*=args.speed_scale
@@ -36,14 +40,16 @@ def main():
         n_s_picks=1, n_p_and_s_picks=0, pick_match_tolerance=.5,
         min_interevent_time=2, min_node_size_location=1, n_threads=16,
         time_slicing=300, node_log_interval=100000)
-    picks = pd.read_csv(ROOT/'results/catalogs/volpick_picks.csv')
+    picks = pd.read_csv(args.picks)
     picks['station'] = picks.trace_id
     picks['time'] = unix_seconds(picks.peak_time_utc)
     span=picks.time.max()-picks.time.min()
     if not 86000 < span < 86400:
         raise ValueError(f'Unexpected daily pick span: {span} seconds')
     records = []
-    for network in read_inventory(ROOT/'data/raw/stations.xml'):
+    inventory=read_inventory(args.inventories[0])
+    for additional in args.inventories[1:]:inventory += read_inventory(additional)
+    for network in inventory:
         for station in network:
             identifier = f'{network.code}.{station.code}.'
             if identifier in set(picks.station):
@@ -68,7 +74,7 @@ def main():
     summary = dict(events=len(events),assigned_picks=len(assignments),
                    velocity_source_doi='10.1002/2013JB010227',
                    input_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in
-                                 [ROOT/'config/tepp2014_model_f.csv',ROOT/'results/catalogs/volpick_picks.csv',ROOT/'data/raw/stations.xml']},
+                                 [ROOT/'config/tepp2014_model_f.csv',args.picks,*args.inventories]},
                    raw_events_before_final_qc=raw_events,raw_arrivals_before_final_qc=raw_arrivals,
                    assigned_P=int((assignments.phase=='P').sum()),assigned_S=int((assignments.phase=='S').sum()),
                    median_absolute_residual_s=float(assignments.residual.abs().median()),
@@ -81,7 +87,7 @@ def main():
                    minimum_P=4,minimum_S=1,minimum_total=5,minimum_both_phase_stations=0,
                    match_tolerance_s=.5,duplicate_time_s=2,location_node_km=1,
                    travel_time_grid_km=.1,time_slice_s=300,n_threads=16,pick_time_span_s=float(span),pyocto_version=pyocto.__version__,
-                   limitations=['Seven 8G stations only; EC picks pending','Not the source model',
+                   station_count=len(stations),limitations=['VCH1 unavailable; nine stations acquired, SN02 gapped','Not the source model',
                                 'No HypoInverse or HypoDD quality control','No magnitudes estimated',
                                 'Candidate events are not the published enhanced catalog'])
     (ROOT/f'results/tables/{args.label}_association.json').write_text(json.dumps(summary,indent=2)+'\n')

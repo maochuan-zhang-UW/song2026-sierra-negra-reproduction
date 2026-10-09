@@ -1,0 +1,42 @@
+{
+  "events": 528,
+  "total_candidates": 536,
+  "wa_poles_rad_s": [
+    [
+      -6.283,
+      4.7124
+    ],
+    [
+      -6.283,
+      -4.7124
+    ]
+  ],
+  "wa_zeros": [
+    0
+  ],
+  "wa_gain": 1,
+  "wa_sensitivity": 2080,
+  "amplitude": "mean two horizontal peak-to-peak amplitudes in mm; require both components SNR>=2",
+  "event_magnitude": "median station ML; published Bakun\u2013Joyner equation with epicentral R in km",
+  "stabilization_prefilter_hz": [
+    0.5,
+    1,
+    22,
+    24
+  ],
+  "additional_bandpass": null,
+  "window_relative_S_s": [
+    -1,
+    4
+  ],
+  "sensitivity_zero_to_peak_magnitude_shift": -0.3010299956639812,
+  "sensitivity_2800_gain_magnitude_shift": 0.1290946963794577,
+  "limitations": [
+    "Approximate epicentral locations",
+    "Source Wood\u2013Anderson sensitivity and amplitude units unspecified",
+    "Peak-to-peak convention follows supplement; standard zero-to-peak convention differs",
+    "No source clipping/spike quality-control implementation available",
+    "Independent response stabilization and SNR gate",
+    "Seismic moment uses published empirical ML-to-Mw relation, not spectral moment inversion"
+  ]
+}

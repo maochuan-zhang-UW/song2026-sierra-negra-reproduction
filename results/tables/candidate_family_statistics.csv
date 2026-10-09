@@ -1,0 +1,2 @@
+family_id,events,family_type,mean_fi,LP_members,VT_members,first_origin_utc,last_origin_utc,mean_recurrence_s,periodicity_ddof0,periodicity_ddof1
+0,10,LP,-3.5150429805759535,10,0,2018-06-26 14:21:48.098650694+00:00,2018-06-26 16:54:31.736983299+00:00,1018.1820369561514,1.1986939209737046,1.130139466783464

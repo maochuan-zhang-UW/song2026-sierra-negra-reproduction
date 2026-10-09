@@ -1,0 +1,16 @@
+source_figure,status,output_stem,limitations
+1,Independent partial,enhanced_topographic_catalog,Approximate locations; original faults/cross-section differ
+2,Independent partial,enhanced_magnitude_timeline;gnss_independent_ppp,Independent magnitudes and PPP
+3,Independent partial,enhanced_frequency_families,Primary 2 families; source 29
+4,Independent partial,enhanced_phase_maps,Inherited approximate locations
+5,Independent partial,enhanced_permissive_moment_recurrence;negative_pair_0208_0234,Independent estimator/screen; review candidates
+6,Conceptual original,fig06_conceptual_sequence,Literature interpretation; no pressure simulation
+S1,Partial distribution,supp_candidate_distributions,Manual calibration identities unavailable
+S2,Independent partial,supp_spatial_LP_VT,Inherited approximate locations
+S3,Independent examples,supp_family_waveforms,Source identities unavailable
+S4,Independent partial,supp_family_periodicity,Family screen sensitivity
+S5,Independent waveform reproduction,figS05_payg_dayplots,Real complete records; processing differs
+S6,Not reproduced,,Original calibration samples unavailable; 0.7 coefficient not independently validated
+S7,Independent partial,supp_before_after_matching,Magnitude-estimated subsets; no true completeness established
+S8,Independent partial,supp_template_fi_comparison,Measurable direct FI subset
+S9,Independent partial,enhanced_permissive_moment_recurrence,Independent RANSAC and pairing controls

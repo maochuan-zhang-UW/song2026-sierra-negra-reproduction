@@ -1,0 +1,9 @@
+lag_seconds,noise_snr,minimum_common_stations,families,family_events,positive_edges,negative_candidates
+0.0,snr,1,7,125,629,8
+0.0,snr,4,0,0,80,0
+0.0,snr_near_noise,1,11,175,763,7
+0.0,snr_near_noise,4,0,0,78,0
+0.2,snr,1,14,452,1495,159
+0.2,snr,4,2,23,220,5
+0.2,snr_near_noise,1,13,484,1700,193
+0.2,snr_near_noise,4,1,10,216,7

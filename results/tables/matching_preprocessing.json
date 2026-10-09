@@ -1,0 +1,21 @@
+{
+  "sample_rate_hz": 50,
+  "band_hz": [
+    2,
+    20
+  ],
+  "prefilter_hz": [
+    0.5,
+    1,
+    22,
+    24
+  ],
+  "filter_order": 4,
+  "zero_phase": true,
+  "response": "VEL, no water level",
+  "block_origin_duration_s": 3600,
+  "real_padding_s": 30,
+  "response_taper_fraction": 0.01,
+  "workers": 8,
+  "note": "Independent response settings; hour blocks have 30 seconds real context on each side, clipped at day edges"
+}

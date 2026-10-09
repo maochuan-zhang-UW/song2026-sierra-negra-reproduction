@@ -1,0 +1,27 @@
+{
+  "screen": "permissive one common station; >=10 member families",
+  "families": 14,
+  "family_types": {
+    "VT": 8,
+    "LP": 6
+  },
+  "mean_recurrence_periodicity_pearson_r": -0.42132435489931386,
+  "p_value": 0.1335215130933414,
+  "fisher_approximate_95_percent": [
+    -0.7779877549220302,
+    0.14071040523745063
+  ],
+  "family_bootstrap_95_percent": [
+    -0.7766625381822309,
+    -0.021605021615198325
+  ],
+  "bootstrap_replicates": 5000,
+  "random_seed": 20261009,
+  "first_direct_LP_at_least_four_P_stations": "2018-06-26 10:23:54.216292143+00:00",
+  "limitations": [
+    "Family membership is screen-sensitive",
+    "Bootstrap conditional on these 14 computed families",
+    "Missed events, station and magnitude errors not represented",
+    "First qualifying spectrum is not physical onset"
+  ]
+}

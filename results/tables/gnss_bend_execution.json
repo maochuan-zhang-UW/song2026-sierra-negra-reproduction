@@ -1,0 +1,77 @@
+{
+  "primary": [
+    {
+      "station": "gv03",
+      "component": "east",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 17.633333333333464,
+      "pre_slope_m_per_hour": 0.02252106514704233,
+      "post_slope_m_per_hour": 0.32923192073787266,
+      "rss_m2": 0.06733235537572203,
+      "minutes": 160
+    },
+    {
+      "station": "gv03",
+      "component": "north",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 18.383333333333503,
+      "pre_slope_m_per_hour": -0.018055549469214047,
+      "post_slope_m_per_hour": -1.2081598517516068,
+      "rss_m2": 0.13805452167954457,
+      "minutes": 160
+    },
+    {
+      "station": "gv03",
+      "component": "up",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 18.100000000000154,
+      "pre_slope_m_per_hour": -0.0582649577658816,
+      "post_slope_m_per_hour": 1.0784686238496246,
+      "rss_m2": 0.21345851680332917,
+      "minutes": 160
+    },
+    {
+      "station": "gv09",
+      "component": "east",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 17.183333333333444,
+      "pre_slope_m_per_hour": -0.0017257252159947117,
+      "post_slope_m_per_hour": 0.048209332657946906,
+      "rss_m2": 0.01189766007750306,
+      "minutes": 285
+    },
+    {
+      "station": "gv09",
+      "component": "north",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 18.566666666666844,
+      "pre_slope_m_per_hour": -0.00035139752300316143,
+      "post_slope_m_per_hour": 0.38070187833653824,
+      "rss_m2": 0.013168011758205415,
+      "minutes": 285
+    },
+    {
+      "station": "gv09",
+      "component": "up",
+      "start_utc_hour": 14.5,
+      "end_utc_hour": 19.25,
+      "bend_utc_hour": 18.53333333333351,
+      "pre_slope_m_per_hour": -0.022972234913950874,
+      "post_slope_m_per_hour": -0.43736778841432716,
+      "rss_m2": 0.17759360170183255,
+      "minutes": 285
+    }
+  ],
+  "model": "continuous piecewise-linear mean displacement; least squares bend at 1-minute grid; 1-minute median PPP",
+  "limitations": [
+    "Independent statistical bend, not inversion for intrusion onset",
+    "Postseismic curvature and evolving intrusion may bias fit",
+    "Window spread is sensitivity, not a confidence interval",
+    "PPP errors and serial correlation not modeled"
+  ]
+}

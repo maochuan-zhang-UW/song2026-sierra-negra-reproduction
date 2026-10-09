@@ -1,0 +1,10 @@
+family_id,preceding_event,following_event,interval_s
+0,candidate_0234,candidate_0246,1199.2899994850159
+0,candidate_0246,candidate_0258,2164.8308334350586
+0,candidate_0258,candidate_0260,470.7334189414978
+0,candidate_0260,candidate_0261,57.24034309387207
+0,candidate_0261,candidate_0267,769.1802985668182
+0,candidate_0267,candidate_0270,549.9122378826141
+0,candidate_0270,candidate_0273,405.2179672718048
+0,candidate_0273,candidate_0291,2804.245112657547
+0,candidate_0291,candidate_0294,742.9881212711334

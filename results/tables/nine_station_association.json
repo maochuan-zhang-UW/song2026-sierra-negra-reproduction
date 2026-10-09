@@ -1,0 +1,58 @@
+{
+  "events": 716,
+  "assigned_picks": 7531,
+  "velocity_source_doi": "10.1002/2013JB010227",
+  "input_sha256": {
+    "config/tepp2014_model_f.csv": "4ffe1be7d8c68eae11fc33bfacce18981df470fbec82443dfcf0639add939f02",
+    "results/catalogs/combined_volpick_picks.csv": "1d7cd31cadb755da12237642a38200ee4fc07fe00f1d447511975a6cd9367c5f",
+    "data/raw/stations.xml": "8728f3981f6e27013bdead675779e8f666c951daa897ca800df7179939759024",
+    "data/raw/EC_responses.xml": "f8cd10554be0182b7c212991d06273f2e687545cdb02c48c76bfac39e214cfd4"
+  },
+  "raw_events_before_final_qc": 716,
+  "raw_arrivals_before_final_qc": 7532,
+  "assigned_P": 4007,
+  "assigned_S": 3524,
+  "median_absolute_residual_s": 0.10288357734680176,
+  "max_absolute_residual_s": 0.49953460693359375,
+  "model": "Tepp et al. 2014 Table 1 Model F; top grid value at -2 km",
+  "interpolation": "piecewise linear",
+  "speed_scale": 1.0,
+  "depth_datum": "km below sea level",
+  "elevation_correction": {
+    "method": "PyOcto surface correction",
+    "vp_km_s": 4.29,
+    "vs_km_s": 2.38
+  },
+  "domain_lat": [
+    -0.9,
+    -0.76
+  ],
+  "domain_lon": [
+    -91.22,
+    -91.08
+  ],
+  "depth_km": [
+    0,
+    30
+  ],
+  "minimum_P": 4,
+  "minimum_S": 1,
+  "minimum_total": 5,
+  "minimum_both_phase_stations": 0,
+  "match_tolerance_s": 0.5,
+  "duplicate_time_s": 2,
+  "location_node_km": 1,
+  "travel_time_grid_km": 0.1,
+  "time_slice_s": 300,
+  "n_threads": 16,
+  "pick_time_span_s": 86376.53999996185,
+  "pyocto_version": "0.2.0",
+  "station_count": 9,
+  "limitations": [
+    "VCH1 unavailable; nine stations acquired, SN02 gapped",
+    "Not the source model",
+    "No HypoInverse or HypoDD quality control",
+    "No magnitudes estimated",
+    "Candidate events are not the published enhanced catalog"
+  ]
+}

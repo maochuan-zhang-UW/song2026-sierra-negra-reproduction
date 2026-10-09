@@ -1,0 +1,68 @@
+{
+  "common_station_screen": 4,
+  "fits": [
+    {
+      "family_type": "LP",
+      "pairing": "preceding",
+      "estimator": "OLS",
+      "slope": -0.025481420131845022,
+      "intercept": 11.356800108506453,
+      "r_squared": 0.0027147503222582914,
+      "p_value": 0.8225250361074367,
+      "jackknife_slope_se": 0.11883074952351888,
+      "transform": "log10",
+      "n": 21
+    },
+    {
+      "family_type": "LP",
+      "pairing": "preceding",
+      "estimator": "RANSAC independent settings",
+      "slope": -0.146404545341286,
+      "intercept": 11.683145069531996,
+      "r_squared": -0.0629916664417729,
+      "inlier_r_squared": 0.523644912592333,
+      "inliers": 11,
+      "n": 21,
+      "transform": "log10"
+    },
+    {
+      "family_type": "LP",
+      "pairing": "following",
+      "estimator": "OLS",
+      "slope": -0.015601492599233859,
+      "intercept": 11.33230054896448,
+      "r_squared": 0.000925624570543401,
+      "p_value": 0.8958439684747079,
+      "jackknife_slope_se": 0.14919845561651923,
+      "transform": "log10",
+      "n": 21
+    },
+    {
+      "family_type": "LP",
+      "pairing": "following",
+      "estimator": "RANSAC independent settings",
+      "slope": 0.030428175172954278,
+      "intercept": 11.04540073935937,
+      "r_squared": -0.32639544848201796,
+      "inlier_r_squared": 0.022892452915801442,
+      "inliers": 10,
+      "n": 21,
+      "transform": "log10"
+    }
+  ],
+  "comparison_windows": "LP before 17:00; VT after 17:00 UTC",
+  "primary_pairing": "preceding",
+  "ransac": {
+    "min_samples": 2,
+    "max_trials": 1000,
+    "random_state": 20261009,
+    "residual_threshold": "sklearn default MAD of y"
+  },
+  "limitations": [
+    "Family membership and approximate magnitudes independently computed",
+    "Original RANSAC controls unavailable",
+    "R squared all points distinguished from R squared inliers",
+    "OLS jackknife event pairs not independent family uncertainty",
+    "Low family count or missing VT family prevents validating the published contrasting populations"
+  ]
+}

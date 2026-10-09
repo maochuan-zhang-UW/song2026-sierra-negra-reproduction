@@ -1,0 +1,5 @@
+catalog,phase,estimated_magnitudes,uncorrected_max_curvature_ML,bin_width
+Before,Phases 1–2,293,0.3499999999999998,0.1
+Before,Phases 3–4,235,2.3499999999999996,0.1
+After,Phases 1–2,573,0.24999999999999983,0.1
+After,Phases 3–4,581,2.3500000000000005,0.1

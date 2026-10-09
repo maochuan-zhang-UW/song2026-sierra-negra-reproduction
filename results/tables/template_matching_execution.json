@@ -1,0 +1,26 @@
+{
+  "templates": 447,
+  "raw_template_peaks": 5548,
+  "additional_candidates": 1007,
+  "additional_classes": {
+    "VT": 650,
+    "LP": 357
+  },
+  "self_recovered": 447,
+  "self_audited": 447,
+  "minimum_self_ncc": 0.7178534884167007,
+  "maximum_self_time_error_s": 0.0177842235571006,
+  "MAD": "median(abs(network mean NCC)); EQcorrscan documented convention",
+  "thresholds": "positive score >= max(9*MAD, 0.4)",
+  "peak_separation_s": 2,
+  "known_event_exclusion_s": 2,
+  "network_weighting": "equal stations; mean available components within each",
+  "limitations": [
+    "Seven stations only",
+    "Approximate template locations",
+    "No undocumented spike rejection recreated",
+    "Unvalidated additional candidates are not confirmed earthquakes",
+    "No magnitudes",
+    "All 536 known candidates excluded, not only selected templates"
+  ]
+}
