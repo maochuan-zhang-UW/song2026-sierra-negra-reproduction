@@ -46,5 +46,9 @@
   "supplement.pdf": {
     "bytes": 3148069,
     "sha256": "c407c9648321d91e9a00f0dfe3a8159b8ffe67990a48a830fd75ad8836835280"
+  },
+  "article.pdf": {
+    "bytes": 6068761,
+    "sha256": "75251b63a3f6ec0949aa6d92b69f0aced2932f55f83b20b471cc0692acccf73b"
   }
 }

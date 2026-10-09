@@ -1,0 +1,34 @@
+{
+  "checked_date": "2026-10-09",
+  "checks": [
+    {
+      "resource": "8G SN01/SN03/SN08 full-day waveforms",
+      "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=8G&sta=SN01,SN03,SN08&loc=*&cha=*&start=2018-06-26&end=2018-06-27&nodata=404",
+      "http_status": 404,
+      "interpretation": "No records returned for this query; does not establish permanent data loss"
+    },
+    {
+      "resource": "VCH1 metadata at EarthScope",
+      "url": "https://service.earthscope.org/fdsnws/station/1/query?sta=VCH1&start=2018-06-26&end=2018-06-27&level=station&format=text&nodata=404",
+      "http_status": 404,
+      "interpretation": "No metadata returned; provider portal required for further investigation"
+    },
+    {
+      "resource": "IGEPN station download portal",
+      "url": "https://data.igepn.edu.ec/download/login2.php",
+      "http_status": 200,
+      "interpretation": "Login form; no VCH1 waveforms retrieved"
+    },
+    {
+      "resource": "GV09 GNSS observation-file candidate",
+      "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv091770.18d.Z",
+      "http_status": 302,
+      "interpretation": "Redirects to login; file existence and contents unverified. Daily archive path follows official layout."
+    },
+    {
+      "resource": "Legacy GV03/GV09 download links",
+      "url": "https://www.unavco.org/data/gps-gnss/data-access-methods/dai1/select_data.php",
+      "interpretation": "Redirect to EarthScope home page, not an observation-file download"
+    }
+  ]
+}

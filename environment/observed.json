@@ -15,8 +15,8 @@
   "cpp": "g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-28)",
   "julia": "julia version 1.7.2",
   "latex": "pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018)",
-  "github_auth_status": "No authenticated hosts; no token variables present",
+  "github_auth_status": "Authenticated as maochuan-zhang-UW; public repository and remote commit verified",
   "ssh_status": "Standard config/key directories absent; no accessible agent",
-  "network": "Approved network access outside sandbox works; raw seismic data, supplement and archive downloaded on 9 October 2026",
+  "network": "Network enabled; seismic archives, full article PDF and supplement downloaded; GNSS and IGEPN waveform portals require separate provider authentication",
   "modern_environment": "Python 3.11 virtual environment on data drive; see waveforms-lock.txt"
 }

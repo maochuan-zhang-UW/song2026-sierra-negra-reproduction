@@ -1,0 +1,62 @@
+[
+  {
+    "resource": "8G SN01/SN03/SN08 all channels",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=8G&sta=SN01,SN03,SN08&loc=*&cha=*&start=2018-06-26&end=2018-06-27&nodata=404",
+    "checked_utc": "2026-10-09T19:51:05.138235+00:00",
+    "http_status": 404,
+    "content_type": "text/plain; charset=utf-8",
+    "final_host": "service.earthscope.org",
+    "final_path": "/fdsnws/dataselect/1/query",
+    "interpretation": "No records returned for this query; not proof of permanent unavailability"
+  },
+  {
+    "resource": "EC SN09/SN10 all channels",
+    "url": "https://service.earthscope.org/fdsnws/dataselect/1/query?net=EC&sta=SN09,SN10&loc=*&cha=*&start=2018-06-26&end=2018-06-27&nodata=404",
+    "checked_utc": "2026-10-09T19:51:05.139155+00:00",
+    "http_status": 404,
+    "content_type": "text/plain; charset=utf-8",
+    "final_host": "service.earthscope.org",
+    "final_path": "/fdsnws/dataselect/1/query",
+    "interpretation": "No records returned for this query; not proof of permanent unavailability"
+  },
+  {
+    "resource": "VCH1 EarthScope all networks",
+    "url": "https://service.earthscope.org/fdsnws/dataselect/1/query?sta=VCH1&loc=*&cha=*&start=2018-06-26&end=2018-06-27&nodata=404",
+    "checked_utc": "2026-10-09T19:51:05.139836+00:00",
+    "http_status": 404,
+    "content_type": "text/plain; charset=utf-8",
+    "final_host": "service.earthscope.org",
+    "final_path": "/fdsnws/dataselect/1/query",
+    "interpretation": "No records returned for this query; not proof of permanent unavailability"
+  },
+  {
+    "resource": "GV03 daily RINEX",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv031770.18d.Z",
+    "checked_utc": "2026-10-09T19:51:05.140819+00:00",
+    "http_status": 200,
+    "content_type": "text/html",
+    "final_host": "data.earthscope.org",
+    "final_path": "/login",
+    "interpretation": "Provider login required; no observation data retrieved"
+  },
+  {
+    "resource": "GV09 daily RINEX",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv091770.18d.Z",
+    "checked_utc": "2026-10-09T19:51:05.289135+00:00",
+    "http_status": 200,
+    "content_type": "text/html",
+    "final_host": "data.earthscope.org",
+    "final_path": "/login",
+    "interpretation": "Provider login required; no observation data retrieved"
+  },
+  {
+    "resource": "IGEPN waveform portal",
+    "url": "https://data.igepn.edu.ec/download/login2.php",
+    "checked_utc": "2026-10-09T19:51:05.465775+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "final_host": "data.igepn.edu.ec",
+    "final_path": "/download/login2.php",
+    "interpretation": "Provider login required; no observation data retrieved"
+  }
+]

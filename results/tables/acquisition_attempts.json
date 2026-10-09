@@ -123,5 +123,61 @@
     "sha256": "ccfeb95f7381126e3e5ac499b9cf1f9123364025d0b979fe8af63c67918f17e6",
     "download_file_mtime_utc": "2026-10-09T17:19:21.128937Z",
     "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "EC_20180626.mseed",
+    "url": "https://service.earthscope.org/fdsnws/dataselect/1/query?net=EC&sta=SN02,SN06,SN09,SN10&loc=*&cha=HH?&start=2018-06-26&end=2018-06-27",
+    "attempt_utc": "2026-10-09T19:46:35.930223Z",
+    "status": "downloaded",
+    "bytes": 81980928,
+    "sha256": "57d3e83fab76ae76827912fc10427c2483de27d1bfaa2cc6e39114383a35cf37"
+  },
+  {
+    "name": "EC_responses.xml",
+    "url": "https://service.earthscope.org/fdsnws/station/1/query?net=EC&sta=SN02,SN06,SN09,SN10&start=2018-06-26&end=2018-06-27&level=response&format=xml",
+    "attempt_utc": "2026-10-09T19:46:40.022012Z",
+    "status": "downloaded",
+    "bytes": 1030504,
+    "sha256": "f8cd10554be0182b7c212991d06273f2e687545cdb02c48c76bfac39e214cfd4"
+  },
+  {
+    "name": "VCH1_Cat_v1.txt",
+    "url": "https://zenodo.org/records/4389190/files/VCH1_Cat_v1.txt",
+    "attempt_utc": "2026-10-09T19:46:40.426961Z",
+    "status": "downloaded",
+    "bytes": 399252,
+    "sha256": "e6e5abef85c3663e8064e7730e63edeb59259bf89e3b384bd266d971c9d80c5d"
+  },
+  {
+    "name": "gnss_doi.html",
+    "url": "https://www.unavco.org/data/doi/10.7283/3R4N-9775",
+    "attempt_utc": "2026-10-09T19:46:43.351672Z",
+    "status": "downloaded",
+    "bytes": 60510,
+    "sha256": "acbac8a61900cdfa1f110195b077cf864331076a31d3602028a973c5ccee4415"
+  },
+  {
+    "name": "GV03_doi.html",
+    "url": "https://www.unavco.org/data/doi/10.7283/MEWP-QZ75",
+    "attempt_utc": "2026-10-09T19:46:44.032461Z",
+    "status": "downloaded",
+    "bytes": 48432,
+    "sha256": "1e39dd13a71da2aa3fc67b5825d17f53fc60fb5e2781ada0e982ccaff5408713"
+  },
+  {
+    "name": "GV09_doi.html",
+    "url": "https://www.unavco.org/data/doi/10.7283/XZAA-W505",
+    "attempt_utc": "2026-10-09T19:46:44.437183Z",
+    "status": "downloaded",
+    "bytes": 48451,
+    "sha256": "560116e39b7d8677b9d0c3418ed21ba2a6a6c79c2c8976bc27d3c92b6e2d6b2d"
+  },
+  {
+    "name": "article.pdf",
+    "url": "https://www.nature.com/articles/s41467-026-68645-4.pdf",
+    "attempt_utc": "2026-10-09T19:50:21.538753Z",
+    "status": "downloaded",
+    "bytes": 6068761,
+    "sha256": "75251b63a3f6ec0949aa6d92b69f0aced2932f55f83b20b471cc0692acccf73b"
   }
 ]

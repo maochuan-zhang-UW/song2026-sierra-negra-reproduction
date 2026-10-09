@@ -1,0 +1,89 @@
+{
+  "acquired_station_count": 9,
+  "acquired_channel_count": 27,
+  "station_coverage": [
+    {
+      "network": "8G",
+      "station": "SN04",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN05",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN07",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN11",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN12",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN13",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "8G",
+      "station": "SN14",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    },
+    {
+      "network": "EC",
+      "station": "SN02",
+      "common_three_component_seconds": 79636.67,
+      "common_day_fraction": 0.9217207175925926
+    },
+    {
+      "network": "EC",
+      "station": "SN06",
+      "common_three_component_seconds": 86400.0,
+      "common_day_fraction": 1.0
+    }
+  ],
+  "vch1_full_file_md5_verified": true,
+  "vch1_date_event_count": 191,
+  "files": {
+    "EC_20180626.mseed": {
+      "bytes": 81980928,
+      "sha256": "57d3e83fab76ae76827912fc10427c2483de27d1bfaa2cc6e39114383a35cf37"
+    },
+    "EC_responses.xml": {
+      "bytes": 1030504,
+      "sha256": "f8cd10554be0182b7c212991d06273f2e687545cdb02c48c76bfac39e214cfd4"
+    },
+    "VCH1_Cat_v1.txt": {
+      "bytes": 399252,
+      "sha256": "e6e5abef85c3663e8064e7730e63edeb59259bf89e3b384bd266d971c9d80c5d"
+    },
+    "gnss_doi.html": {
+      "bytes": 60510,
+      "sha256": "acbac8a61900cdfa1f110195b077cf864331076a31d3602028a973c5ccee4415"
+    },
+    "GV03_doi.html": {
+      "bytes": 48432,
+      "sha256": "1e39dd13a71da2aa3fc67b5825d17f53fc60fb5e2781ada0e982ccaff5408713"
+    },
+    "GV09_doi.html": {
+      "bytes": 48451,
+      "sha256": "560116e39b7d8677b9d0c3418ed21ba2a6a6c79c2c8976bc27d3c92b6e2d6b2d"
+    }
+  },
+  "note": "Additional data retrieval and inventory only; existing 8G-only candidate picks are unchanged. EC orientation aliases and common-component gaps require explicit handling before picking."
+}

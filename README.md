@@ -1,8 +1,8 @@
 # Song (2026) Sierra Negra reproduction
 
-**Status: partial, with actual waveform acquisition and original-catalog computations.** The full Bell catalog passes its published checksum and contains 219 events on 26 June 2018. Seven complete three-component 8G station records and all four PAYG days in Supplementary Figure 5 are acquired. The supplement is reviewed. No enhanced located catalog, event-associated LP/VT population, observed families or published regressions are reproduced yet.
+**Status: partial, with actual waveform acquisition and original-catalog computations.** The full Bell catalog passes its published checksum and contains 219 events on 26 June 2018. Nine three-component stations across 8G and EC and all four PAYG days in Supplementary Figure 5 are acquired. Eight stations are complete; SN02 has gaps. The VCH1 archive checksum is verified, with 191 events on the date retained in a separate catalog. The supplement is reviewed. No enhanced located catalog, event-associated LP/VT population, observed families or published regressions are reproduced yet.
 
-The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Eleven numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. GitHub publication awaits workspace authentication.
+The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Eleven numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. The public [GitHub repository](https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction) is published and its remote commit verified.
 
 - [Compiled report](report/main.pdf), [LaTeX source](report/main.tex), [executed notebook](report/analysis.ipynb)
 - [Reproducibility assessment](docs/reproducibility.md), [supplementary-methods audit](docs/supplementary_methods.md), [limitations](docs/limitations.md)
@@ -50,17 +50,22 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=8 .venv/bin/python scripts/pick_waveforms
 
 The missing numerical velocity-model layers and S-wave prescription, station coverage, original association/location controls, event/family catalogs and high-rate GNSS prevent a faithful full reproduction. They are documented rather than replaced by invented values. Correlation and timing alone do not establish a unique fluid-triggering mechanism.
 
-## Publication
-
-No remote repository exists yet. Once this workspace is authenticated:
+## Additional retrieval and publication
 
 ```bash
-gh auth status
-gh repo create song2026-sierra-negra-reproduction --public --source=. --remote=origin --push
-gh repo view --json url
+.venv/bin/python scripts/acquire.py --remaining
+.venv/bin/python scripts/inventory_remaining_data.py
+```
+
+Additional records and response metadata include EC SN02/SN06. [Combined coverage](results/tables/acquired_station_coverage.csv) reports the common three-component fraction, including SN02 gaps. The [VCH1 subset](results/catalogs/vch1_original_20180626.csv) is a separate original catalog; it is not merged with the located catalog because event equivalence is unverified. GNSS DOI metadata provide GV03/GV09 map coordinates, not deformation observations. See [access requirements](docs/data_access.md) for GNSS and VCH1 waveforms.
+
+The project is public at https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction. Verify a checkout with:
+
+```bash
+gh repo view maochuan-zhang-UW/song2026-sierra-negra-reproduction --json url,visibility
 git ls-remote origin refs/heads/main
 ```
 
-Do not commit raw waveforms, tokens, SSH credentials, checkpoint weights or caches. The MIT license applies to original project code; third-party instructions, data and article material retain their own attribution and licenses.
+Raw waveforms, authentication material, checkpoint weights and caches remain excluded from Git. The MIT license applies to original project code; third-party instructions and data retain their own attribution and licenses.
 
 Completed actual-waveform Volpick execution processed all 168 acquired station-hours: **6,908 P and 6,379 S candidate picks** (13,287 total). The supplement reports 13,144 P and 12,196 S candidates before association across the study network. Differences are -6,236 P and -5,817 S, with station coverage and processing/checkpoint choices differing; these are not earthquake-count differences or evidence of detection completeness. The [execution record](results/tables/volpick_execution.json) and checkpoint hashes document the run. No false-pick rate or event completeness has been estimated.

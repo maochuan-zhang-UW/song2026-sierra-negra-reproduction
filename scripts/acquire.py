@@ -13,6 +13,15 @@ URLS={
  'PAYG_stations.xml':'https://service.iris.edu/fdsnws/station/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=1999-12-22&end=2018-06-27&level=response&format=xml',
  'stations.xml':'https://service.iris.edu/fdsnws/station/1/query?network=8G&starttime=2018-06-26&endtime=2018-06-27&level=response&format=xml'
 }
+REMAINING={
+ 'EC_20180626.mseed':'https://service.earthscope.org/fdsnws/dataselect/1/query?net=EC&sta=SN02,SN06,SN09,SN10&loc=*&cha=HH?&start=2018-06-26&end=2018-06-27',
+ 'EC_responses.xml':'https://service.earthscope.org/fdsnws/station/1/query?net=EC&sta=SN02,SN06,SN09,SN10&start=2018-06-26&end=2018-06-27&level=response&format=xml',
+ 'VCH1_Cat_v1.txt':'https://zenodo.org/records/4389190/files/VCH1_Cat_v1.txt',
+ 'gnss_doi.html':'https://www.unavco.org/data/doi/10.7283/3R4N-9775',
+ 'GV03_doi.html':'https://www.unavco.org/data/doi/10.7283/MEWP-QZ75',
+ 'GV09_doi.html':'https://www.unavco.org/data/doi/10.7283/XZAA-W505'
+}
+URLS.update(REMAINING)
 for date in ['2018-06-26','2005-10-22','2005-04-16','1999-12-22']:
     URLS['PAYG_'+date+'.mseed']='https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start='+date+'T00:00:00&end='+date+'T23:59:59.99'
 
@@ -34,6 +43,14 @@ def fetch(name,url):
             raise ValueError('Response is not a PDF (possible access challenge)')
         if name.endswith('.eventlist') and b'EVENT EVENT_ID' not in temp.read_bytes()[:1000]:
             raise ValueError('Not a recognized earthquake catalog')
+        if name.endswith('.xml'):
+            import xml.etree.ElementTree as ET
+            if not ET.parse(str(temp)).getroot().tag.endswith('FDSNStationXML'):
+                raise ValueError('Not FDSN StationXML')
+        if name.endswith('.mseed'):
+            from obspy import read
+            if not len(read(str(temp),format='MSEED',headonly=True)):
+                raise ValueError('No waveform records')
         temp.replace(target)
         record.update(status='downloaded',bytes=target.stat().st_size,
                       sha256=hashlib.sha256(target.read_bytes()).hexdigest())
@@ -44,9 +61,15 @@ def fetch(name,url):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--only',choices=list(URLS));args=parser.parse_args()
-    selected={args.only:URLS[args.only]} if args.only else URLS
+    parser=argparse.ArgumentParser()
+    choices=parser.add_mutually_exclusive_group()
+    choices.add_argument('--only',choices=list(URLS))
+    choices.add_argument('--remaining',action='store_true',help='Acquire EC records, VCH1 catalog and GNSS DOI metadata')
+    args=parser.parse_args()
+    selected={args.only:URLS[args.only]} if args.only else (REMAINING if args.remaining else URLS)
     records=[fetch(k,v) for k,v in selected.items()]
-    (ROOT/'results/tables/acquisition_attempts.json').write_text(json.dumps(records,indent=2)+'\n')
+    log=ROOT/'results/tables/acquisition_attempts.json'
+    previous=json.loads(log.read_text()) if log.exists() else []
+    log.write_text(json.dumps(previous+records,indent=2)+'\n')
     print(json.dumps(records,indent=2))
     if any(r['status']=='failed' for r in records):raise SystemExit(1)

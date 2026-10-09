@@ -1,0 +1,16 @@
+[
+  {
+    "station": "GV03",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv031770.18d.Z",
+    "attempt_utc": "2026-10-09T19:51:40.709637+00:00",
+    "status": "blocked",
+    "reason": "No usable EarthScope access token; authenticate using .venv/bin/es login"
+  },
+  {
+    "station": "GV09",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv091770.18d.Z",
+    "attempt_utc": "2026-10-09T19:51:40.709686+00:00",
+    "status": "blocked",
+    "reason": "No usable EarthScope access token; authenticate using .venv/bin/es login"
+  }
+]
