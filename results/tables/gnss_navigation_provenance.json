@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://data.earthscope.org/archive/gnss/rinex/nav/2018/177/gv031770.18n.Z",
+    "status": "validated_gps_navigation_header",
+    "bytes": 70957,
+    "compressed_sha256": "0354be560c5d34663a5a55df982e89c6b8f80fa863a4bab485043830fcf1c063",
+    "rinex_sha256": "b621492b2b905470c60a56afa5dd2f49d5e4e856f466515f650f79726150afae"
+  },
+  {
+    "url": "https://data.earthscope.org/archive/gnss/rinex/nav/2018/177/gv091770.18n.Z",
+    "status": "validated_gps_navigation_header",
+    "bytes": 115505,
+    "compressed_sha256": "21825a9da3eba8c9b88200e618ea22828ae2a8ab706b0e7088b3471c23869a11",
+    "rinex_sha256": "f5dbdd9397dce955c7e1c55611f0b3aa9d3e0a191be7c37cbab1a55528f3328b"
+  }
+]

@@ -17,3 +17,5 @@ Magma intrusion UTC,~17:00,,not computed,"Timeline annotation from publication, 
 Eruption UTC,19:35-19:40,,not computed,Publication timing range; no tremor processed
 Candidate P picks,13144,6908,-6236,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
 Candidate S picks,12196,6379,-5817,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
+GV09 coseismic vertical hourly mean (m),at least 1.83,1.867071,0.037071 above published lower bound,"Independent RTKLIB float PPP; 120 epochs per hour. Published value is a lower bound, not an exact target. Different corrections and postseismic motion."
+GV03 coseismic displacement,published record missing,,not measurable,Validated 03:21:42–12:46:12 UTC observation outage; no interpolation.

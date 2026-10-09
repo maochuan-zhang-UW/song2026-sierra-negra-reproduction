@@ -4,3 +4,7 @@ obspy
 seisbench
 pyocto
 # EQcorrscan is not installed; independent matching kernels are tested.
+
+# GNSS validation and approximate 1-D association.
+hatanaka
+pyrocko

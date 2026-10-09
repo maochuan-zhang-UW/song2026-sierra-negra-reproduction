@@ -2,7 +2,7 @@
 
 **Status: partial, with actual waveform acquisition and original-catalog computations.** The full Bell catalog passes its published checksum and contains 219 events on 26 June 2018. Nine three-component stations across 8G and EC and all four PAYG days in Supplementary Figure 5 are acquired. Eight stations are complete; SN02 has gaps. The VCH1 archive checksum is verified, with 191 events on the date retained in a separate catalog. The supplement is reviewed. No enhanced located catalog, event-associated LP/VT population, observed families or published regressions are reproduced yet.
 
-The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Eleven numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. The public [GitHub repository](https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction) is published and its remote commit verified.
+The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Fourteen numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. The public [GitHub repository](https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction) is published and its remote commit verified.
 
 - [Compiled report](report/main.pdf), [LaTeX source](report/main.tex), [executed notebook](report/analysis.ipynb)
 - [Reproducibility assessment](docs/reproducibility.md), [supplementary-methods audit](docs/supplementary_methods.md), [limitations](docs/limitations.md)
@@ -48,7 +48,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=8 .venv/bin/python scripts/pick_waveforms
 
 `scripts/analyze_windows.py --help` describes classification, clustering and recurrence analysis on actual preprocessed arrival windows. It requires explicit lag, interval pairing, regression transform and standard-deviation choices. The existing regression routine uses OLS; Supplementary Figure 9 uses log–log RANSAC with unspecified controls. Synthetic numerical tests validate algorithms and are excluded from volcanic results.
 
-The missing numerical velocity-model layers and S-wave prescription, station coverage, original association/location controls, event/family catalogs and high-rate GNSS prevent a faithful full reproduction. They are documented rather than replaced by invented values. Correlation and timing alone do not establish a unique fluid-triggering mechanism.
+Missing station coverage, original association/location controls and event/family catalogs prevent an exact full reproduction. Authenticated GNSS is now validated and independently processed; Tepp et al. (2014) Table 1 Model F supplies published P/S speeds for approximate locations. All departures from the source methods are documented. Correlation and timing alone do not establish a unique fluid-triggering mechanism.
 
 ## Additional retrieval and publication
 
@@ -69,3 +69,19 @@ git ls-remote origin refs/heads/main
 Raw waveforms, authentication material, checkpoint weights and caches remain excluded from Git. The MIT license applies to original project code; third-party instructions and data retain their own attribution and licenses.
 
 Completed actual-waveform Volpick execution processed all 168 acquired 8G station-hours: **6,908 P and 6,379 S candidate picks** (13,287 total). The supplement reports 13,144 P and 12,196 S candidates before association across the study network. Differences are -6,236 P and -5,817 S, with station coverage and processing/checkpoint choices differing; these are not earthquake-count differences or evidence of detection completeness. The [execution record](results/tables/volpick_execution.json) and checkpoint hashes document the run. No false-pick rate or event completeness has been estimated.
+
+## Independent GNSS results and approximate locations
+
+GV03 and GV09 Unix-compressed Hatanaka observations are decompressed and validated. GV09 has 2,880 epochs; GV03 has 1,431, with a long outage spanning the fault earthquake. VCH1 retrieval is skipped at the user's instruction and remains a seismic coverage gap.
+
+Independent RTKLIB float PPP uses ESA final precise orbits/clocks and IGS20 antenna calibration. At GV09 the one-hour after-minus-before vertical mean is **1.86707 m**, consistent with the paper's **at least 1.83 m** lower bound. This does not establish exact agreement with its GIPSY/VMF1/FES2004 processing. GV03 has no coseismic estimate. A separate relative-baseline calculation retains 1,363 fixed and 47 float solutions and rejects stale-reference/single-point estimates. See [PPP figure](results/figures/gnss_independent_ppp.png), [relative figure](results/figures/gnss_relative_baseline.png), [validation](results/tables/gnss_rinex_validation.json), [PPP results](results/tables/gnss_ppp_analysis.json), and [methods and caveats](docs/gnss_and_velocity.md).
+
+```bash
+source scripts/env.sh
+# EarthScope CLI must already be authenticated; no credentials go into Git.
+bash scripts/run_gnss_relative.sh
+bash scripts/run_gnss_ppp.sh
+OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/associate_approximate.py
+```
+
+Approximate PyOcto locations use [Tepp et al. (2014) Table 1 Model F](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JB010227), with published P/S values, piecewise-linear interpolation and documented elevation correction. They are candidate associations; no HypoInverse/HypoDD relocation or magnitudes are claimed. Configuration and differences from Song's model are described in `docs/gnss_and_velocity.md`.

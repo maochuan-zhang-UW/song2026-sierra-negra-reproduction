@@ -1,0 +1,19 @@
+[
+  {
+    "url": "https://navigation-office.esa.int/products/gnss-products/2007/ESA0MGNFIN_20181770000_01D_05M_ORB.SP3.gz",
+    "compressed_sha256": "f3f34c6eb4ae85767ea14761f6a1ff68c875d7f9623afcf8b09f8fb7bede1032",
+    "decoded_bytes": 1921401,
+    "sha256": "212a12cc8f1b26b77596dac888d0a98a4ff89738c524c5d4478acfdb5624cae4"
+  },
+  {
+    "url": "https://navigation-office.esa.int/products/gnss-products/2007/ESA0MGNFIN_20181770000_01D_30S_CLK.CLK.gz",
+    "compressed_sha256": "ad846b0271aa9a5db3be5c0c9267c46f45a2965b817721e1c9bdeb07895bcab2",
+    "decoded_bytes": 53362314,
+    "sha256": "2d04079f520ed0a19aa075e1c79105e8cd2f58f032f37276aa8fe090b598826c"
+  },
+  {
+    "url": "https://files.igs.org/pub/station/general/igs20.atx",
+    "bytes": 61579571,
+    "sha256": "0cd58d0d9ee678d5586de6c01f576e5aceb86f4a0735a168f733dfd091c0a614"
+  }
+]

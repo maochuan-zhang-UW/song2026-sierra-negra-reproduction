@@ -12,5 +12,23 @@
     "attempt_utc": "2026-10-09T19:51:40.709686+00:00",
     "status": "blocked",
     "reason": "No usable EarthScope access token; authenticate using .venv/bin/es login"
+  },
+  {
+    "station": "GV03",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv031770.18d.Z",
+    "attempt_utc": "2026-10-09T20:05:29.794515+00:00",
+    "status": "downloaded_compressed_unparsed",
+    "bytes": 190854,
+    "sha256": "5dbbfc0842ab67f4c37fa05a28867165d3f50830c2261832023db98741d9451e",
+    "note": "Compression header checked; RINEX content, epoch coverage and PPP not validated yet"
+  },
+  {
+    "station": "GV09",
+    "url": "https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv091770.18d.Z",
+    "attempt_utc": "2026-10-09T20:05:30.441743+00:00",
+    "status": "downloaded_compressed_unparsed",
+    "bytes": 381601,
+    "sha256": "f73bed315cac1ad9f7edc82a9fc0c83a3cf30eee13f7496734af2e7c0b2ff3b9",
+    "note": "Compression header checked; RINEX content, epoch coverage and PPP not validated yet"
   }
 ]

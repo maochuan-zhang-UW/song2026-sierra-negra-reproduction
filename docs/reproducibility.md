@@ -23,15 +23,15 @@ The public Volpick EQTransformer checkpoint v1 is cached on the data drive. Its 
 | Catalog acquisition | Full source checksum verified; date subset analyzed | Enhanced source catalog and picks |
 | Waveforms | Nine stations across 8G/EC; four PAYG historical records; coverage inventoried | VCH1 access; SN02 gaps; EC inputs not yet picked |
 | Picking | Public checkpoint executed on actual acquired waveforms | Exact checkpoint and unspecified filtering/normalization details |
-| Association | PyOcto installed; published selection criteria recorded | Numerical velocity model and exact domain center; no association run |
+| Association | PyOcto installed; published selection criteria recorded | Published alternative Model F supplied; exact original model/domain and location controls differ |
 | Locations | Published relocation selection/windows reviewed | HypoInverse/HypoDD source controls, differential observations; no relocation run |
 | Template matching | FFT kernels tested; nine-MAD and 0.4 quality thresholds recorded | Real relocated templates and picks; original gap/spike controls |
 | FI classification | Amplitude-based FI tested, LP < -2 | Event-associated arrival windows and SNR definition |
 | Multiplets | C++ signed NCC and connected components tested | Observed event windows, lag/station aggregation and manual inspection |
 | Recurrence/moment | Conversion, pairing, OLS and jackknife tested | Real families, RANSAC controls and interval pairing |
-| GNSS | Long-term archived baseline acquired | High-rate positions or RINEX/PPP products and controls |
+| GNSS | Validated RINEX, independent float PPP and relative baseline computed | Original GIPSY/VMF1/FES2004 controls; GV03 outage |
 
-The velocity-model manuscript (Rezaeifar et al., 2024) is locally reviewed. It describes a VELEST-derived 1-D P model and plots it, without a numerical layer table identified in accessible text. Association and relocation do not proceed with invented layer values or Vp/Vs.
+The velocity-model manuscript (Rezaeifar et al., 2024) is locally reviewed. It describes a VELEST-derived 1-D P model and plots it, without a numerical layer table identified in accessible text. Authorized approximate association uses published Tepp et al. (2014) Table 1 Model F P/S values with explicit interpolation and elevation correction; differential relocation remains unexecuted.
 
 FI is the base-2 logarithm of mean spectral amplitude at 9–15 Hz divided by mean spectral amplitude at 2–5 Hz. FI -2 implies amplitude ratio 1/4, not integrated energy ratio 1/4. Unmeasured events remain unclassified.
 
@@ -69,4 +69,6 @@ The observed original phase counts are 29/74/72/44 using a 19:40 eruption bounda
 
 Completed actual-waveform Volpick execution processed all 168 acquired station-hours: **6,908 P and 6,379 S candidate picks** (13,287 total). The supplement reports 13,144 P and 12,196 S candidates before association across the study network. Differences are -6,236 P and -5,817 S, with station coverage and processing/checkpoint choices differing; these are not earthquake-count differences or evidence of detection completeness. The [execution record](../results/tables/volpick_execution.json) and checkpoint hashes document the run. No false-pick rate or event completeness has been estimated.
 
-The public repository is published at https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction. The full VCH1 original catalog also passes its published MD5; its separate date subset contains 191 events. It lacks locations and event identities for reliable merging with the 219-event located catalog. A new consolidated station map includes 14 seismic metadata stations (nine acquired) and GV03/GV09 DOI coordinates. GNSS position files are not acquired; authentication and raw-file existence remain separate from station metadata. See `docs/data_access.md` and `results/tables/remaining_data_access.json`.
+The public repository is published at https://github.com/maochuan-zhang-UW/song2026-sierra-negra-reproduction. The full VCH1 original catalog also passes its published MD5; its separate date subset contains 191 events. It lacks locations and event identities for reliable merging with the 219-event located catalog. A new consolidated station map includes 14 seismic metadata stations (nine acquired) and GV03/GV09 DOI coordinates. GNSS observations and navigation files are now authenticated, decompressed and validated; independent PPP positions are calculated. See `gnss_and_velocity.md` for coverage, processing settings and departures from source methods. See `docs/data_access.md` and `results/tables/remaining_data_access.json`.
+
+Independent PPP gives a one-hour GV09 vertical difference of 1.86707 m, consistent with the published lower bound of 1.83 m. This is not an exact scalar agreement test. GV03 has no coseismic estimate owing to its outage. New GNSS figures supplement the original-catalog main Figure 2 comparison; LP/VT and family results remain incomplete.

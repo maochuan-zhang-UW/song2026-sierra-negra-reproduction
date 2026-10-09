@@ -1,0 +1,15 @@
+{
+  "common_screened_fixed_epochs": 814,
+  "datum_epochs": 60,
+  "residual_rmse_m": {
+    "east": 0.031691313957062546,
+    "north": 0.01624523971647399,
+    "up": 0.06474022467981014
+  },
+  "residual_median_absolute_m": {
+    "east": 0.027620029801823875,
+    "north": 0.009547793146793992,
+    "up": 0.05102218385013402
+  },
+  "note": "PPP baseline and relative solution differences after common datum; shared input errors are correlated"
+}

@@ -1,0 +1,98 @@
+{
+  "method": "RTKLIB 2.4.2 combined dual-frequency kinematic relative baseline",
+  "rtklib_commit": "71db0ffa0d9735697c6adfd06fdf766d0e5ce807",
+  "rover": "GV09",
+  "reference": "GV03 (fixed computational reference; station may move)",
+  "raw_solution_epochs": 2140,
+  "valid_relative_epochs": 1410,
+  "ambiguity_fixed_epochs": 1363,
+  "ambiguity_float_epochs": 47,
+  "rejected_epochs": 730,
+  "earthquake_utc": "2018-06-26T09:15:32.299000+00:00",
+  "before_fixed_epochs": 0,
+  "after_fixed_epochs": 0,
+  "nominal_epochs_per_hour": 120,
+  "mean_after_minus_before_relative_m": null,
+  "coseismic_estimate_status": "unavailable: GV03 gap contains both one-hour windows",
+  "reference_window_utc": [
+    "2018-06-26T00:30Z",
+    "2018-06-26T01:30Z"
+  ],
+  "reference_fixed_epochs": 120,
+  "gv03_gaps": [
+    {
+      "start_utc": "2018-06-26T03:21:42+00:00",
+      "end_utc": "2018-06-26T12:46:12+00:00",
+      "spacing_s": 33870.0
+    },
+    {
+      "start_utc": "2018-06-26T12:54:12+00:00",
+      "end_utc": "2018-06-26T13:09:42+00:00",
+      "spacing_s": 930.0
+    },
+    {
+      "start_utc": "2018-06-26T13:09:42+00:00",
+      "end_utc": "2018-06-26T13:18:12+00:00",
+      "spacing_s": 510.0
+    },
+    {
+      "start_utc": "2018-06-26T13:27:42+00:00",
+      "end_utc": "2018-06-26T14:17:12+00:00",
+      "spacing_s": 2970.0
+    },
+    {
+      "start_utc": "2018-06-26T16:08:12+00:00",
+      "end_utc": "2018-06-26T16:27:12+00:00",
+      "spacing_s": 1140.0
+    },
+    {
+      "start_utc": "2018-06-26T16:34:42+00:00",
+      "end_utc": "2018-06-26T16:38:42+00:00",
+      "spacing_s": 240.0
+    },
+    {
+      "start_utc": "2018-06-26T20:14:12+00:00",
+      "end_utc": "2018-06-26T20:37:12+00:00",
+      "spacing_s": 1380.0
+    },
+    {
+      "start_utc": "2018-06-26T21:23:12+00:00",
+      "end_utc": "2018-06-26T21:51:42+00:00",
+      "spacing_s": 1710.0
+    },
+    {
+      "start_utc": "2018-06-26T21:58:42+00:00",
+      "end_utc": "2018-06-26T22:03:42+00:00",
+      "spacing_s": 300.0
+    }
+  ],
+  "limitations": [
+    "Relative motion only; both volcanic stations may move",
+    "Not original GIPSY PPP or absolute coseismic displacement",
+    "No precise orbit, clock, antenna calibration or tide products",
+    "GV03 gaps limit intrusion and eruption timing",
+    "VCH1 skipped by user"
+  ],
+  "intrusion_hour_window_comparison": {
+    "literature_boundary_utc": "2018-06-26T17:00:00+00:00",
+    "before_fixed_epochs": 76,
+    "after_fixed_epochs": 119,
+    "relative_mean_difference_m": {
+      "east_m": -0.016462505528124893,
+      "north_m": -0.0018735404692051816,
+      "up_m": 0.0034073418841416014
+    },
+    "interpretation": "descriptive average-window difference, not an instantaneous offset or inferred onset"
+  },
+  "eruption_hour_window_comparison": {
+    "literature_boundary_utc": "2018-06-26T19:40:00+00:00",
+    "before_fixed_epochs": 120,
+    "after_fixed_epochs": 63,
+    "relative_mean_difference_m": {
+      "east_m": -0.0063161904761273036,
+      "north_m": 0.6886938095240112,
+      "up_m": -0.18485916666669766
+    },
+    "interpretation": "descriptive average-window difference, not an instantaneous offset or inferred onset"
+  }
+}

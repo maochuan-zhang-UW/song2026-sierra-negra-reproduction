@@ -1,0 +1,68 @@
+[
+  {
+    "station": "GV03",
+    "status": "validated_rinex_observations",
+    "approx_xyz_m": [
+      -126116.7985,
+      -6377207.0662,
+      -88222.6806
+    ],
+    "interval_s": 30.0,
+    "gps_minus_utc_s": 18,
+    "observation_types": [
+      "L1",
+      "L2",
+      "C1",
+      "P2",
+      "P1",
+      "S1",
+      "S2"
+    ],
+    "compressed_sha256": "5dbbfc0842ab67f4c37fa05a28867165d3f50830c2261832023db98741d9451e",
+    "rinex_sha256": "d6ef4f118ba54e6223df47db49f8c310b13b268c1a07ed4d54667e2bc1daa856",
+    "epochs": 1431,
+    "expected_daily_epochs": 2880,
+    "daily_epoch_fraction": 0.496875,
+    "first_epoch_utc": "2018-06-25T23:59:42+00:00",
+    "last_epoch_utc": "2018-06-26T23:47:42+00:00",
+    "internal_gaps_over_30s": 9,
+    "maximum_internal_spacing_s": 33870.0,
+    "min_satellites": 9,
+    "median_satellites": 10.0,
+    "min_dual_frequency_satellites": 9,
+    "loss_of_lock_flags": 189
+  },
+  {
+    "station": "GV09",
+    "status": "validated_rinex_observations",
+    "approx_xyz_m": [
+      -127723.565,
+      -6377218.9036,
+      -92596.2276
+    ],
+    "interval_s": 30.0,
+    "gps_minus_utc_s": 18,
+    "observation_types": [
+      "L1",
+      "L2",
+      "C1",
+      "P2",
+      "P1",
+      "S1",
+      "S2"
+    ],
+    "compressed_sha256": "f73bed315cac1ad9f7edc82a9fc0c83a3cf30eee13f7496734af2e7c0b2ff3b9",
+    "rinex_sha256": "0cf322982d7d8b4fc2bbadfa52c901f9c490f5d58dcf208b4fd7c5a9c71ca138",
+    "epochs": 2880,
+    "expected_daily_epochs": 2880,
+    "daily_epoch_fraction": 1.0,
+    "first_epoch_utc": "2018-06-25T23:59:42+00:00",
+    "last_epoch_utc": "2018-06-26T23:59:12+00:00",
+    "internal_gaps_over_30s": 0,
+    "maximum_internal_spacing_s": 30.0,
+    "min_satellites": 9,
+    "median_satellites": 11.0,
+    "min_dual_frequency_satellites": 9,
+    "loss_of_lock_flags": 192
+  }
+]

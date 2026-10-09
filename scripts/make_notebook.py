@@ -12,7 +12,7 @@ os.chdir(str(ROOT));sys.path.insert(0,str(ROOT))
 nb=nbformat.v4.new_notebook()
 nb.metadata.kernelspec=dict(display_name='Python 3',language='python',name='python3')
 nb.metadata.language_info=dict(name='python',version=sys.version.split()[0])
-nb.cells.append(nbformat.v4.new_markdown_cell('# Original-catalog analysis\n\nActual archived Bell et al. observations, not the enhanced Song catalog. Outputs are computed and retained. Raw 8G, EC and PAYG waveforms have been acquired; S5 uses independently processed ground velocity. Enhanced event and high-rate GNSS results remain unavailable.'))
+nb.cells.append(nbformat.v4.new_markdown_cell('# Original-catalog analysis\n\nActual archived Bell et al. observations, not the enhanced Song catalog. Outputs are computed and retained. Raw 8G, EC and PAYG waveforms have been acquired; S5 uses independently processed ground velocity. Enhanced events remain incomplete; independent high-rate GNSS processing is available.'))
 codes=["from pathlib import Path\nimport os, sys\nROOT = Path.cwd()\nif ROOT.name == 'report': ROOT = ROOT.parent\nos.chdir(str(ROOT))\nsys.path.insert(0, str(ROOT))\nos.environ['MPLCONFIGDIR'] = str(ROOT / '.cache/matplotlib')\nimport pandas as pd\nfrom src.visualization.figures import catalog_figures, conceptual_figure\ndf = pd.read_csv('results/catalogs/original_20180626.csv')\nprint('Original events:', len(df))\nprint(df.groupby('phase').size())\ncatalog_figures(df, 'results/figures')\nconceptual_figure('results/figures')"]
 for name in ['fig01_original_catalog','fig02_original_timeline','fig04_original_phase_maps','fig06_conceptual_sequence']:
     codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/{}.png'))".format(name))
@@ -22,6 +22,9 @@ for name in ['fig01_all_stations','figS05_payg_dayplots','phase_pick_counts']:
     codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/{}.png'))".format(name))
 codes.append("import json\nexecution = json.loads(Path('results/tables/volpick_execution.json').read_text())\nprint('Picking status:', execution['status'])\nprint('Candidate phase counts:', execution['phase_counts'])\nprint('These are phase picks, not associated earthquake events.')")
 codes.append("print('Separate VCH1 original entries:', len(pd.read_csv('results/catalogs/vch1_original_20180626.csv')))\nprint('VCH1 entries are not merged with the located catalog.')")
+for name in ['gnss_independent_ppp','gnss_relative_baseline']:
+    codes.append("from IPython.display import Image, display\ndisplay(Image(filename='results/figures/{}.png'))".format(name))
+codes.append("import json\nprint(json.dumps(json.loads(Path('results/tables/gnss_ppp_analysis.json').read_text()), indent=2))\nprint('Independent PPP; original GIPSY settings differ. VCH1 skipped; GV03 lacks earthquake interval.')")
 shell=InteractiveShell.instance()
 for count,code in enumerate(codes,1):
     with capture_output() as captured:

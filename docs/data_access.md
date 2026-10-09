@@ -13,7 +13,7 @@ The paper cites DOI 10.7283/3R4N-9775. GV03/GV09 DOI pages provide station coord
 - https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv031770.18d.Z
 - https://data.earthscope.org/archive/gnss/rinex/obs/2018/177/gv091770.18d.Z
 
-Both requests end at the provider's login page with HTML content. Their file existence, observation interval and completeness remain unverified. A 200 response containing a login form is not a successful data download. These daily-file candidates are not established as the raw inputs to the paper's 30-second PPP time series.
+Historical unauthenticated requests returned login HTML. Authenticated retrieval now provides verified observations: GV09 has 2,880 epochs and GV03 has 1,431 at 30-second intervals. Detailed current validation is in `gnss_and_velocity.md`. A 200 response containing a login form is not a successful data download. These daily-file candidates are not established as the raw inputs to the paper's 30-second PPP time series.
 
 EarthScope explicitly requires provider registration/login for this file server; see its [authentication documentation](https://www.earthscope.org/data/authentication/) and [GNSS file-server examples](https://www.unavco.org/data/gps-gnss/file-server/file-server-access-examples.html). Complete EarthScope authentication through its supported user or CLI/SDK workflow, then verify file listing and actual RINEX contents before processing. Keep tokens and cookies outside Git and do not put credentials into documentation or command logs. After acquisition, confirm the sample interval and epoch coverage and identify the required orbit/loading/tropospheric products. The archived scalar long-term baseline is not a substitute for high-rate positions.
 
@@ -27,7 +27,7 @@ Run `.venv/bin/python scripts/check_data_access.py` to repeat the public checks.
 
 ## Authenticated retry helper
 
-The installed environment includes EarthScope CLI/SDK. `scripts/acquire_gnss.py --plan` lists the candidate daily files without logging in or downloading. The actual retry obtains an access token through the local CLI, never prints that token, rejects login HTML, and records download status separately from RINEX/PPP validation. The current attempt is blocked because no usable EarthScope token is available.
+The installed environment includes EarthScope CLI/SDK. `scripts/acquire_gnss.py --plan` lists the candidate daily files without logging in or downloading. The actual retry obtains an access token through the local CLI, never prints that token, rejects login HTML, and records download status separately from RINEX/PPP validation. EarthScope authentication is now available and successful downloads are decompressed, validated and independently processed.
 
 ```bash
 source scripts/env.sh
@@ -35,4 +35,6 @@ source scripts/env.sh
 .venv/bin/python scripts/acquire_gnss.py
 ```
 
-This login is a separate provider-account step; it has not been completed automatically. A compressed download, if obtained later, still requires decompression, RINEX-header checks, epoch/sample-interval validation, and scientifically specified PPP processing. The helper's status `downloaded_compressed_unparsed` explicitly means those checks remain outstanding.
+The user completed this separate provider-account step. A compressed download, if obtained later, still requires decompression, RINEX-header checks, epoch/sample-interval validation, and scientifically specified PPP processing. The helper's status `downloaded_compressed_unparsed` explicitly means those checks remain outstanding.
+
+VCH1 retrieval is skipped for the current analysis at the user's instruction. Independent PPP uses public ESA orbit/clock products and IGS20 antenna calibration; source hashes and URLs are in `results/tables/gnss_precise_products.json`.

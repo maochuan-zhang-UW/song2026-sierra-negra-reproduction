@@ -1,0 +1,138 @@
+{
+  "method": "RTKLIB 2.4.2 forward GPS-only float PPP",
+  "stations": [
+    {
+      "station": "GV03",
+      "solution_epochs": 1431,
+      "ppp_quality_epochs": 1431,
+      "screened_epochs": 836,
+      "screen": "Q=6, >=5 satellites, >=1 hour after gap >300 s",
+      "reference_utc": [
+        "2018-06-26T01:00Z",
+        "2018-06-26T02:00Z"
+      ],
+      "fault_earthquake": {
+        "before_epochs": 0,
+        "after_epochs": 0,
+        "mean_difference_m": null,
+        "before_std_m": null,
+        "after_std_m": null
+      },
+      "intrusion": {
+        "before_epochs": 17,
+        "after_epochs": 66,
+        "mean_difference_m": {
+          "east_m": 0.050624616510223194,
+          "north_m": -0.017602440710098977,
+          "up_m": -0.055334321454014956
+        },
+        "before_std_m": {
+          "east_m": 0.0032982771652872713,
+          "north_m": 0.0047038369032773334,
+          "up_m": 0.010155015031347378
+        },
+        "after_std_m": {
+          "east_m": 0.03965187305567447,
+          "north_m": 0.009369324192630027,
+          "up_m": 0.015584345680600156
+        }
+      },
+      "eruption": {
+        "before_epochs": 120,
+        "after_epochs": 69,
+        "mean_difference_m": {
+          "east_m": 0.07374812589532198,
+          "north_m": -0.4297685841839378,
+          "up_m": 0.05275013202577167
+        },
+        "before_std_m": {
+          "east_m": 0.08906770642041666,
+          "north_m": 0.31304008339860884,
+          "up_m": 0.2371850592163328
+        },
+        "after_std_m": {
+          "east_m": 0.009134450661780393,
+          "north_m": 0.01796116123270388,
+          "up_m": 0.08978857510906647
+        }
+      }
+    },
+    {
+      "station": "GV09",
+      "solution_epochs": 2880,
+      "ppp_quality_epochs": 2880,
+      "screened_epochs": 2760,
+      "screen": "Q=6, >=5 satellites, >=1 hour after gap >300 s",
+      "reference_utc": [
+        "2018-06-26T01:00Z",
+        "2018-06-26T02:00Z"
+      ],
+      "fault_earthquake": {
+        "before_epochs": 120,
+        "after_epochs": 120,
+        "mean_difference_m": {
+          "east_m": -0.09459897330653999,
+          "north_m": 0.8461600571114432,
+          "up_m": 1.8670711439433945
+        },
+        "before_std_m": {
+          "east_m": 0.008606416136982044,
+          "north_m": 0.004901814427388523,
+          "up_m": 0.00788327543014832
+        },
+        "after_std_m": {
+          "east_m": 0.020279963079766684,
+          "north_m": 0.01311350576864132,
+          "up_m": 0.025275398041351285
+        }
+      },
+      "intrusion": {
+        "before_epochs": 120,
+        "after_epochs": 120,
+        "mean_difference_m": {
+          "east_m": 0.014518991246008084,
+          "north_m": -0.00656834083462543,
+          "up_m": -0.02145135545217869
+        },
+        "before_std_m": {
+          "east_m": 0.00843629982491135,
+          "north_m": 0.006145717223372697,
+          "up_m": 0.0191156073215338
+        },
+        "after_std_m": {
+          "east_m": 0.015265225223397981,
+          "north_m": 0.005195526357390242,
+          "up_m": 0.019297560998883353
+        }
+      },
+      "eruption": {
+        "before_epochs": 120,
+        "after_epochs": 120,
+        "mean_difference_m": {
+          "east_m": 0.09223975398356882,
+          "north_m": 0.2713491781696024,
+          "up_m": -0.15823345146464218
+        },
+        "before_std_m": {
+          "east_m": 0.024467165653754754,
+          "north_m": 0.11554955333516696,
+          "up_m": 0.10634505360342399
+        },
+        "after_std_m": {
+          "east_m": 0.030473835574853714,
+          "north_m": 0.046725089540465115,
+          "up_m": 0.039527948850242224
+        }
+      }
+    }
+  ],
+  "products": "ESA reprocessed final SP3 and 30-second clocks; IGS20 ANTEX",
+  "limitations": [
+    "Not original GIPSY-OASIS PPP",
+    "Saastamoinen estimated ZTD rather than VMF1",
+    "Solid Earth tides only; no FES2004 ocean loading",
+    "Independent conservative convergence screening",
+    "Daily orbit endpoints and antenna-calibration version may differ",
+    "Window differences include evolving deformation; no instantaneous step fit"
+  ]
+}
