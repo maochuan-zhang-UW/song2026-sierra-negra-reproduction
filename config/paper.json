@@ -2,10 +2,19 @@
   "date": "2018-06-26",
   "network": "8G",
   "network_epoch": "2018-2019",
-  "fi_low_hz": [2, 5],
-  "fi_high_hz": [9, 15],
+  "fi_low_hz": [
+    2,
+    5
+  ],
+  "fi_high_hz": [
+    9,
+    15
+  ],
   "classification_threshold": -2,
-  "filter_hz": [2, 20],
+  "filter_hz": [
+    2,
+    20
+  ],
   "window_seconds": 5,
   "prepick_seconds": 1,
   "minimum_snr": 2,
@@ -16,18 +25,41 @@
   "intrusion_utc": "2018-06-26T17:00:00Z",
   "eruption_utc": "2018-06-26T19:40:00Z",
   "eruption_earliest_utc": "2018-06-26T19:35:00Z",
-  "template_detection_threshold": null,
-  "template_threshold_type": null,
+  "template_detection_threshold": 9,
+  "template_threshold_type": "MAD; EQcorrscan median(abs(cccsum)) convention must be checked",
   "template_trigger_interval_seconds": null,
-  "picker_p_threshold": null,
-  "picker_s_threshold": null,
-  "association_parameters": null,
-  "velocity_model": null,
+  "picker_p_threshold": 0.2,
+  "picker_s_threshold": 0.2,
+  "association_parameters": {
+    "minimum_p_picks": 4,
+    "minimum_s_picks": 1,
+    "residual_tolerance_seconds": 0.5,
+    "duplicate_seconds": 2,
+    "horizontal_span_degrees": 0.14,
+    "maximum_depth_km": 30,
+    "grid_spacing_km": 1
+  },
+  "velocity_model": "Rezaeifar et al. (2024), 1-D; numerical layer values not yet recovered",
   "filter_order": null,
   "filter_zero_phase": null,
   "ncc_maximum_lag_seconds": null,
   "snr_definition": null,
   "recurrence_moment_pairing": null,
-  "regression_transform": null,
-  "notes": "Nulls require supplementary information or explicit documented sensitivity choices. Do not silently use package defaults as published settings."
+  "regression_transform": "log10",
+  "notes": "Supplement reviewed 9 October 2026. Remaining nulls and unresolved strings require source controls or explicitly labeled sensitivity choices.",
+  "picker_sampling_rate_hz": 100,
+  "picker_filter_hz": [
+    2,
+    12
+  ],
+  "picker_window_seconds": 60,
+  "picker_overlap_samples": 3000,
+  "template_sampling_rate_hz": 50,
+  "template_minimum_average_ncc": 0.4,
+  "template_duplicate_seconds": 2,
+  "template_hour_overlap_seconds": 30,
+  "template_minimum_stations": 4,
+  "regression_estimator": "RANSAC (Supplementary Figure 9); hyperparameters and random seed unspecified",
+  "magnitude_relative_scaling": 0.7,
+  "magnitude_relative_amplitude": "median over stations of PCA amplitude ratios; 5 s vertical P windows"
 }

@@ -1,0 +1,1063 @@
+{
+  "status": "complete",
+  "runs": [
+    {
+      "station": "SN04",
+      "hour": 0,
+      "status": "processed",
+      "picks": 65
+    },
+    {
+      "station": "SN04",
+      "hour": 1,
+      "status": "processed",
+      "picks": 49
+    },
+    {
+      "station": "SN04",
+      "hour": 2,
+      "status": "processed",
+      "picks": 32
+    },
+    {
+      "station": "SN04",
+      "hour": 3,
+      "status": "processed",
+      "picks": 36
+    },
+    {
+      "station": "SN04",
+      "hour": 4,
+      "status": "processed",
+      "picks": 29
+    },
+    {
+      "station": "SN04",
+      "hour": 5,
+      "status": "processed",
+      "picks": 30
+    },
+    {
+      "station": "SN04",
+      "hour": 6,
+      "status": "processed",
+      "picks": 28
+    },
+    {
+      "station": "SN04",
+      "hour": 7,
+      "status": "processed",
+      "picks": 19
+    },
+    {
+      "station": "SN04",
+      "hour": 8,
+      "status": "processed",
+      "picks": 51
+    },
+    {
+      "station": "SN04",
+      "hour": 9,
+      "status": "processed",
+      "picks": 103
+    },
+    {
+      "station": "SN04",
+      "hour": 10,
+      "status": "processed",
+      "picks": 95
+    },
+    {
+      "station": "SN04",
+      "hour": 11,
+      "status": "processed",
+      "picks": 87
+    },
+    {
+      "station": "SN04",
+      "hour": 12,
+      "status": "processed",
+      "picks": 43
+    },
+    {
+      "station": "SN04",
+      "hour": 13,
+      "status": "processed",
+      "picks": 60
+    },
+    {
+      "station": "SN04",
+      "hour": 14,
+      "status": "processed",
+      "picks": 56
+    },
+    {
+      "station": "SN04",
+      "hour": 15,
+      "status": "processed",
+      "picks": 36
+    },
+    {
+      "station": "SN04",
+      "hour": 16,
+      "status": "processed",
+      "picks": 34
+    },
+    {
+      "station": "SN04",
+      "hour": 17,
+      "status": "processed",
+      "picks": 122
+    },
+    {
+      "station": "SN04",
+      "hour": 18,
+      "status": "processed",
+      "picks": 107
+    },
+    {
+      "station": "SN04",
+      "hour": 19,
+      "status": "processed",
+      "picks": 114
+    },
+    {
+      "station": "SN04",
+      "hour": 20,
+      "status": "processed",
+      "picks": 127
+    },
+    {
+      "station": "SN04",
+      "hour": 21,
+      "status": "processed",
+      "picks": 128
+    },
+    {
+      "station": "SN04",
+      "hour": 22,
+      "status": "processed",
+      "picks": 119
+    },
+    {
+      "station": "SN04",
+      "hour": 23,
+      "status": "processed",
+      "picks": 123
+    },
+    {
+      "station": "SN05",
+      "hour": 0,
+      "status": "processed",
+      "picks": 105
+    },
+    {
+      "station": "SN05",
+      "hour": 1,
+      "status": "processed",
+      "picks": 47
+    },
+    {
+      "station": "SN05",
+      "hour": 2,
+      "status": "processed",
+      "picks": 39
+    },
+    {
+      "station": "SN05",
+      "hour": 3,
+      "status": "processed",
+      "picks": 47
+    },
+    {
+      "station": "SN05",
+      "hour": 4,
+      "status": "processed",
+      "picks": 39
+    },
+    {
+      "station": "SN05",
+      "hour": 5,
+      "status": "processed",
+      "picks": 28
+    },
+    {
+      "station": "SN05",
+      "hour": 6,
+      "status": "processed",
+      "picks": 37
+    },
+    {
+      "station": "SN05",
+      "hour": 7,
+      "status": "processed",
+      "picks": 16
+    },
+    {
+      "station": "SN05",
+      "hour": 8,
+      "status": "processed",
+      "picks": 66
+    },
+    {
+      "station": "SN05",
+      "hour": 9,
+      "status": "processed",
+      "picks": 106
+    },
+    {
+      "station": "SN05",
+      "hour": 10,
+      "status": "processed",
+      "picks": 117
+    },
+    {
+      "station": "SN05",
+      "hour": 11,
+      "status": "processed",
+      "picks": 93
+    },
+    {
+      "station": "SN05",
+      "hour": 12,
+      "status": "processed",
+      "picks": 82
+    },
+    {
+      "station": "SN05",
+      "hour": 13,
+      "status": "processed",
+      "picks": 69
+    },
+    {
+      "station": "SN05",
+      "hour": 14,
+      "status": "processed",
+      "picks": 60
+    },
+    {
+      "station": "SN05",
+      "hour": 15,
+      "status": "processed",
+      "picks": 54
+    },
+    {
+      "station": "SN05",
+      "hour": 16,
+      "status": "processed",
+      "picks": 56
+    },
+    {
+      "station": "SN05",
+      "hour": 17,
+      "status": "processed",
+      "picks": 118
+    },
+    {
+      "station": "SN05",
+      "hour": 18,
+      "status": "processed",
+      "picks": 120
+    },
+    {
+      "station": "SN05",
+      "hour": 19,
+      "status": "processed",
+      "picks": 120
+    },
+    {
+      "station": "SN05",
+      "hour": 20,
+      "status": "processed",
+      "picks": 93
+    },
+    {
+      "station": "SN05",
+      "hour": 21,
+      "status": "processed",
+      "picks": 113
+    },
+    {
+      "station": "SN05",
+      "hour": 22,
+      "status": "processed",
+      "picks": 113
+    },
+    {
+      "station": "SN05",
+      "hour": 23,
+      "status": "processed",
+      "picks": 114
+    },
+    {
+      "station": "SN07",
+      "hour": 0,
+      "status": "processed",
+      "picks": 50
+    },
+    {
+      "station": "SN07",
+      "hour": 1,
+      "status": "processed",
+      "picks": 36
+    },
+    {
+      "station": "SN07",
+      "hour": 2,
+      "status": "processed",
+      "picks": 41
+    },
+    {
+      "station": "SN07",
+      "hour": 3,
+      "status": "processed",
+      "picks": 33
+    },
+    {
+      "station": "SN07",
+      "hour": 4,
+      "status": "processed",
+      "picks": 27
+    },
+    {
+      "station": "SN07",
+      "hour": 5,
+      "status": "processed",
+      "picks": 25
+    },
+    {
+      "station": "SN07",
+      "hour": 6,
+      "status": "processed",
+      "picks": 30
+    },
+    {
+      "station": "SN07",
+      "hour": 7,
+      "status": "processed",
+      "picks": 22
+    },
+    {
+      "station": "SN07",
+      "hour": 8,
+      "status": "processed",
+      "picks": 58
+    },
+    {
+      "station": "SN07",
+      "hour": 9,
+      "status": "processed",
+      "picks": 113
+    },
+    {
+      "station": "SN07",
+      "hour": 10,
+      "status": "processed",
+      "picks": 122
+    },
+    {
+      "station": "SN07",
+      "hour": 11,
+      "status": "processed",
+      "picks": 119
+    },
+    {
+      "station": "SN07",
+      "hour": 12,
+      "status": "processed",
+      "picks": 125
+    },
+    {
+      "station": "SN07",
+      "hour": 13,
+      "status": "processed",
+      "picks": 133
+    },
+    {
+      "station": "SN07",
+      "hour": 14,
+      "status": "processed",
+      "picks": 125
+    },
+    {
+      "station": "SN07",
+      "hour": 15,
+      "status": "processed",
+      "picks": 123
+    },
+    {
+      "station": "SN07",
+      "hour": 16,
+      "status": "processed",
+      "picks": 130
+    },
+    {
+      "station": "SN07",
+      "hour": 17,
+      "status": "processed",
+      "picks": 137
+    },
+    {
+      "station": "SN07",
+      "hour": 18,
+      "status": "processed",
+      "picks": 113
+    },
+    {
+      "station": "SN07",
+      "hour": 19,
+      "status": "processed",
+      "picks": 119
+    },
+    {
+      "station": "SN07",
+      "hour": 20,
+      "status": "processed",
+      "picks": 76
+    },
+    {
+      "station": "SN07",
+      "hour": 21,
+      "status": "processed",
+      "picks": 99
+    },
+    {
+      "station": "SN07",
+      "hour": 22,
+      "status": "processed",
+      "picks": 96
+    },
+    {
+      "station": "SN07",
+      "hour": 23,
+      "status": "processed",
+      "picks": 106
+    },
+    {
+      "station": "SN11",
+      "hour": 0,
+      "status": "processed",
+      "picks": 78
+    },
+    {
+      "station": "SN11",
+      "hour": 1,
+      "status": "processed",
+      "picks": 78
+    },
+    {
+      "station": "SN11",
+      "hour": 2,
+      "status": "processed",
+      "picks": 56
+    },
+    {
+      "station": "SN11",
+      "hour": 3,
+      "status": "processed",
+      "picks": 57
+    },
+    {
+      "station": "SN11",
+      "hour": 4,
+      "status": "processed",
+      "picks": 48
+    },
+    {
+      "station": "SN11",
+      "hour": 5,
+      "status": "processed",
+      "picks": 47
+    },
+    {
+      "station": "SN11",
+      "hour": 6,
+      "status": "processed",
+      "picks": 50
+    },
+    {
+      "station": "SN11",
+      "hour": 7,
+      "status": "processed",
+      "picks": 52
+    },
+    {
+      "station": "SN11",
+      "hour": 8,
+      "status": "processed",
+      "picks": 72
+    },
+    {
+      "station": "SN11",
+      "hour": 9,
+      "status": "processed",
+      "picks": 111
+    },
+    {
+      "station": "SN11",
+      "hour": 10,
+      "status": "processed",
+      "picks": 122
+    },
+    {
+      "station": "SN11",
+      "hour": 11,
+      "status": "processed",
+      "picks": 111
+    },
+    {
+      "station": "SN11",
+      "hour": 12,
+      "status": "processed",
+      "picks": 98
+    },
+    {
+      "station": "SN11",
+      "hour": 13,
+      "status": "processed",
+      "picks": 105
+    },
+    {
+      "station": "SN11",
+      "hour": 14,
+      "status": "processed",
+      "picks": 105
+    },
+    {
+      "station": "SN11",
+      "hour": 15,
+      "status": "processed",
+      "picks": 101
+    },
+    {
+      "station": "SN11",
+      "hour": 16,
+      "status": "processed",
+      "picks": 91
+    },
+    {
+      "station": "SN11",
+      "hour": 17,
+      "status": "processed",
+      "picks": 135
+    },
+    {
+      "station": "SN11",
+      "hour": 18,
+      "status": "processed",
+      "picks": 136
+    },
+    {
+      "station": "SN11",
+      "hour": 19,
+      "status": "processed",
+      "picks": 104
+    },
+    {
+      "station": "SN11",
+      "hour": 20,
+      "status": "processed",
+      "picks": 96
+    },
+    {
+      "station": "SN11",
+      "hour": 21,
+      "status": "processed",
+      "picks": 115
+    },
+    {
+      "station": "SN11",
+      "hour": 22,
+      "status": "processed",
+      "picks": 116
+    },
+    {
+      "station": "SN11",
+      "hour": 23,
+      "status": "processed",
+      "picks": 95
+    },
+    {
+      "station": "SN12",
+      "hour": 0,
+      "status": "processed",
+      "picks": 72
+    },
+    {
+      "station": "SN12",
+      "hour": 1,
+      "status": "processed",
+      "picks": 68
+    },
+    {
+      "station": "SN12",
+      "hour": 2,
+      "status": "processed",
+      "picks": 51
+    },
+    {
+      "station": "SN12",
+      "hour": 3,
+      "status": "processed",
+      "picks": 64
+    },
+    {
+      "station": "SN12",
+      "hour": 4,
+      "status": "processed",
+      "picks": 45
+    },
+    {
+      "station": "SN12",
+      "hour": 5,
+      "status": "processed",
+      "picks": 41
+    },
+    {
+      "station": "SN12",
+      "hour": 6,
+      "status": "processed",
+      "picks": 51
+    },
+    {
+      "station": "SN12",
+      "hour": 7,
+      "status": "processed",
+      "picks": 47
+    },
+    {
+      "station": "SN12",
+      "hour": 8,
+      "status": "processed",
+      "picks": 64
+    },
+    {
+      "station": "SN12",
+      "hour": 9,
+      "status": "processed",
+      "picks": 124
+    },
+    {
+      "station": "SN12",
+      "hour": 10,
+      "status": "processed",
+      "picks": 116
+    },
+    {
+      "station": "SN12",
+      "hour": 11,
+      "status": "processed",
+      "picks": 120
+    },
+    {
+      "station": "SN12",
+      "hour": 12,
+      "status": "processed",
+      "picks": 116
+    },
+    {
+      "station": "SN12",
+      "hour": 13,
+      "status": "processed",
+      "picks": 114
+    },
+    {
+      "station": "SN12",
+      "hour": 14,
+      "status": "processed",
+      "picks": 117
+    },
+    {
+      "station": "SN12",
+      "hour": 15,
+      "status": "processed",
+      "picks": 127
+    },
+    {
+      "station": "SN12",
+      "hour": 16,
+      "status": "processed",
+      "picks": 122
+    },
+    {
+      "station": "SN12",
+      "hour": 17,
+      "status": "processed",
+      "picks": 149
+    },
+    {
+      "station": "SN12",
+      "hour": 18,
+      "status": "processed",
+      "picks": 132
+    },
+    {
+      "station": "SN12",
+      "hour": 19,
+      "status": "processed",
+      "picks": 112
+    },
+    {
+      "station": "SN12",
+      "hour": 20,
+      "status": "processed",
+      "picks": 96
+    },
+    {
+      "station": "SN12",
+      "hour": 21,
+      "status": "processed",
+      "picks": 126
+    },
+    {
+      "station": "SN12",
+      "hour": 22,
+      "status": "processed",
+      "picks": 132
+    },
+    {
+      "station": "SN12",
+      "hour": 23,
+      "status": "processed",
+      "picks": 130
+    },
+    {
+      "station": "SN13",
+      "hour": 0,
+      "status": "processed",
+      "picks": 16
+    },
+    {
+      "station": "SN13",
+      "hour": 1,
+      "status": "processed",
+      "picks": 13
+    },
+    {
+      "station": "SN13",
+      "hour": 2,
+      "status": "processed",
+      "picks": 14
+    },
+    {
+      "station": "SN13",
+      "hour": 3,
+      "status": "processed",
+      "picks": 13
+    },
+    {
+      "station": "SN13",
+      "hour": 4,
+      "status": "processed",
+      "picks": 10
+    },
+    {
+      "station": "SN13",
+      "hour": 5,
+      "status": "processed",
+      "picks": 26
+    },
+    {
+      "station": "SN13",
+      "hour": 6,
+      "status": "processed",
+      "picks": 38
+    },
+    {
+      "station": "SN13",
+      "hour": 7,
+      "status": "processed",
+      "picks": 38
+    },
+    {
+      "station": "SN13",
+      "hour": 8,
+      "status": "processed",
+      "picks": 34
+    },
+    {
+      "station": "SN13",
+      "hour": 9,
+      "status": "processed",
+      "picks": 52
+    },
+    {
+      "station": "SN13",
+      "hour": 10,
+      "status": "processed",
+      "picks": 39
+    },
+    {
+      "station": "SN13",
+      "hour": 11,
+      "status": "processed",
+      "picks": 21
+    },
+    {
+      "station": "SN13",
+      "hour": 12,
+      "status": "processed",
+      "picks": 39
+    },
+    {
+      "station": "SN13",
+      "hour": 13,
+      "status": "processed",
+      "picks": 36
+    },
+    {
+      "station": "SN13",
+      "hour": 14,
+      "status": "processed",
+      "picks": 28
+    },
+    {
+      "station": "SN13",
+      "hour": 15,
+      "status": "processed",
+      "picks": 23
+    },
+    {
+      "station": "SN13",
+      "hour": 16,
+      "status": "processed",
+      "picks": 12
+    },
+    {
+      "station": "SN13",
+      "hour": 17,
+      "status": "processed",
+      "picks": 78
+    },
+    {
+      "station": "SN13",
+      "hour": 18,
+      "status": "processed",
+      "picks": 91
+    },
+    {
+      "station": "SN13",
+      "hour": 19,
+      "status": "processed",
+      "picks": 71
+    },
+    {
+      "station": "SN13",
+      "hour": 20,
+      "status": "processed",
+      "picks": 16
+    },
+    {
+      "station": "SN13",
+      "hour": 21,
+      "status": "processed",
+      "picks": 53
+    },
+    {
+      "station": "SN13",
+      "hour": 22,
+      "status": "processed",
+      "picks": 62
+    },
+    {
+      "station": "SN13",
+      "hour": 23,
+      "status": "processed",
+      "picks": 49
+    },
+    {
+      "station": "SN14",
+      "hour": 0,
+      "status": "processed",
+      "picks": 92
+    },
+    {
+      "station": "SN14",
+      "hour": 1,
+      "status": "processed",
+      "picks": 68
+    },
+    {
+      "station": "SN14",
+      "hour": 2,
+      "status": "processed",
+      "picks": 58
+    },
+    {
+      "station": "SN14",
+      "hour": 3,
+      "status": "processed",
+      "picks": 53
+    },
+    {
+      "station": "SN14",
+      "hour": 4,
+      "status": "processed",
+      "picks": 49
+    },
+    {
+      "station": "SN14",
+      "hour": 5,
+      "status": "processed",
+      "picks": 47
+    },
+    {
+      "station": "SN14",
+      "hour": 6,
+      "status": "processed",
+      "picks": 72
+    },
+    {
+      "station": "SN14",
+      "hour": 7,
+      "status": "processed",
+      "picks": 52
+    },
+    {
+      "station": "SN14",
+      "hour": 8,
+      "status": "processed",
+      "picks": 96
+    },
+    {
+      "station": "SN14",
+      "hour": 9,
+      "status": "processed",
+      "picks": 112
+    },
+    {
+      "station": "SN14",
+      "hour": 10,
+      "status": "processed",
+      "picks": 94
+    },
+    {
+      "station": "SN14",
+      "hour": 11,
+      "status": "processed",
+      "picks": 99
+    },
+    {
+      "station": "SN14",
+      "hour": 12,
+      "status": "processed",
+      "picks": 109
+    },
+    {
+      "station": "SN14",
+      "hour": 13,
+      "status": "processed",
+      "picks": 110
+    },
+    {
+      "station": "SN14",
+      "hour": 14,
+      "status": "processed",
+      "picks": 111
+    },
+    {
+      "station": "SN14",
+      "hour": 15,
+      "status": "processed",
+      "picks": 121
+    },
+    {
+      "station": "SN14",
+      "hour": 16,
+      "status": "processed",
+      "picks": 108
+    },
+    {
+      "station": "SN14",
+      "hour": 17,
+      "status": "processed",
+      "picks": 134
+    },
+    {
+      "station": "SN14",
+      "hour": 18,
+      "status": "processed",
+      "picks": 141
+    },
+    {
+      "station": "SN14",
+      "hour": 19,
+      "status": "processed",
+      "picks": 145
+    },
+    {
+      "station": "SN14",
+      "hour": 20,
+      "status": "processed",
+      "picks": 101
+    },
+    {
+      "station": "SN14",
+      "hour": 21,
+      "status": "processed",
+      "picks": 105
+    },
+    {
+      "station": "SN14",
+      "hour": 22,
+      "status": "processed",
+      "picks": 109
+    },
+    {
+      "station": "SN14",
+      "hour": 23,
+      "status": "processed",
+      "picks": 111
+    }
+  ],
+  "model": "EQTransformer.from_pretrained(volpick)",
+  "inference": "Direct model pre/forward/post; average finite overlap; SeisBench picks_from_annotations",
+  "model_default_args": {
+    "detection_threshold": 0.10141666,
+    "P_threshold": 0.22,
+    "S_threshold": 0.22
+  },
+  "model_args": {
+    "sampling_rate": 100,
+    "component_order": "ZNE",
+    "in_samples": 6000,
+    "filter_args": null,
+    "filter_kwargs": null,
+    "grouping": "instrument",
+    "in_channels": 3,
+    "classes": 2,
+    "phases": "PS",
+    "lstm_blocks": 3,
+    "drop_rate": 0.1,
+    "original_compatible": false,
+    "norm": "peak",
+    "norm_amp_per_comp": false,
+    "norm_detrend": false
+  },
+  "input_sha256": "5cdd1b101229dc19762ca21ce22a55ded4a1c0ac9e543e8ab1ae2ac1f3e10a05",
+  "settings": {
+    "P_threshold": 0.2,
+    "S_threshold": 0.2,
+    "overlap_samples": 3000,
+    "batch_size": 64,
+    "filter_hz": [
+      2,
+      12
+    ],
+    "filter_corners": 4,
+    "filter_zero_phase": false,
+    "blinding": [
+      500,
+      500
+    ],
+    "stacking": "avg",
+    "threads": 8
+  },
+  "deviations": "Public checkpoint version not established as Song checkpoint; filter order/phase, normalization, edge blinding and stacking not specified by supplement. No association or relocation performed.",
+  "elapsed_seconds": 115.28697225899668,
+  "pick_count": 13287,
+  "phase_counts": {
+    "P": 6908,
+    "S": 6379
+  }
+}

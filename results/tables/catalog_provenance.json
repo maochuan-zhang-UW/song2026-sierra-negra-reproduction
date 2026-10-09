@@ -1,13 +1,13 @@
 {
-  "source_url": "https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist?download=1",
+  "source_url": "https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist",
   "source_doi": "10.5281/zenodo.4389190",
   "source_publication": "Bell et al. (2021)",
-  "recovery": "Browser text, complete consecutive source rows 348-566 inclusive; neighboring rows 347 and 567 are other dates",
-  "input_sha256": "2575bbeacdf4dbc1e4c529abbe470518a23c1fc602e219a6f4fa5864896be3d4",
+  "recovery": "Full archival download",
+  "input_sha256": "6afe88c051e2afee8ca3f01c44bd110a677a752d20530594ba81dd606679e0be",
   "full_archive_md5": "8935d6cc8189ff1991ba966666aacd66",
-  "full_archive_checksum_verified": false,
+  "full_archive_checksum_verified": true,
   "subset_event_count": 219,
-  "limitation": "Browser recovery is not byte-identical archival download; full MD5 awaits network access",
+  "source_license": "CC-BY-4.0 (Zenodo metadata)",
   "python": "3.6.8",
   "numpy": "1.19.5"
 }

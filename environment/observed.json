@@ -17,5 +17,6 @@
   "latex": "pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018)",
   "github_auth_status": "No authenticated hosts; no token variables present",
   "ssh_status": "Standard config/key directories absent; no accessible agent",
-  "network": "DNS resolution fails; explicit outbound socket connections return EPERM"
+  "network": "Approved network access outside sandbox works; raw seismic data, supplement and archive downloaded on 9 October 2026",
+  "modern_environment": "Python 3.11 virtual environment on data drive; see waveforms-lock.txt"
 }

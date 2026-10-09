@@ -1,15 +1,16 @@
-test_cpp_against_numpy (test_algorithms.Numerics) ... ok
-test_fft_against_direct (test_algorithms.Numerics) ... ok
-test_frequency_amplitude_not_power (test_algorithms.Numerics) ... ok
-test_injection_and_polarity (test_algorithms.Numerics) ... ok
-test_moment_conversion_boundary (test_algorithms.Numerics) ... ok
-test_recurrence_and_pairing (test_algorithms.Numerics) ... ok
-test_regression_and_jackknife (test_algorithms.Numerics) ... ok
-test_transitive_components_and_anti (test_algorithms.Numerics) ... ok
-test_windows_and_gnss (test_algorithms.Numerics) ... ok
-test_classification_family_and_statistics (test_window_cli.WindowCLI) ... ok
+test_cpp_against_numpy (test_algorithms.Numerics.test_cpp_against_numpy) ... ok
+test_fft_against_direct (test_algorithms.Numerics.test_fft_against_direct) ... ok
+test_frequency_amplitude_not_power (test_algorithms.Numerics.test_frequency_amplitude_not_power) ... ok
+test_injection_and_polarity (test_algorithms.Numerics.test_injection_and_polarity) ... ok
+test_moment_conversion_boundary (test_algorithms.Numerics.test_moment_conversion_boundary) ... ok
+test_recurrence_and_pairing (test_algorithms.Numerics.test_recurrence_and_pairing) ... ok
+test_regression_and_jackknife (test_algorithms.Numerics.test_regression_and_jackknife) ... ok
+test_transitive_components_and_anti (test_algorithms.Numerics.test_transitive_components_and_anti) ... ok
+test_windows_and_gnss (test_algorithms.Numerics.test_windows_and_gnss) ... ok
+test_known_probabilities_and_edges (test_volpick_overlap.Overlap.test_known_probabilities_and_edges) ... ok
+test_classification_family_and_statistics (test_window_cli.WindowCLI.test_classification_family_and_statistics) ... ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 1.685s
+Ran 11 tests in 2.909s
 
 OK

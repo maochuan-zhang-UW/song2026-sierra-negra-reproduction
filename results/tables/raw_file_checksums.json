@@ -1,0 +1,50 @@
+{
+  "8G_20180626.mseed": {
+    "bytes": 359546368,
+    "sha256": "5cdd1b101229dc19762ca21ce22a55ded4a1c0ac9e543e8ab1ae2ac1f3e10a05"
+  },
+  "IGUANA_Cat_V1.eventlist": {
+    "bytes": 327909,
+    "sha256": "6afe88c051e2afee8ca3f01c44bd110a677a752d20530594ba81dd606679e0be"
+  },
+  "PAYG_1999-12-22.mseed": {
+    "bytes": 1789952,
+    "sha256": "ccfeb95f7381126e3e5ac499b9cf1f9123364025d0b979fe8af63c67918f17e6"
+  },
+  "PAYG_2005-04-16.mseed": {
+    "bytes": 1847296,
+    "sha256": "3cedf9297de8ec5067d375346f0b62a4d4a3d275695883e1718a06ca652290b5"
+  },
+  "PAYG_2005-10-22.mseed": {
+    "bytes": 1827328,
+    "sha256": "812941447d769cc0c13e58112d6b6fbcf467a24ce3a0ed2bd42c2a51194079a9"
+  },
+  "PAYG_2018-06-26.mseed": {
+    "bytes": 2961408,
+    "sha256": "f2b4499e67c041d9cc99720469ef06963fe8190eaf35f2bc3513d99cc9586c7d"
+  },
+  "PAYG_stations.xml": {
+    "bytes": 57681,
+    "sha256": "21acf3c76c1907252bf92216e237630dfe3921a1310329d90d5626e5ddffd686"
+  },
+  "SN05_1100_1200.mseed": {
+    "bytes": 687616,
+    "sha256": "d8c7dbb1b7090e2b01ac3bb72d29c8301b41346fd75abb2bbea5cfa899b18fd2"
+  },
+  "bell_archive_metadata.json": {
+    "bytes": 5759,
+    "sha256": "20bea6a042f4f45d87f90aab6e0124e64d4f631b6bb4d77d35db1aa5bf9fa055"
+  },
+  "rezaeifar2024.pdf": {
+    "bytes": 11165487,
+    "sha256": "8e63a7aa4228a519cfad5c7e4041ea75eb3fde5930537b8eed5410bff58e42c6"
+  },
+  "stations.xml": {
+    "bytes": 5095565,
+    "sha256": "8728f3981f6e27013bdead675779e8f666c951daa897ca800df7179939759024"
+  },
+  "supplement.pdf": {
+    "bytes": 3148069,
+    "sha256": "c407c9648321d91e9a00f0dfe3a8159b8ffe67990a48a830fd75ad8836835280"
+  }
+}

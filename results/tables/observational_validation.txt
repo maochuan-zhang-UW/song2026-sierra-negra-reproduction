@@ -1,0 +1,1 @@
+Source MD5 verified; 21 complete channels; 168 unique station-hour runs; 13287 unique candidate picks in date bounds; all probabilities in [0.2, 1]. No event association or false-pick validation claimed.

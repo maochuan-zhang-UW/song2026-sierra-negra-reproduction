@@ -1,0 +1,24 @@
+{
+  "volpick.pt.v1": {
+    "bytes": 1598464,
+    "sha256": "edf08221cfc30cd9319c806de1740ad22b2a46a42cf33d3631a64e437b8e4ebd"
+  },
+  "volpick.json.v1": {
+    "bytes": 691,
+    "sha256": "e26a52e344780ae8e729365ffd9bb33bface29b7b497345be24a8d8437ab83d6",
+    "config": {
+      "docstring": "Model trained on volcano-tectonic and long-period earthquakes with a learning rate of 0.001.\nThreshold selected for optimal F1 score on the validation set. Depending on the target region, the thresholds might need to be adjusted.\nWhen using this model, please reference\nYiyuan Zhong and Yen Joe Tan (2024). Geophysical Research Letters, 51, e2024GL108438. https://doi.org/10.1029/2024GL108438.",
+      "model_args": {
+        "component_order": "ZNE",
+        "norm": "peak"
+      },
+      "seisbench_requirement": "0.4.0",
+      "version": "1",
+      "default_args": {
+        "detection_threshold": 0.10141666,
+        "P_threshold": 0.22,
+        "S_threshold": 0.22
+      }
+    }
+  }
+}

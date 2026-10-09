@@ -1,7 +1,7 @@
 quantity,published_value,reproduced_value,difference,explanation
-Located machine-learning events,694,,not computed,"Waveforms, model inference, association and relocation not executed"
+Located machine-learning events,694,,not computed,Association and relocation not executed; numerical velocity layers and source controls missing
 Templates,669,,not computed,Template selections unavailable
-Additional template detections,1241,,not computed,Continuous waveforms unavailable locally
+Additional template detections,1241,,not computed,Raw waveforms acquired; relocated templates and assigned phase arrivals unavailable
 Enhanced total (694+1241),1935,,not computed,219 original events are not an enhanced reproduction
 VT events (Results),1224,,not computed,Results and Methods disagree by 10 VT events
 VT events (Methods),1214,,not computed,"Methods sum with 711 LP is 1925, not 1935"
@@ -9,9 +9,11 @@ LP events,711,,not computed,No FI windows available
 Families / member events,29 / 714,,not computed,No waveform similarities computed for observations
 Phase-2 LP families,5,,not computed,Membership unavailable
 Anticorrelated LP pairs,11,,not computed,Manual inspection and waveforms required
-VT moment/recurrence R squared,0.70,,not computed,Family data and regression convention unavailable
-LP moment/recurrence R squared,0.07,,not computed,Family data and regression convention unavailable
+VT moment/recurrence R squared,0.70,,not computed,Observed family data and original RANSAC controls unavailable
+LP moment/recurrence R squared,0.07,,not computed,Observed family data and original RANSAC controls unavailable
 Recurrence/periodicity Pearson r,0.03,,not computed,Family times unavailable
 TDF earthquake UTC (minute precision),09:15,09:15:32.299,+32.299 s,Original maximum-magnitude event; nominal difference +32.299 seconds
 Magma intrusion UTC,~17:00,,not computed,"Timeline annotation from publication, not independently measured"
 Eruption UTC,19:35-19:40,,not computed,Publication timing range; no tremor processed
+Candidate P picks,13144,6908,-6236,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.
+Candidate S picks,12196,6379,-5817,Seven acquired 8G stations only; exact original checkpoint unverified; independent filtering/edge/stacking choices. Not associated arrivals or earthquake counts.

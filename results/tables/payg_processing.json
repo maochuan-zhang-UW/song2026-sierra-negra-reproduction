@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2018-06-26",
+    "velocity_scale_m_per_s": 6.2000796941378355e-06,
+    "pre_filter_hz": [
+      0.01,
+      0.02,
+      8,
+      9
+    ],
+    "water_level": null,
+    "display_scale_percentile": 99,
+    "observed_seconds": 86400.0,
+    "gaps": []
+  },
+  {
+    "date": "2005-10-22",
+    "velocity_scale_m_per_s": 3.5746211790908162e-06,
+    "pre_filter_hz": [
+      0.01,
+      0.02,
+      8,
+      9
+    ],
+    "water_level": null,
+    "display_scale_percentile": 99,
+    "observed_seconds": 86400.0,
+    "gaps": []
+  },
+  {
+    "date": "2005-04-16",
+    "velocity_scale_m_per_s": 3.0749563782542087e-06,
+    "pre_filter_hz": [
+      0.01,
+      0.02,
+      8,
+      9
+    ],
+    "water_level": null,
+    "display_scale_percentile": 99,
+    "observed_seconds": 86400.0,
+    "gaps": []
+  },
+  {
+    "date": "1999-12-22",
+    "velocity_scale_m_per_s": 1.7015445176606496e-06,
+    "pre_filter_hz": [
+      0.01,
+      0.02,
+      8,
+      9
+    ],
+    "water_level": null,
+    "display_scale_percentile": 99,
+    "observed_seconds": 86400.0,
+    "gaps": []
+  }
+]

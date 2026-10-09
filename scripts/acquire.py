@@ -5,12 +5,16 @@ from pathlib import Path
 from datetime import datetime
 ROOT=Path(__file__).resolve().parents[1]
 URLS={
- 'IGUANA_Cat_V1.eventlist':'https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist?download=1',
- 'GV01-gv02_gv04_filled.baseline':'https://zenodo.org/records/4389190/files/GV01-gv02_gv04_filled.baseline?download=1',
+ 'IGUANA_Cat_V1.eventlist':'https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist',
+ 'GV01-gv02_gv04_filled.baseline':'https://zenodo.org/records/4389190/files/GV01-gv02_gv04_filled.baseline',
  'article.pdf':'https://www.nature.com/articles/s41467-026-68645-4.pdf',
- 'supplement.pdf':'https://pmc.ncbi.nlm.nih.gov/articles/instance/12946353/bin/41467_2026_68645_MOESM1_ESM.pdf',
+ 'supplement.pdf':'https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-68645-4/MediaObjects/41467_2026_68645_MOESM1_ESM.pdf',
+ '8G_20180626.mseed':'https://service.iris.edu/fdsnws/dataselect/1/query?net=8G&sta=*&loc=*&cha=HH?&start=2018-06-26T00:00:00&end=2018-06-27T00:00:00',
+ 'PAYG_stations.xml':'https://service.iris.edu/fdsnws/station/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=1999-12-22&end=2018-06-27&level=response&format=xml',
  'stations.xml':'https://service.iris.edu/fdsnws/station/1/query?network=8G&starttime=2018-06-26&endtime=2018-06-27&level=response&format=xml'
 }
+for date in ['2018-06-26','2005-10-22','2005-04-16','1999-12-22']:
+    URLS['PAYG_'+date+'.mseed']='https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start='+date+'T00:00:00&end='+date+'T23:59:59.99'
 
 
 def fetch(name,url):

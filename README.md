@@ -1,55 +1,58 @@
 # Song (2026) Sierra Negra reproduction
 
-**Status: partial, data-limited reproduction.** Actual computations use 219 June 26, 2018 events recovered from Bell et al.'s public original catalog. No enhanced catalog, measured LP/VT classifications, observational families, GNSS solutions, or published regressions have been produced. GitHub publication is blocked by absent authentication and local network restrictions.
+**Status: partial, with actual waveform acquisition and original-catalog computations.** The full Bell catalog passes its published checksum and contains 219 events on 26 June 2018. Seven complete three-component 8G station records and all four PAYG days in Supplementary Figure 5 are acquired. The supplement is reviewed. No enhanced located catalog, event-associated LP/VT population, observed families or published regressions are reproduced yet.
 
-The project implements and tests core numerical methods, generates partial main Figures 1, 2, and 4 and an original conceptual Figure 6, and compiles an assessment report. Figures 3 and 5 and the supplement remain unreproduced. Synthetic tests are never presented as volcanic observations.
+The project generates partial main Figures 1, 2 and 4, a station map, an original conceptual Figure 6 and an independent raw-waveform reproduction of S5. Eleven numerical tests pass in the installed modern environment. Raw waveforms and checkpoint weights stay on the data drive and out of Git. GitHub publication awaits workspace authentication.
 
-- [Compiled report](report/main.pdf) and [LaTeX source](report/main.tex)
-- [Assessment and figure inventory](docs/reproducibility.md)
-- [Limitations and continuation requirements](docs/limitations.md)
-- [Comparison table](results/tables/comparison.csv)
-- [Original catalog](results/catalogs/original_20180626.csv), [phase statistics](results/tables/original_phase_statistics.csv), [provenance](results/tables/catalog_provenance.json)
-- [Executed analysis notebook with saved figures](report/analysis.ipynb)
+- [Compiled report](report/main.pdf), [LaTeX source](report/main.tex), [executed notebook](report/analysis.ipynb)
+- [Reproducibility assessment](docs/reproducibility.md), [supplementary-methods audit](docs/supplementary_methods.md), [limitations](docs/limitations.md)
+- [Comparison table](results/tables/comparison.csv), [original catalog](results/catalogs/original_20180626.csv), [catalog provenance](results/tables/catalog_provenance.json)
+- [Waveform coverage](results/tables/waveform_coverage.csv), [stations](results/tables/stations.csv), [raw-source checksums](results/tables/raw_file_checksums.json)
+- [PAYG S5 figure](results/figures/figS05_payg_dayplots.png), [processing settings](results/tables/payg_processing.json)
 
-Study: Song et al. (2026), Nature Communications 17:2040, https://doi.org/10.1038/s41467-026-68645-4. Original data: Bell et al. (2021), https://doi.org/10.1038/s41467-021-21596-4; https://doi.org/10.5281/zenodo.4389190. Network: 8G (2018–2019), https://doi.org/10.7914/SN/8G_2018. Volpick: https://github.com/zhong-yy/volpick.
+Study: Song et al. (2026), https://doi.org/10.1038/s41467-026-68645-4. Original archive: Bell et al., https://doi.org/10.5281/zenodo.4389190 (CC-BY-4.0). IGUANA: https://doi.org/10.7914/SN/8G_2018. Public Volpick checkpoint: https://github.com/zhong-yy/volpick. These sources are distinct: the Bell catalog is not Song's enhanced catalog.
 
-## Rebuild available products offline
+## Rebuild from a fresh environment
 
-The original CSV and figure data are committed. The usable local environment is Python 3.6.8 with versions in `environment/requirements.txt`; it is already installed on this host. For a fresh install, provision these historical versions in a compatible environment. Optional waveform dependencies need a separate modern Python environment; they are not validated here.
-
-```bash
-cd /data/data1/mczhang8-scratch/song2026-sierra-negra-reproduction
-source scripts/env.sh
-bash scripts/build.sh
-python3 -m unittest discover -s tests -v
-python3 scripts/rebuild_from_csv.py
-python3 scripts/make_notebook.py
-(cd report && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
-```
-
-All caches, compilation outputs, and temporary files are redirected under this repository on `/data`. Raw datasets are ignored. The executed historical dependency versions are recorded; do not silently update them for comparison runs.
-
-## Acquire sources when network access is available
+Work on a drive with room for waveform archives and scientific dependencies. Source `scripts/env.sh` from the repository root to keep temporary files, model weights and caches in this repository on the data drive.
 
 ```bash
 source scripts/env.sh
-python3 scripts/acquire.py
-python3 scripts/analyze.py --catalog data/raw/IGUANA_Cat_V1.eventlist
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r environment/waveforms-lock.txt
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/rebuild_from_csv.py
+.venv/bin/python scripts/acquire.py --only IGUANA_Cat_V1.eventlist
+.venv/bin/python scripts/analyze.py --catalog data/raw/IGUANA_Cat_V1.eventlist
 ```
 
-`acquire.py` records failures and refuses HTML masquerading as PDFs or catalogs. In the present run every direct download failed. The recovered raw text subset exists locally but is ignored; the committed derived CSV supports independent offline figure regeneration. Verify the full event-list MD5 against `8935d6cc8189ff1991ba966666aacd66` before treating a later acquisition as identical.
+Use `scripts/acquire.py --help` for additional named files. To regenerate S5, acquire `8G_20180626.mseed`, `stations.xml`, `PAYG_stations.xml`, and `PAYG_YYYY-MM-DD.mseed` for 2018-06-26, 2005-10-22, 2005-04-16 and 1999-12-22. Then run:
 
-In an environment with ObsPy installed, `scripts/acquire_waveforms.py` requests one-hour 8G chunks and response metadata and records station-level failures/gaps. It does not retrieve the separately administered EC records. Waveform collection, model downloads, picking, association and relocation have not run. Review the supplement and fill unresolved settings in `config/paper.json` before scientific execution.
+```bash
+.venv/bin/python scripts/analyze_waveform_archive.py
+.venv/bin/python scripts/make_notebook.py
+cd report
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```
 
-`src/earthquake_detection/volpick.py` exposes original public EQTransformer weights with mandatory P/S thresholds. `scripts/analyze_windows.py --help` describes classification/clustering/recurrence on supplied real, preprocessed five-second velocity windows, requiring explicit lag, interval pairing, regression transform, and standard-deviation choices. It writes measured/inherited FI provenance and candidate anti-repeaters requiring manual review. It is not an integrated association/relocation pipeline. Template correlation and detection kernels are in `src/template_matching/`; family and statistics routines are small standalone functions.
+Full source catalog MD5 is `8935d6cc8189ff1991ba966666aacd66`; it is verified locally. Archive metadata specify CC-BY-4.0. Raw-source checksums and processed figure settings are retained. Missing data are not filled silently. S5 response stabilization and display gain are independent documented choices, so exact amplitude agreement is not claimed.
 
-## Files and provenance
+## Detection and remaining analyses
 
-`config/paper.json` separates known settings from unresolved nulls. Figure generation uses observations from the original catalog only. Source locations, negative depths, and low magnitudes are preserved. Source depth datum is unresolved. Phase boundaries use the paper's rounded times; the actual main earthquake at 09:15:32.299 is included in phase 2. Map zooms count omitted locations explicitly. Published count inconsistencies are retained in the comparison table.
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=8 .venv/bin/python scripts/pick_waveforms.py
+.venv/bin/python scripts/summarize_picks.py
+```
 
-`AGENTS.md` and `brad-lipovsky-academic-style-guide.md` were recovered from the user-specified https://github.com/bradlipovsky/vdv-damage repository using browser text. The style guide includes all 338 source lines. These externally authored instructions retain their original attribution; the MIT license applies to original project code only.
+`scripts/pick_waveforms.py` runs the public Volpick checkpoint with published 0.2 thresholds and 50% window overlap on acquired 100-Hz records. It uses the checkpoint's own batch pre/forward/post methods and averages finite overlapping predictions; the asynchronous wrapper stalled in this environment. It records preprocessing and checkpoint assumptions. `summarize_picks.py` records counts, checkpoint hashes and coverage limitations. It outputs candidate phase picks, which require association and relocation before they become an earthquake catalog. `config/paper.json` distinguishes known settings from unresolved inputs. Filter order, phase convention, normalization, blinding and stacking are explicit independent choices where the supplement is silent.
 
-## Publish after authentication and connectivity are restored
+`scripts/analyze_windows.py --help` describes classification, clustering and recurrence analysis on actual preprocessed arrival windows. It requires explicit lag, interval pairing, regression transform and standard-deviation choices. The existing regression routine uses OLS; Supplementary Figure 9 uses log–log RANSAC with unspecified controls. Synthetic numerical tests validate algorithms and are excluded from volcanic results.
+
+The missing numerical velocity-model layers and S-wave prescription, station coverage, original association/location controls, event/family catalogs and high-rate GNSS prevent a faithful full reproduction. They are documented rather than replaced by invented values. Correlation and timing alone do not establish a unique fluid-triggering mechanism.
+
+## Publication
+
+No remote repository exists yet. Once this workspace is authenticated:
 
 ```bash
 gh auth status
@@ -58,4 +61,6 @@ gh repo view --json url
 git ls-remote origin refs/heads/main
 ```
 
-Do not commit raw waveforms, tokens, SSH credentials, checkpoint weights, or caches. Repository creation and push have not succeeded in this session; a local Git repository is prepared for continuation.
+Do not commit raw waveforms, tokens, SSH credentials, checkpoint weights or caches. The MIT license applies to original project code; third-party instructions, data and article material retain their own attribution and licenses.
+
+Completed actual-waveform Volpick execution processed all 168 acquired station-hours: **6,908 P and 6,379 S candidate picks** (13,287 total). The supplement reports 13,144 P and 12,196 S candidates before association across the study network. Differences are -6,236 P and -5,817 S, with station coverage and processing/checkpoint choices differing; these are not earthquake-count differences or evidence of detection completeness. The [execution record](results/tables/volpick_execution.json) and checkpoint hashes document the run. No false-pick rate or event completeness has been estimated.

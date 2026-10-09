@@ -33,5 +33,95 @@
     "attempt_utc": "2026-10-08T23:15:11.504413Z",
     "status": "failed",
     "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "name": "IGUANA_Cat_V1.eventlist",
+    "url": "https://zenodo.org/records/4389190/files/IGUANA_Cat_V1.eventlist",
+    "status": "downloaded",
+    "bytes": 327909,
+    "sha256": "6afe88c051e2afee8ca3f01c44bd110a677a752d20530594ba81dd606679e0be",
+    "download_file_mtime_utc": "2026-10-09T17:19:12.027932Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "GV01-gv02_gv04_filled.baseline",
+    "url": "https://zenodo.org/records/4389190/files/GV01-gv02_gv04_filled.baseline",
+    "status": "downloaded",
+    "bytes": 164921,
+    "sha256": "2f0759b4be781f44b7fd24e3dd644e1d343220667d783be6311d870499bcb478",
+    "download_file_mtime_utc": "2026-10-09T17:20:53.426998Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "supplement.pdf",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-026-68645-4/MediaObjects/41467_2026_68645_MOESM1_ESM.pdf",
+    "status": "downloaded",
+    "bytes": 3148069,
+    "sha256": "c407c9648321d91e9a00f0dfe3a8159b8ffe67990a48a830fd75ad8836835280",
+    "download_file_mtime_utc": "2026-10-09T17:17:16.376856Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "8G_20180626.mseed",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=8G&sta=*&loc=*&cha=HH?&start=2018-06-26T00:00:00&end=2018-06-27T00:00:00",
+    "status": "downloaded",
+    "bytes": 359546368,
+    "sha256": "5cdd1b101229dc19762ca21ce22a55ded4a1c0ac9e543e8ab1ae2ac1f3e10a05",
+    "download_file_mtime_utc": "2026-10-09T17:18:35.997908Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "PAYG_stations.xml",
+    "url": "https://service.iris.edu/fdsnws/station/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=1999-12-22&end=2018-06-27&level=response&format=xml",
+    "status": "downloaded",
+    "bytes": 57681,
+    "sha256": "21acf3c76c1907252bf92216e237630dfe3921a1310329d90d5626e5ddffd686",
+    "download_file_mtime_utc": "2026-10-09T17:19:21.489938Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "stations.xml",
+    "url": "https://service.iris.edu/fdsnws/station/1/query?network=8G&starttime=2018-06-26&endtime=2018-06-27&level=response&format=xml",
+    "status": "downloaded",
+    "bytes": 5095565,
+    "sha256": "8728f3981f6e27013bdead675779e8f666c951daa897ca800df7179939759024",
+    "download_file_mtime_utc": "2026-10-09T17:17:34.536868Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "PAYG_2018-06-26.mseed",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=2018-06-26T00:00:00&end=2018-06-26T23:59:59.99",
+    "status": "downloaded",
+    "bytes": 2961408,
+    "sha256": "f2b4499e67c041d9cc99720469ef06963fe8190eaf35f2bc3513d99cc9586c7d",
+    "download_file_mtime_utc": "2026-10-09T17:19:21.169938Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "PAYG_2005-10-22.mseed",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=2005-10-22T00:00:00&end=2005-10-22T23:59:59.99",
+    "status": "downloaded",
+    "bytes": 1827328,
+    "sha256": "812941447d769cc0c13e58112d6b6fbcf467a24ce3a0ed2bd42c2a51194079a9",
+    "download_file_mtime_utc": "2026-10-09T17:19:21.132937Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "PAYG_2005-04-16.mseed",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=2005-04-16T00:00:00&end=2005-04-16T23:59:59.99",
+    "status": "downloaded",
+    "bytes": 1847296,
+    "sha256": "3cedf9297de8ec5067d375346f0b62a4d4a3d275695883e1718a06ca652290b5",
+    "download_file_mtime_utc": "2026-10-09T17:19:21.318938Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
+  },
+  {
+    "name": "PAYG_1999-12-22.mseed",
+    "url": "https://service.iris.edu/fdsnws/dataselect/1/query?net=IU&sta=PAYG&loc=00&cha=BHZ&start=1999-12-22T00:00:00&end=1999-12-22T23:59:59.99",
+    "status": "downloaded",
+    "bytes": 1789952,
+    "sha256": "ccfeb95f7381126e3e5ac499b9cf1f9123364025d0b979fe8af63c67918f17e6",
+    "download_file_mtime_utc": "2026-10-09T17:19:21.128937Z",
+    "acquisition": "curl outside sandbox; locally validated by catalog/waveform analysis"
   }
 ]

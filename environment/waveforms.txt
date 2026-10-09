@@ -1,6 +1,6 @@
-# Optional modern environment; NOT installed or executed in this run.
+# Modern waveform environment installed and executed; exact versions in waveforms-lock.txt.
 # Resolve under Python >=3.10, then save pip freeze before scientific execution.
 obspy
 seisbench
 pyocto
-eqcorrscan
+# EQcorrscan is not installed; independent matching kernels are tested.

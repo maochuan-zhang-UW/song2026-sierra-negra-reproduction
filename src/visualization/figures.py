@@ -11,7 +11,7 @@ COLORS=['#2471a3','#d4ac0d','#d35400']
 
 
 def save(fig,path):
-    fig.savefig(str(path)+'.pdf',bbox_inches='tight')
+    fig.savefig(str(path)+'.pdf',dpi=300,bbox_inches='tight')
     fig.savefig(str(path)+'.png',dpi=300,bbox_inches='tight')
     plt.close(fig)
 
